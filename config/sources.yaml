@@ -1,0 +1,531 @@
+# Masterkatalog över övervakade källor och domäner för Totalförsvaret MCP/RAG
+# Repo: https://github.com/flinnander/totalforsvaret
+#
+# Grundprincip (se SECURITY_AND_SCOPE.md):
+# "Struktur, Roller & Formella Krav JA – Uppfyllnad, Förmågegap & Sårbarheter NEJ"
+# Vi aggregerar ENDAST öppna källor om vad totalförsvaret ÄR, vilka som ingår och vilka lagar/krav
+# som gäller. Vi exkluderar aktivt hur väl enskilda aktörer svarar upp mot kraven.
+
+version: "1.1"
+updated: "2026-11-25"
+
+ingestion_defaults:
+  respect_robots_txt: true
+  user_agent: "Totalforsvaret-OpenRAG-Bot/1.0 (+https://github.com/flinnander/totalforsvaret)"
+  require_source_url: true
+  require_timestamp: true
+
+# Automatiska säkerhets- och avgränsningsfilter vid inhämtning
+exclusion_rules:
+  exclude_compliance_and_capability_assessments: true
+  exclude_physical_infrastructure_coordinates: true
+  blocked_doc_patterns:
+    - "risk- och sårbarhetsanalys"
+    - "risk-och-sarbarhetsanalys"
+    - "rsa-"
+    - "förmågebedömning"
+    - "mognadsbedömning"
+    - "tillsynsbeslut"
+    - "brister i beredskapen"
+    - "uppföljning av beredskapsförmåga"
+    - "återrapportering"
+    - "skyddsobjekt"
+
+# ==============================================================================
+# 1. RIKSDAG, REGERING, RÄTTSINFORMATION & REGLERINGSBREV (FORMELLA KRAV)
+# ==============================================================================
+core_governance_sources:
+  - id: riksdagen_open_data
+    name: "Riksdagens Öppna Data"
+    domain: "data.riksdagen.se"
+    base_urls:
+      - "https://data.riksdagen.se/dokumentlista/"
+    method: "rest_api"
+    schedule: "weekly"
+    doc_types: ["sfs", "prop", "sou", "ds", "bet", "skr"]
+    filters:
+      keywords:
+        - "totalförsvar"
+        - "civilt försvar"
+        - "höjd beredskap"
+        - "beredskapsmyndighet"
+        - "beredskapssektor"
+        - "krigsorganisation"
+        - "allmän tjänsteplikt"
+        - "värdlandsstöd"
+        - "NATO"
+        - "NCRS"
+        - "försörjningsberedskap"
+      key_sfs:
+        - "1992:1403" # Lag om totalförsvar och höjd beredskap
+        - "2015:1053" # Förordning om totalförsvar och höjd beredskap
+        - "2022:524"  # Förordning om statliga myndigheters beredskap (inkl. ändringar 2025:742, 2026 m.fl.)
+        - "2006:544"  # Lag om kommuners och regioners åtgärder inför och vid extraordinära händelser i fredstid och höjd beredskap (LEH)
+        - "2006:637"  # Förordning om kommuners och regioners åtgärder (FEH)
+        - "1994:1809" # Lag om totalförsvarsplikt
+        - "1982:1004" # Lag om skyldighet för näringsidkare, arbetsmarknadsorganisationer m.fl. att delta i totalförsvarsplaneringen
+        - "1978:599"  # Förfogandelag
+        - "1978:561"  # Ransoneringslag
+        - "2018:585"  # Säkerhetsskyddslag (endast lagtext/normativt regelverk)
+        - "2020:782"  # Lag om operativt militärt stöd / Värdlandsstöd & DCA-relaterad lagstiftning
+
+  - id: regeringen
+    name: "Regeringskansliet"
+    domain: "regeringen.se"
+    base_urls:
+      - "https://www.regeringen.se/sveriges-regering/forsvarsdepartementet/"
+      - "https://www.regeringen.se/regeringens-politik/totalforsvar/"
+      - "https://www.regeringen.se/regeringens-politik/civilt-forsvar/"
+      - "https://www.regeringen.se/regeringens-politik/sverige-och-nato/"
+      - "https://www.regeringen.se/rattsliga-dokument/"
+    method: "rss_and_curated_web"
+    schedule: "weekly"
+    doc_types: ["regeringsbeslut", "kommittedirektiv", "strategi", "regleringsbrev", "ds", "sou"]
+
+  - id: esv_statsliggaren
+    name: "Ekonomistyrningsverket (ESV) & Statsliggaren – Regleringsbrev"
+    domain: "esv.se"
+    base_urls:
+      - "https://www.esv.se/statsliggaren/"
+    method: "structured_scraper"
+    schedule: "monthly" # Särskilt intensiv körning december–januari samt vid ändringsbudgetar
+    doc_types: ["regleringsbrev"]
+    scope_notes: >
+      Hämtar ENDAST regeringens formella mål, uppdrag och anslagsvillkor i regleringsbreven
+      (Utgiftsområde 6 samt beredskapsmyndigheternas regleringsbrev). Myndigheternas efterföljande
+      återrapporteringar om måluppfyllnad eller brister hämtas EJ.
+
+  - id: riksbanken
+    name: "Sveriges riksbank (Riksdagsmyndighet – Regelverk & roll i finansiell beredskap)"
+    domain: "riksbank.se"
+    base_urls:
+      - "https://www.riksbank.se/sv/betalningar--kontanter/beredskap/"
+    method: "curated_web_and_pdf"
+    schedule: "monthly"
+    doc_types: ["föreskrift", "rollbeskrivning"]
+
+# ==============================================================================
+# 2. NATO, ALLIANSFÖRPLIKTELSER & CRISIS RESPONSE MEASURES (KONCEPT & KRAVRAMVERK)
+# ==============================================================================
+nato_and_alliance_sources:
+  - id: nato_hq
+    name: "NATO Official Portal (Resilience, Article 3, NCRS/NRS, Deterrence & Defence)"
+    domain: "nato.int"
+    base_urls:
+      - "https://www.nato.int/cps/en/natohq/topics_132722.htm" # Resilience, civil preparedness and Article 3
+      - "https://www.nato.int/cps/en/natohq/topics_49288.htm"  # Crisis management (NCRS / NRS)
+      - "https://www.nato.int/cps/en/natohq/official_texts.htm"
+    method: "curated_web"
+    schedule: "monthly"
+    doc_types: ["nato_policy", "official_text", "baseline_requirements"]
+    scope_notes: >
+      Fokus på vad NATO:s ramverk innebär konceptuellt och formellt: de 7 grundläggande kraven på civil
+      motståndskraft (Seven Baseline Requirements), hur NATO Crisis Response System (NCRS) / NATO Response
+      System (NRS) och Crisis Response Measures (CRM) fungerar som system, NDPP samt Värdlandsstöd (HNS).
+      Inga landspecifika förmågegranskningar eller uppfyllnadsbedömningar inkluderas.
+
+  - id: nato_act_and_shape
+    name: "NATO Allied Command Transformation (ACT) & SHAPE"
+    domain: "act.nato.int"
+    secondary_domains: ["shape.nato.int", "nso.nato.int"]
+    base_urls:
+      - "https://www.act.nato.int/"
+      - "https://shape.nato.int/"
+    method: "curated_web_and_pdf"
+    schedule: "quarterly"
+    doc_types: ["nato_doctrine", "hns_guidance"]
+    scope_notes: "Öppna doktriner och standardramverk (t.ex. AJP för Host Nation Support och CIMIC)."
+
+  - id: nato_hybrid_and_cyber_coe
+    name: "European Centre of Excellence for Countering Hybrid Threats & NATO CCDCOE"
+    domain: "hybridcoe.fi"
+    secondary_domains: ["ccdcoe.org"]
+    base_urls:
+      - "https://www.hybridcoe.fi/publications/"
+      - "https://ccdcoe.org/library/publications/"
+    method: "curated_web_and_pdf"
+    schedule: "quarterly"
+    doc_types: ["begreppsramverk", "metodhandbok"]
+
+# ==============================================================================
+# 3. FÖRSVARSDEPARTEMENTETS MYNDIGHETER, MILITÄRT FÖRSVAR & KUNSKAPSMYNDIGHETER
+# ==============================================================================
+defense_and_core_agencies:
+  - id: forsvarsmakten
+    name: "Försvarsmakten (inkl. Militärregioner: Norra, Mellersta, Västra, Södra & Gotland)"
+    domain: "forsvarsmakten.se"
+    method: "curated_web_and_pdf"
+    schedule: "weekly"
+    doc_types: ["doktrin", "handbok", "organisation", "föreskrift_ffs", "webb"]
+
+  - id: mcf
+    name: "Myndigheten för civilt försvar (MCF, tidigare MSB)"
+    domain: "mcf.se"
+    legacy_aliases: ["msb.se", "Myndigheten för samhällsskydd och beredskap", "MSB"]
+    secondary_domains: ["krisinformation.se"]
+    method: "curated_web_and_pdf"
+    schedule: "weekly"
+    doc_types: ["föreskrift", "handbok", "metodstöd", "systembeskrivning", "webb"]
+
+  - id: mtfa
+    name: "Myndigheten för totalförsvarsanalys (MTFA)"
+    domain: "mtfa.se"
+    method: "curated_web"
+    schedule: "monthly"
+    doc_types: ["rollbeskrivning", "systemöversikt"]
+    scope_notes: >
+      Endast beskrivningar av MTFA:s uppdrag och systembeskrivningar av totalförsvarets uppbyggnad.
+      Granskningsrapporter som bedömer aktörers faktiska förmåga eller brister exkluderas enligt SECURITY_AND_SCOPE.md.
+
+  - id: mpf
+    name: "Myndigheten för psykologiskt försvar (MPF)"
+    domain: "mpf.se"
+    secondary_domains: ["bliintelurad.se"]
+    method: "curated_web_and_pdf"
+    schedule: "monthly"
+    doc_types: ["handbok", "utbildningsmaterial", "rollbeskrivning"]
+
+  - id: foi
+    name: "Totalförsvarets forskningsinstitut (FOI)"
+    domain: "foi.se"
+    method: "curated_web_and_pdf"
+    schedule: "monthly"
+    doc_types: ["begreppsrapport", "rollbeskrivning"]
+
+  - id: fhs
+    name: "Försvarshögskolan (FHS / CTSS)"
+    domain: "fhs.se"
+    method: "curated_web_and_pdf"
+    schedule: "monthly"
+    doc_types: ["handbok", "utbildning", "forskning"]
+
+  - id: pliktverket
+    name: "Totalförsvarets plikt- och prövningsverk"
+    domain: "pliktverket.se"
+    method: "curated_web_and_pdf"
+    schedule: "monthly"
+    doc_types: ["föreskrift", "vägledning_plikt", "krigsplacering_regelverk"]
+
+  - id: fmv
+    name: "Försvarets materielverk (FMV)"
+    domain: "fmv.se"
+    method: "curated_web"
+    schedule: "monthly"
+    doc_types: ["rollbeskrivning"]
+
+  - id: fra_ncsc
+    name: "Försvarets radioanstalt (FRA) & Nationellt cybersäkerhetscenter (NCSC)"
+    domain: "fra.se"
+    secondary_domains: ["ncsc.se"]
+    method: "curated_web_and_pdf"
+    schedule: "monthly"
+    doc_types: ["rollbeskrivning", "metodvägledning"]
+
+  - id: fortifikationsverket
+    name: "Fortifikationsverket"
+    domain: "fortifikationsverket.se"
+    method: "curated_web"
+    schedule: "quarterly"
+    doc_types: ["rollbeskrivning"]
+
+# ==============================================================================
+# 4. DE 12 BEREDSKAPSSEKTORERNA & BEREDSKAPSMYNDIGHETER (SFS 2022:524)
+#    Endast roller, instruktioner, föreskrifter och ansvar i totalförsvaret.
+# ==============================================================================
+preparedness_sectors:
+  - sector_id: ekonomisk_sakerhet
+    name: "Ekonomisk säkerhet"
+    nato_baseline_mapping: ["continuity_of_government"]
+    lead_agency:
+      id: forsakringskassan
+      name: "Försäkringskassan"
+      domain: "forsakringskassan.se"
+    member_agencies:
+      - { id: arbetsformedlingen, name: "Arbetsförmedlingen", domain: "arbetsformedlingen.se" }
+      - { id: pensionsmyndigheten, name: "Pensionsmyndigheten", domain: "pensionsmyndigheten.se" }
+      - { id: riksgalden, name: "Riksgäldskontoret", domain: "riksgalden.se" }
+      - { id: skatteverket, name: "Skatteverket", domain: "skatteverket.se" }
+      - { id: statens_servicecenter, name: "Statens servicecenter", domain: "statenssc.se" }
+      - { id: utbetalningsmyndigheten, name: "Utbetalningsmyndigheten", domain: "utbetalningsmyndigheten.se" }
+
+  - sector_id: elektroniska_kommunikationer_och_post
+    name: "Elektroniska kommunikationer och post"
+    nato_baseline_mapping: ["resilient_civil_communications"]
+    lead_agency:
+      id: pts
+      name: "Post- och telestyrelsen (PTS)"
+      domain: "pts.se"
+    member_agencies:
+      - { id: svenska_kraftnat, name: "Affärsverket svenska kraftnät", domain: "svk.se" }
+      - { id: mcf, name: "Myndigheten för civilt försvar", domain: "mcf.se" }
+      - { id: trafikverket, name: "Trafikverket", domain: "trafikverket.se" }
+
+  - sector_id: energiforsorjning
+    name: "Energiförsörjning"
+    nato_baseline_mapping: ["resilient_energy_supplies"]
+    lead_agency:
+      id: energimyndigheten
+      name: "Statens energimyndighet"
+      domain: "energimyndigheten.se"
+    member_agencies:
+      - { id: svenska_kraftnat, name: "Affärsverket svenska kraftnät", domain: "svk.se" }
+      - { id: energimarknadsinspektionen, name: "Energimarknadsinspektionen", domain: "ei.se" }
+      - { id: stralsakerhetsmyndigheten, name: "Strålsäkerhetsmyndigheten", domain: "stralsakerhetsmyndigheten.se" }
+
+  - sector_id: finansiella_tjanster
+    name: "Finansiella tjänster"
+    nato_baseline_mapping: ["continuity_of_government"]
+    lead_agency:
+      id: finansinspektionen
+      name: "Finansinspektionen"
+      domain: "fi.se"
+    member_agencies:
+      - { id: riksgalden, name: "Riksgäldskontoret", domain: "riksgalden.se" }
+
+  - sector_id: forsorjning_av_grunddata
+    name: "Försörjning av grunddata"
+    nato_baseline_mapping: ["continuity_of_government", "resilient_civil_communications"]
+    lead_agency:
+      id: skatteverket
+      name: "Skatteverket"
+      domain: "skatteverket.se"
+    member_agencies:
+      - { id: bolagsverket, name: "Bolagsverket", domain: "bolagsverket.se" }
+      - { id: lantmateriet, name: "Lantmäteriet", domain: "lantmateriet.se" }
+      - { id: digg, name: "Myndigheten för digital förvaltning (Digg)", domain: "digg.se" }
+      - { id: riksarkivet, name: "Riksarkivet", domain: "riksarkivet.se" }
+
+  - sector_id: halsa_vard_och_omsorg
+    name: "Hälsa, vård och omsorg"
+    nato_baseline_mapping: ["ability_to_deal_with_mass_casualties"]
+    lead_agency:
+      id: socialstyrelsen
+      name: "Socialstyrelsen"
+      domain: "socialstyrelsen.se"
+    member_agencies:
+      - { id: ehalsomyndigheten, name: "E-hälsomyndigheten", domain: "ehalsomyndigheten.se" }
+      - { id: folkhalsomyndigheten, name: "Folkhälsomyndigheten", domain: "folkhalsomyndigheten.se" }
+      - { id: lakemedelsverket, name: "Läkemedelsverket", domain: "lakemedelsverket.se" }
+
+  - sector_id: industri_byggande_och_handel
+    name: "Industri, byggande och handel"
+    nato_baseline_mapping: ["resilient_transport_systems", "resilient_energy_supplies"]
+    lead_agency:
+      id: tillvaxtverket
+      name: "Tillväxtverket"
+      domain: "tillvaxtverket.se"
+    member_agencies:
+      - { id: boverket, name: "Boverket", domain: "boverket.se" }
+      - { id: sgu, name: "Sveriges geologiska undersökning (SGU)", domain: "sgu.se" }
+
+  - sector_id: livsmedelsforsorjning_och_dricksvatten
+    name: "Livsmedelsförsörjning och dricksvatten"
+    nato_baseline_mapping: ["resilient_food_and_water_resources"]
+    lead_agency:
+      id: livsmedelsverket
+      name: "Livsmedelsverket"
+      domain: "livsmedelsverket.se"
+    member_agencies:
+      - { id: lansstyrelserna, name: "Länsstyrelserna (21 st)", domain: "lansstyrelsen.se" }
+      - { id: naturvardsverket, name: "Naturvårdsverket", domain: "naturvardsverket.se" }
+      - { id: jordbruksverket, name: "Statens jordbruksverk", domain: "jordbruksverket.se" }
+      - { id: sva, name: "Statens veterinärmedicinska anstalt (SVA)", domain: "sva.se" }
+
+  - sector_id: ordning_och_sakerhet
+    name: "Ordning och säkerhet"
+    nato_baseline_mapping: ["continuity_of_government", "uncontrolled_movement_of_people"]
+    lead_agency:
+      id: polismyndigheten
+      name: "Polismyndigheten"
+      domain: "polisen.se"
+    member_agencies:
+      - { id: domstolsverket, name: "Domstolsverket", domain: "domstol.se" }
+      - { id: kriminalvarden, name: "Kriminalvården", domain: "kriminalvarden.se" }
+      - { id: kustbevakningen, name: "Kustbevakningen", domain: "kustbevakningen.se" }
+      - { id: migrationsverket, name: "Migrationsverket", domain: "migrationsverket.se" }
+      - { id: sakerhetspolisen, name: "Säkerhetspolisen (Säpo)", domain: "sakerhetspolisen.se" }
+      - { id: tullverket, name: "Tullverket", domain: "tullverket.se" }
+      - { id: aklagarmyndigheten, name: "Åklagarmyndigheten", domain: "aklagare.se" }
+
+  - sector_id: raddningstjanst_och_skydd_av_civilbefolkningen
+    name: "Räddningstjänst och skydd av civilbefolkningen"
+    nato_baseline_mapping: ["uncontrolled_movement_of_people", "ability_to_deal_with_mass_casualties"]
+    lead_agency:
+      id: mcf
+      name: "Myndigheten för civilt försvar (MCF)"
+      domain: "mcf.se"
+    member_agencies:
+      - { id: kustbevakningen, name: "Kustbevakningen", domain: "kustbevakningen.se" }
+      - { id: lansstyrelserna, name: "Länsstyrelserna (21 st)", domain: "lansstyrelsen.se" }
+      - { id: polismyndigheten, name: "Polismyndigheten", domain: "polisen.se" }
+      - { id: sjofartsverket, name: "Sjöfartsverket", domain: "sjofartsverket.se" }
+      - { id: stralsakerhetsmyndigheten, name: "Strålsäkerhetsmyndigheten", domain: "stralsakerhetsmyndigheten.se" }
+      - { id: smhi, name: "SMHI", domain: "smhi.se" }
+
+  - sector_id: transporter
+    name: "Transporter"
+    nato_baseline_mapping: ["resilient_transport_systems"]
+    lead_agency:
+      id: trafikverket
+      name: "Trafikverket"
+      domain: "trafikverket.se"
+    member_agencies:
+      - { id: luftfartsverket, name: "Luftfartsverket (LFV)", domain: "lfv.se" }
+      - { id: sjofartsverket, name: "Sjöfartsverket", domain: "sjofartsverket.se" }
+      - { id: transportstyrelsen, name: "Transportstyrelsen", domain: "transportstyrelsen.se" }
+
+  - sector_id: utrikeshandel
+    name: "Utrikeshandel"
+    nato_baseline_mapping: ["resilient_food_and_water_resources", "resilient_energy_supplies"]
+    lead_agency:
+      id: kommerskollegium
+      name: "Kommerskollegium"
+      domain: "kommerskollegium.se"
+    member_agencies:
+      - { id: tullverket, name: "Tullverket", domain: "tullverket.se" }
+
+standalone_preparedness_agencies:
+  - { id: mpf, name: "Myndigheten för psykologiskt försvar", domain: "mpf.se" }
+  - { id: riksantikvarieambetet, name: "Riksantikvarieämbetet (Kulturarvsskydd i krig)", domain: "raa.se" }
+  - { id: skolverket, name: "Statens skolverk (Skola och barnomsorg under höjd beredskap)", domain: "skolverket.se" }
+
+# ==============================================================================
+# 5. REGIONAL & LOKAL NIVÅ (6 CIVILOMRÅDEN, 21 LÄN/REGIONER, SKR & KOMMUNER)
+#    Endast ansvarsfördelning, lagkrav (LEH) och organisationsstruktur – inga RSA:er.
+# ==============================================================================
+regional_and_municipal_sources:
+  civilomraden:
+    - id: norra_civilomradet
+      name: "Norra civilområdet"
+      lead_county_board: "Länsstyrelsen i Norrbottens län"
+      domain: "lansstyrelsen.se/norrbotten"
+      counties: ["Norrbottens län", "Västerbottens län", "Jämtlands län", "Västernorrlands län"]
+
+    - id: mellersta_civilomradet
+      name: "Mellersta civilområdet"
+      lead_county_board: "Länsstyrelsen i Örebro län"
+      domain: "lansstyrelsen.se/orebro"
+      counties: ["Örebro län", "Dalarnas län", "Gävleborgs län", "Södermanlands län", "Uppsala län", "Värmlands län", "Västmanlands län"]
+
+    - id: ostra_civilomradet
+      name: "Östra civilområdet"
+      lead_county_board: "Länsstyrelsen i Stockholms län"
+      domain: "lansstyrelsen.se/stockholm"
+      counties: ["Stockholms län", "Gotlands län"]
+
+    - id: sydostra_civilomradet
+      name: "Sydöstra civilområdet"
+      lead_county_board: "Länsstyrelsen i Östergötlands län"
+      domain: "lansstyrelsen.se/ostergotland"
+      counties: ["Östergötlands län", "Jönköpings län", "Kalmar län"]
+
+    - id: vastra_civilomradet
+      name: "Västra civilområdet"
+      lead_county_board: "Länsstyrelsen i Västra Götalands län"
+      domain: "lansstyrelsen.se/vastra-gotaland"
+      counties: ["Västra Götalands län", "Hallands län"]
+
+    - id: sodra_civilomradet
+      name: "Södra civilområdet"
+      lead_county_board: "Länsstyrelsen i Skåne län"
+      domain: "lansstyrelsen.se/skane"
+      counties: ["Skåne län", "Blekinge län", "Kronobergs län"]
+
+  umbrella_and_regions:
+    - id: skr
+      name: "Sveriges Kommuner och Regioner (SKR)"
+      domain: "skr.se"
+      base_urls:
+        - "https://skr.se/skr/samhallsplaneringinfrastruktur/trygghetsakerhet/civiltforsvar.html"
+      method: "curated_web_and_pdf"
+      schedule: "monthly"
+      scope_notes: "Principöverenskommelser stat–kommun/region om civilt försvar, rollfördelning och LEH (ej lokala RSA)."
+
+# ==============================================================================
+# 6. FRIVILLIGA FÖRSVARSORGANISATIONER (18 FFO) & NÄRINGSLIVETS ROLL
+# ==============================================================================
+voluntary_and_private_sector:
+  voluntary_defense_portal:
+    id: frivilligforsvaret
+    name: "Frivilligförsvarets samlingsportal"
+    domain: "frivilligforsvaret.se"
+
+  ffo_organizations:
+    - { name: "Civilförsvarsförbundet", domain: "civil.se" }
+    - { name: "Flygvapenfrivilligas riksförbund (FVF)", domain: "flygvapenfrivilliga.se" }
+    - { name: "Frivilliga automobilkårernas riksförbund (Bilkåren)", domain: "bilkaren.se" }
+    - { name: "Frivilliga flygkåren (FFK)", domain: "ffk.se" }
+    - { name: "Frivilliga motorcykelkårernas riksförbund (FMCK)", domain: "fmck.se" }
+    - { name: "Frivilliga radioorganisationen (FRO)", domain: "fro.se" }
+    - { name: "Försvarets personaltjänstförbund (FPF)", domain: "fpf1.se" }
+    - { name: "Insatsingenjörernas riksförbund", domain: "insatsingenjorerna.se" }
+    - { name: "Sjövärnskårernas riksförbund (SVK)", domain: "sjovarnskaren.se" }
+    - { name: "Svenska Blå Stjärnan", domain: "svenskablastjarnan.se" }
+    - { name: "Svenska Brukshundklubben", domain: "brukshundklubben.se" }
+    - { name: "Svenska Fallskärmsförbundet (SFF)", domain: "sff.se" }
+    - { name: "Svenska försvarsutbildningsförbundet (Försvarsutbildarna)", domain: "forsvarsutbildarna.se" }
+    - { name: "Svenska Lottakåren", domain: "svenskalottakaren.se" }
+    - { name: "Svenska Pistolskytteförbundet", domain: "pistolskytteforbundet.se" }
+    - { name: "Svenska Röda Korset", domain: "redcross.se" }
+    - { name: "Svenska Skyttesportförbundet", domain: "skyttesport.se" }
+    - { name: "Sveriges bilkårers riksförbund", domain: "bilkaren.se" }
+
+  business_preparedness:
+    - { id: svenskt_naringsliv, name: "Svenskt Näringsliv (Näringslivets roll i totalförsvaret / K-företagsbegreppet)", domain: "svensktnaringsliv.se" }
+    - { id: energiforetagen, name: "Energiföretagen Sverige (Elberedskapsrollen)", domain: "energiforetagen.se" }
+    - { id: livsmedelsforetagen, name: "Livsmedelsföretagen", domain: "livsmedelsforetagen.se" }
+
+# ==============================================================================
+# 7. AKADEMI, UTBILDNING & FORSKNINGSSAMVERKAN (CAMPUS TOTALFÖRSVAR)
+# ==============================================================================
+academia_and_education:
+  - id: campus_totalforsvar
+    name: "Campus totalförsvar – Nationell samverkansplattform för utbildning och forskning"
+    domain: "campustotalforsvar.se"
+    base_urls:
+      - "https://campustotalforsvar.se/"
+      - "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet"
+      - "https://campustotalforsvar.se/utbildning/"
+      - "https://campustotalforsvar.se/forskning/"
+    method: "curated_web"
+    schedule: "monthly"
+    doc_types: ["utbildningskatalog", "lärosätessamverkan", "forskningsteman"]
+    participating_universities_count: 37
+    participating_universities:
+      - "Blekinge tekniska högskola"
+      - "Chalmers tekniska högskola"
+      - "Försvarshögskolan"
+      - "Gymnastik- och idrottshögskolan (GIH)"
+      - "Göteborgs universitet"
+      - "Handelshögskolan i Stockholm"
+      - "Högskolan Dalarna"
+      - "Högskolan i Borås"
+      - "Högskolan i Gävle"
+      - "Högskolan i Halmstad"
+      - "Högskolan i Skövde"
+      - "Högskolan Kristianstad"
+      - "Högskolan Väst"
+      - "Jönköping University"
+      - "Karlstads universitet"
+      - "Karolinska Institutet"
+      - "Konstfack"
+      - "Kungl. Konsthögskolan"
+      - "Kungl. Musikhögskolan"
+      - "Kungliga Tekniska högskolan (KTH)"
+      - "Linköpings universitet"
+      - "Linnéuniversitetet"
+      - "Luleå tekniska universitet"
+      - "Lunds universitet"
+      - "Malmö universitet"
+      - "Marie Cederschiöld högskola"
+      - "Mittuniversitetet"
+      - "Mälardalens universitet"
+      - "Röda Korsets högskola"
+      - "Sophiahemmet Högskola"
+      - "Stockholms konstnärliga högskola"
+      - "Stockholms universitet"
+      - "Sveriges lantbruksuniversitet (SLU)"
+      - "Södertörns högskola"
+      - "Umeå universitet"
+      - "Uppsala universitet"
+      - "Örebro universitet"

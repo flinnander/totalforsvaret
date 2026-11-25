@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Local SQLite database & raw cache (rebuilt via `uv run totalforsvaret build` or Releases)
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+data/raw_cache/
+
+# Node / Web frontend
+web/node_modules/
+web/dist/
+web/.vite/
+*.tsbuildinfo
+
+# OS / IDE
+.DS_Store
+Thumbs.db
