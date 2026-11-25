@@ -2,7 +2,20 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import ForceGraph2D from 'react-force-graph-2d';
 import ForceGraph3D from 'react-force-graph-3d';
 import SpriteText from 'three-spritetext';
-import { Box, Compass, ExternalLink, Focus, Layers, RotateCcw, Search, Share2 } from 'lucide-react';
+import {
+  Box,
+  Compass,
+  ExternalLink,
+  Focus,
+  Layers,
+  PanelLeftClose,
+  PanelLeftOpen,
+  PanelRightClose,
+  PanelRightOpen,
+  RotateCcw,
+  Search,
+  Share2,
+} from 'lucide-react';
 
 interface GraphNode {
   id: string;
@@ -65,10 +78,14 @@ export default function App() {
   const [hiddenTypes, setHiddenTypes] = useState<Set<string>>(new Set());
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>('totalforsvaret');
   const [egoCenterId, setEgoCenterId] = useState<string | null>(null);
+  const [leftOpen, setLeftOpen] = useState<boolean>(true);
+  const [rightOpen, setRightOpen] = useState<boolean>(true);
   const [dimensions, setDimensions] = useState({ width: window.innerWidth, height: window.innerHeight });
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const fgRef = useRef<any>(null);
+  const fg2dRef = useRef<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const fg3dRef = useRef<any>(null);
 
   useEffect(() => {
     const onResize = () => setDimensions({ width: window.innerWidth, height: window.innerHeight });
@@ -121,7 +138,6 @@ export default function App() {
         const hay = `${n.name} ${n.shortName} ${n.description} ${n.aliases.join(' ')}`.toLowerCase();
         if (hay.includes(q)) matched.add(n.id);
       }
-      // Ta även med direkta grannar till sökträffar så kontexten syns
       const withNeighbors = new Set<string>(matched);
       for (const l of rawData.links) {
         const s = endpointId(l.source);
@@ -132,9 +148,10 @@ export default function App() {
       candidateIds = withNeighbors;
     }
 
+    // Skapa rena kopior utan gamla x/y/z-koordinater vid vybyte mellan 2D och 3D
     const nodes = rawData.nodes
       .filter((n) => candidateIds.has(n.id))
-      .map((n) => ({ ...n }));
+      .map(({ x: _x, y: _y, z: _z, ...rest }) => ({ ...rest }));
 
     const links = rawData.links
       .filter((l) => candidateIds.has(endpointId(l.source)) && candidateIds.has(endpointId(l.target)))
@@ -146,7 +163,7 @@ export default function App() {
       }));
 
     return { nodes, links };
-  }, [rawData, activePerspective, hiddenTypes, egoCenterId, searchQuery]);
+  }, [rawData, activePerspective, hiddenTypes, egoCenterId, searchQuery, is3D]);
 
   const selectedNode = useMemo(() => {
     if (!rawData || !selectedNodeId) return null;
@@ -174,18 +191,17 @@ export default function App() {
   const focusOnNode = useCallback(
     (node: GraphNode) => {
       setSelectedNodeId(node.id);
-      if (!fgRef.current) return;
-      if (is3D && typeof node.x === 'number' && typeof node.y === 'number' && typeof node.z === 'number') {
+      if (is3D && fg3dRef.current && typeof node.x === 'number' && typeof node.y === 'number' && typeof node.z === 'number') {
         const dist = 160;
         const distRatio = 1 + dist / Math.hypot(node.x || 1, node.y || 1, node.z || 1);
-        fgRef.current.cameraPosition(
+        fg3dRef.current.cameraPosition(
           { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio },
           node,
           900
         );
-      } else if (!is3D && typeof node.x === 'number' && typeof node.y === 'number') {
-        fgRef.current.centerAt(node.x, node.y, 700);
-        fgRef.current.zoom(2.6, 700);
+      } else if (!is3D && fg2dRef.current && typeof node.x === 'number' && typeof node.y === 'number') {
+        fg2dRef.current.centerAt(node.x, node.y, 700);
+        fg2dRef.current.zoom(2.6, 700);
       }
     },
     [is3D]
@@ -204,8 +220,9 @@ export default function App() {
     setEgoCenterId(null);
     setSearchQuery('');
     setHiddenTypes(new Set());
-    if (fgRef.current?.zoomToFit) {
-      fgRef.current.zoomToFit(600, 70);
+    const activeRef = is3D ? fg3dRef.current : fg2dRef.current;
+    if (activeRef?.zoomToFit) {
+      activeRef.zoomToFit(600, 70);
     }
   };
 
@@ -227,6 +244,8 @@ export default function App() {
           <div className="search-box">
             <Search size={15} color="#94a3b8" />
             <input
+              id="graph-search"
+              name="graph-search"
               type="text"
               placeholder="Sök myndighet, sektor, MSB, KTH, NCRS, SFS..."
               value={searchQuery}
@@ -235,6 +254,8 @@ export default function App() {
           </div>
 
           <select
+            id="dag-layout"
+            name="dag-layout"
             value={dagMode}
             onChange={(e) => setDagMode(e.target.value as DagLayout)}
             title="Välj graf-layout"
@@ -266,52 +287,97 @@ export default function App() {
         </div>
       </header>
 
-      {/* Vänsterpanel: Perspektiv & Nodtyper */}
-      <aside className="perspective-bar">
-        <div className="section-label">
-          <Compass size={12} style={{ verticalAlign: 'middle', marginRight: 4 }} />
-          Välj Perspektiv
-        </div>
-        {rawData?.perspectives.map((p) => (
-          <button
-            key={p.id}
-            className={`persp-btn ${activePerspective === p.id && !egoCenterId ? 'active' : ''}`}
-            onClick={() => {
-              setEgoCenterId(null);
-              setActivePerspective(p.id);
-            }}
-          >
-            <strong>{p.title}</strong>
-            <small>{p.description}</small>
-          </button>
-        ))}
-
-        <div className="section-label" style={{ marginTop: 10 }}>
-          <Layers size={12} style={{ verticalAlign: 'middle', marginRight: 4 }} />
-          Filtrera Nodtyper (Klicka)
-        </div>
-        <div className="legend-list">
-          {rawData &&
-            Object.entries(rawData.nodeTypes).map(([typeKey, cfg]) => (
-              <div
-                key={typeKey}
-                className={`legend-item ${hiddenTypes.has(typeKey) ? 'muted' : ''}`}
-                onClick={() => toggleNodeType(typeKey)}
-              >
-                <span className="legend-dot" style={{ background: cfg.color }} />
-                <span>{cfg.label_sv}</span>
-              </div>
-            ))}
-        </div>
-      </aside>
-
-      {/* Högerpanel: Detaljinspektör (L2–L3) */}
-      {selectedNode && (
-        <aside className="inspector">
-          <div className="type-pill">
-            <span className="legend-dot" style={{ background: selectedNode.color }} />
-            {selectedNode.typeLabel}
+      {/* Vänsterkolumn: utfällbar / infällbar */}
+      {!leftOpen ? (
+        <button
+          className="drawer-toggle-left"
+          onClick={() => setLeftOpen(true)}
+          title="Fäll ut vänsterkolumn (Perspektiv & Filter)"
+        >
+          <PanelLeftOpen size={16} />
+          <span>Perspektiv & Filter</span>
+        </button>
+      ) : (
+        <aside className="perspective-bar">
+          <div className="panel-header">
+            <div className="section-label">
+              <Compass size={12} style={{ verticalAlign: 'middle', marginRight: 4 }} />
+              Välj Perspektiv
+            </div>
+            <button
+              className="icon-btn"
+              onClick={() => setLeftOpen(false)}
+              title="Fäll in vänsterkolumn"
+              aria-label="Fäll in vänsterkolumn"
+            >
+              <PanelLeftClose size={15} />
+            </button>
           </div>
+
+          {rawData?.perspectives.map((p) => (
+            <button
+              key={p.id}
+              className={`persp-btn ${activePerspective === p.id && !egoCenterId ? 'active' : ''}`}
+              onClick={() => {
+                setEgoCenterId(null);
+                setActivePerspective(p.id);
+              }}
+            >
+              <strong>{p.title}</strong>
+              <small>{p.description}</small>
+            </button>
+          ))}
+
+          <div className="section-label" style={{ marginTop: 10 }}>
+            <Layers size={12} style={{ verticalAlign: 'middle', marginRight: 4 }} />
+            Filtrera Nodtyper (Klicka)
+          </div>
+          <div className="legend-list">
+            {rawData &&
+              Object.entries(rawData.nodeTypes).map(([typeKey, cfg]) => (
+                <div
+                  key={typeKey}
+                  className={`legend-item ${hiddenTypes.has(typeKey) ? 'muted' : ''}`}
+                  onClick={() => toggleNodeType(typeKey)}
+                >
+                  <span className="legend-dot" style={{ background: cfg.color }} />
+                  <span>{cfg.label_sv}</span>
+                </div>
+              ))}
+          </div>
+        </aside>
+      )}
+
+      {/* Högerkolumn: utfällbar / infällbar */}
+      {selectedNode && !rightOpen && (
+        <button
+          className="drawer-toggle-right"
+          onClick={() => setRightOpen(true)}
+          title="Fäll ut högerkolumn (Detaljpanel)"
+        >
+          <PanelRightOpen size={16} />
+          <span className="legend-dot" style={{ background: selectedNode.color }} />
+          <span className="truncate">{selectedNode.shortName}</span>
+        </button>
+      )}
+
+      {selectedNode && rightOpen && (
+        <aside className="inspector">
+          <div className="panel-header">
+            <div className="type-pill">
+              <span className="legend-dot" style={{ background: selectedNode.color }} />
+              {selectedNode.typeLabel}
+            </div>
+            <button
+              className="icon-btn"
+              onClick={() => setRightOpen(false)}
+              title="Fäll in högerkolumn"
+              aria-label="Fäll in högerkolumn"
+            >
+              <PanelRightClose size={15} />
+            </button>
+          </div>
+
           <h2>{selectedNode.name}</h2>
           {selectedNode.aliases.length > 0 && (
             <div style={{ fontSize: '0.73rem', color: '#94a3b8', marginBottom: 4 }}>
@@ -387,7 +453,7 @@ export default function App() {
       {/* Huvudcanvas: react-force-graph 2D eller 3D */}
       {rawData && !is3D && (
         <ForceGraph2D
-          ref={fgRef}
+          ref={fg2dRef}
           width={dimensions.width}
           height={dimensions.height}
           backgroundColor="#070b14"
@@ -435,7 +501,7 @@ export default function App() {
 
       {rawData && is3D && (
         <ForceGraph3D
-          ref={fgRef}
+          ref={fg3dRef}
           width={dimensions.width}
           height={dimensions.height}
           backgroundColor="#070b14"
@@ -445,7 +511,8 @@ export default function App() {
           onDagError={() => true}
           nodeVal={(n) => (n as GraphNode).val}
           nodeColor={(n) => (n as GraphNode).color}
-          linkColor={() => 'rgba(148, 163, 184, 0.35)'}
+          nodeLabel={(n) => `${(n as GraphNode).name} (${(n as GraphNode).typeLabel})`}
+          linkColor={() => 'rgba(148, 163, 184, 0.38)'}
           linkWidth={(l) => Math.max(0.5, ((l as GraphLink).weight || 1) * 0.5)}
           linkDirectionalParticles={1}
           linkDirectionalParticleWidth={1.6}
