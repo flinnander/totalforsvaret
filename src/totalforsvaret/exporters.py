@@ -84,10 +84,15 @@ def build_force_graph_payload(
     rows_nodes = conn.execute("SELECT * FROM nodes ORDER BY type, name").fetchall()
     rows_edges = conn.execute("SELECT * FROM edges ORDER BY weight DESC, id ASC").fetchall()
 
-    degree_map: dict[str, int] = {}
+    in_deg_map: dict[str, int] = {}
+    out_deg_map: dict[str, int] = {}
+    weight_sum_map: dict[str, float] = {}
     for e in rows_edges:
-        degree_map[e["source"]] = degree_map.get(e["source"], 0) + 1
-        degree_map[e["target"]] = degree_map.get(e["target"], 0) + 1
+        out_deg_map[e["source"]] = out_deg_map.get(e["source"], 0) + 1
+        in_deg_map[e["target"]] = in_deg_map.get(e["target"], 0) + 1
+        w = float(e["weight"] or 1.0)
+        weight_sum_map[e["source"]] = weight_sum_map.get(e["source"], 0.0) + w
+        weight_sum_map[e["target"]] = weight_sum_map.get(e["target"], 0.0) + w
 
     filtered_node_ids = {
         r["id"] for r in rows_nodes if r["type"] in allowed_types
@@ -115,7 +120,40 @@ def build_force_graph_payload(
         vis = NODE_VISUAL_CONFIG.get(r["type"], {"color": "#cbd5e1", "val": 8, "label_sv": r["type"]})
         meta = json.loads(r["metadata_json"] or "{}")
         aliases = json.loads(r["aliases_json"] or "[]")
-        deg = degree_map.get(r["id"], 1)
+        in_deg = in_deg_map.get(r["id"], 0)
+        out_deg = out_deg_map.get(r["id"], 0)
+        deg = in_deg + out_deg
+        w_sum = round(weight_sum_map.get(r["id"], 1.0), 2)
+
+        # Berika beskrivning för myndigheter som ingår i en eller flera beredskapssektorer
+        desc = r["description"]
+        if r["type"] == "agency":
+            lead_secs = [
+                row["short_name"]
+                for row in conn.execute(
+                    "SELECT n.short_name FROM edges e JOIN nodes n ON n.id = e.target WHERE e.source = ? AND e.relation = 'SEKTORSANSVARIG_FOR'",
+                    (r["id"],),
+                ).fetchall()
+            ]
+            mem_secs = [
+                row["short_name"]
+                for row in conn.execute(
+                    "SELECT n.short_name FROM edges e JOIN nodes n ON n.id = e.target WHERE e.source = ? AND e.relation = 'INGAR_I_SEKTOR'",
+                    (r["id"],),
+                ).fetchall()
+            ]
+            parts: list[str] = []
+            if lead_secs:
+                parts.append(f"Sektorsansvarig myndighet för: {', '.join(lead_secs)}.")
+            if mem_secs:
+                parts.append(f"Ingår som beredskapsmyndighet i: {', '.join(mem_secs)}.")
+            if parts:
+                desc = " ".join(parts) + (f" ({r['domain']})" if r["domain"] else "")
+
+        # Volym/area-viktning baserad på in- och utgående kopplingar samt relationsvikt
+        radius_score = 2.0 + (w_sum ** 0.65) * 1.45
+        weighted_val = round(radius_score ** 2.4, 1)
+
         nodes_out.append(
             {
                 "id": r["id"],
@@ -124,11 +162,14 @@ def build_force_graph_payload(
                 "type": r["type"],
                 "typeLabel": vis["label_sv"],
                 "color": vis["color"],
-                "val": round(vis["val"] + min(deg * 0.45, 12), 1),
+                "val": weighted_val,
                 "degree": deg,
+                "inDegree": in_deg,
+                "outDegree": out_deg,
+                "weightedDegree": w_sum,
                 "domain": r["domain"],
                 "url": r["url"],
-                "description": r["description"],
+                "description": desc,
                 "aliases": aliases,
                 "metadata": meta,
             }
