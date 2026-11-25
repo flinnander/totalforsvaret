@@ -1,13 +1,17 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import ForceGraph2D from 'react-force-graph-2d';
 import ForceGraph3D from 'react-force-graph-3d';
+import * as THREE from 'three';
 import SpriteText from 'three-spritetext';
 import {
   Box,
+  CheckSquare,
   Compass,
   ExternalLink,
   Focus,
   Layers,
+  Map as MapIcon,
+  MapPin,
   PanelLeftClose,
   PanelLeftOpen,
   PanelRightClose,
@@ -17,6 +21,7 @@ import {
   Search,
   Share2,
 } from 'lucide-react';
+import MapView, { GeoInfo } from './MapView';
 
 interface GraphNode {
   id: string;
@@ -24,6 +29,8 @@ interface GraphNode {
   shortName: string;
   type: string;
   typeLabel: string;
+  sourceGroup: string;
+  sourceGroupTitle: string;
   color: string;
   val: number;
   degree: number;
@@ -38,6 +45,8 @@ interface GraphNode {
   radius2D?: number;
   domain?: string | null;
   url?: string | null;
+  iconUrl?: string | null;
+  geo?: GeoInfo | null;
   description: string;
   aliases: string[];
   x?: number;
@@ -52,10 +61,20 @@ interface GraphLink {
   weight: number;
 }
 
+interface SourceGroupConfig {
+  id: string;
+  title: string;
+  shortTitle: string;
+  description: string;
+  color: string;
+  defaultEnabled: boolean;
+}
+
 interface Perspective {
   id: string;
   title: string;
   description: string;
+  source_groups?: string[];
   node_types: string[];
 }
 
@@ -67,13 +86,40 @@ interface ForceGraphPayload {
     linkCount: number;
     scopePolicy: string;
   };
+  sourceGroups: SourceGroupConfig[];
   perspectives: Perspective[];
   nodeTypes: Record<string, { color: string; val: number; label_sv: string }>;
   nodes: GraphNode[];
   links: GraphLink[];
 }
 
+type ViewMode = '3d' | '2d' | 'map';
 type DagLayout = '' | 'radialout' | 'td' | 'lr';
+
+// Modulglobala textur- och bildcachar för 60 FPS utan omladdningar
+const threeTextureCache = new Map<string, THREE.Texture>();
+const textureLoader = new THREE.TextureLoader();
+
+function getThreeTexture(url: string): THREE.Texture {
+  let tex = threeTextureCache.get(url);
+  if (!tex) {
+    tex = textureLoader.load(url);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    threeTextureCache.set(url, tex);
+  }
+  return tex;
+}
+
+const image2dCache = new Map<string, HTMLImageElement>();
+function get2dImage(url: string): HTMLImageElement {
+  let img = image2dCache.get(url);
+  if (!img) {
+    img = new Image();
+    img.src = url;
+    image2dCache.set(url, img);
+  }
+  return img;
+}
 
 function endpointId(end: string | GraphNode): string {
   return typeof end === 'string' ? end : end.id;
@@ -81,9 +127,10 @@ function endpointId(end: string | GraphNode): string {
 
 export default function App() {
   const [rawData, setRawData] = useState<ForceGraphPayload | null>(null);
-  const [activePerspective, setActivePerspective] = useState<string>('helhetsbild');
-  // 3D som default!
-  const [is3D, setIs3D] = useState<boolean>(true);
+  // 3D är standardvy!
+  const [viewMode, setViewMode] = useState<ViewMode>('3d');
+  const [enabledGroups, setEnabledGroups] = useState<Set<string>>(new Set());
+  const [showEmblems, setShowEmblems] = useState<boolean>(true);
   const [weightByDegree, setWeightByDegree] = useState<boolean>(true);
   const [dagMode, setDagMode] = useState<DagLayout>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -110,20 +157,29 @@ export default function App() {
   useEffect(() => {
     fetch('./data/force_graph.json')
       .then((r) => r.json())
-      .then((data: ForceGraphPayload) => setRawData(data))
+      .then((data: ForceGraphPayload) => {
+        setRawData(data);
+        setEnabledGroups(new Set(data.sourceGroups.map((g) => g.id)));
+      })
       .catch((err) => console.error('Kunde inte ladda force_graph.json:', err));
   }, []);
+
+  // Antal noder per källgrupp (för tydliga räknare i vänsterpanelen)
+  const groupCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    if (!rawData) return counts;
+    for (const n of rawData.nodes) {
+      counts.set(n.sourceGroup, (counts.get(n.sourceGroup) ?? 0) + 1);
+    }
+    return counts;
+  }, [rawData]);
 
   const filteredGraph = useMemo(() => {
     if (!rawData) return { nodes: [] as GraphNode[], links: [] as GraphLink[] };
 
-    const persp =
-      rawData.perspectives.find((p) => p.id === activePerspective) ?? rawData.perspectives[0];
-    const allowedByPerspective = new Set(persp.node_types);
-
     let candidateIds = new Set(
       rawData.nodes
-        .filter((n) => allowedByPerspective.has(n.type) && !hiddenTypes.has(n.type))
+        .filter((n) => enabledGroups.has(n.sourceGroup) && !hiddenTypes.has(n.type))
         .map((n) => n.id)
     );
 
@@ -149,7 +205,8 @@ export default function App() {
       const matched = new Set<string>();
       for (const n of rawData.nodes) {
         if (!candidateIds.has(n.id)) continue;
-        const hay = `${n.name} ${n.shortName} ${n.description} ${n.aliases.join(' ')}`.toLowerCase();
+        const cityStr = n.geo?.city ?? '';
+        const hay = `${n.name} ${n.shortName} ${cityStr} ${n.description} ${n.aliases.join(' ')}`.toLowerCase();
         if (hay.includes(q)) matched.add(n.id);
       }
       const withNeighbors = new Set<string>(matched);
@@ -171,7 +228,6 @@ export default function App() {
         weight: l.weight,
       }));
 
-    // Beräkna inkommande, utgående och viktad grad dynamiskt för aktuellt perspektiv!
     const inCount = new Map<string, number>();
     const outCount = new Map<string, number>();
     const weightSum = new Map<string, number>();
@@ -183,6 +239,7 @@ export default function App() {
       weightSum.set(l.target, (weightSum.get(l.target) ?? 0) + w);
     }
 
+    const is3D = viewMode === '3d';
     const nodes = rawData.nodes
       .filter((n) => candidateIds.has(n.id))
       .map(({ x: _x, y: _y, z: _z, ...rest }) => {
@@ -191,15 +248,8 @@ export default function App() {
         const actDeg = actIn + actOut;
         const actWeight = weightSum.get(rest.id) ?? 0.5;
 
-        // I 3D är klotets radie kubikroten ur val (r = cbrt(val) * nodeRelSize).
-        // Genom att kubera önskad radie får vi en tydlig och rättvis visuell storleksskillnad
-        // mellan noder med få kopplingar (t.ex. 1) och centrala nav (t.ex. 15–37 kopplingar)!
-        const r3d = weightByDegree
-          ? 2.4 + Math.pow(actWeight, 0.58) * 1.95
-          : 4.5;
-        const r2d = weightByDegree
-          ? 4.0 + Math.pow(actWeight, 0.56) * 2.9
-          : 7.5;
+        const r3d = weightByDegree ? 2.8 + Math.pow(actWeight, 0.56) * 2.0 : 4.8;
+        const r2d = weightByDegree ? 4.8 + Math.pow(actWeight, 0.54) * 2.9 : 8.5;
         const dynamicVal = is3D ? Math.pow(r3d / 2.2, 3) : Math.pow(r2d, 2);
 
         return {
@@ -215,17 +265,16 @@ export default function App() {
       });
 
     return { nodes, links };
-  }, [rawData, activePerspective, hiddenTypes, egoCenterId, searchQuery, is3D, weightByDegree]);
+  }, [rawData, enabledGroups, hiddenTypes, egoCenterId, searchQuery, viewMode, weightByDegree]);
 
-  // Ge lite mer utrymme mellan stora viktade klot i 3D så allt är lättklickat
   useEffect(() => {
-    if (is3D && fg3dRef.current) {
+    if (viewMode === '3d' && fg3dRef.current) {
       const charge = fg3dRef.current.d3Force?.('charge');
       if (charge?.strength) {
-        charge.strength(-155);
+        charge.strength(-175);
       }
     }
-  }, [is3D, filteredGraph]);
+  }, [viewMode, filteredGraph]);
 
   const selectedNode = useMemo(() => {
     if (!rawData || !selectedNodeId) return null;
@@ -257,14 +306,13 @@ export default function App() {
   const handleSelectAndFocusNode = useCallback(
     (node: GraphNode) => {
       setSelectedNodeId(node.id);
-      // Öppna alltid högerkolumnen när användaren klickar på ett objekt för att läsa om det!
       setRightOpen(true);
       requestAnimationFrame(() => {
         inspectorRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
       if (
-        is3D &&
+        viewMode === '3d' &&
         fg3dRef.current &&
         typeof node.x === 'number' &&
         typeof node.y === 'number' &&
@@ -291,13 +339,59 @@ export default function App() {
           { x: nx, y: ny, z: nz },
           800
         );
-      } else if (!is3D && fg2dRef.current && typeof node.x === 'number' && typeof node.y === 'number') {
+      } else if (viewMode === '2d' && fg2dRef.current && typeof node.x === 'number' && typeof node.y === 'number') {
         fg2dRef.current.centerAt(node.x, node.y, 650);
         fg2dRef.current.zoom(2.4, 650);
       }
     },
-    [is3D]
+    [viewMode]
   );
+
+  const toggleSourceGroup = (groupId: string) => {
+    setEgoCenterId(null);
+    setEnabledGroups((prev) => {
+      const next = new Set(prev);
+      if (next.has(groupId)) next.delete(groupId);
+      else next.add(groupId);
+      return next;
+    });
+  };
+
+  const selectAllGroups = () => {
+    if (!rawData) return;
+    setEgoCenterId(null);
+    setHiddenTypes(new Set());
+    setEnabledGroups(new Set(rawData.sourceGroups.map((g) => g.id)));
+  };
+
+  const selectCoreGroupsOnly = () => {
+    setEgoCenterId(null);
+    setHiddenTypes(new Set());
+    setEnabledGroups(
+      new Set([
+        'styrning_lagrum',
+        'nato_allians',
+        'militart_och_karnmyndigheter',
+        'beredskapssektorer',
+        'geografi_civilomraden',
+      ])
+    );
+  };
+
+  const clearAllGroups = () => {
+    setEgoCenterId(null);
+    setEnabledGroups(new Set());
+  };
+
+  const applyPerspectivePreset = (p: Perspective) => {
+    setEgoCenterId(null);
+    setHiddenTypes(new Set());
+    if (p.source_groups && p.source_groups.length > 0) {
+      setEnabledGroups(new Set(p.source_groups));
+    } else if (rawData) {
+      setEnabledGroups(new Set(rawData.sourceGroups.map((g) => g.id)));
+    }
+  };
 
   const toggleNodeType = (t: string) => {
     setHiddenTypes((prev) => {
@@ -309,10 +403,9 @@ export default function App() {
   };
 
   const resetView = () => {
-    setEgoCenterId(null);
+    selectAllGroups();
     setSearchQuery('');
-    setHiddenTypes(new Set());
-    const activeRef = is3D ? fg3dRef.current : fg2dRef.current;
+    const activeRef = viewMode === '3d' ? fg3dRef.current : fg2dRef.current;
     if (activeRef?.zoomToFit) {
       activeRef.zoomToFit(600, 70);
     }
@@ -325,9 +418,9 @@ export default function App() {
         <div className="brand">
           <div className="brand-badge" />
           <div>
-            <h1>Svenskt Totalförsvar & NATO – Kunskapsgraf</h1>
+            <h1>Svenskt Totalförsvar & NATO – Kunskapsgraf & Karta</h1>
             <span>
-              {filteredGraph.nodes.length} noder • {filteredGraph.links.length} relationer • Klicka på en nod för att läsa mer
+              {filteredGraph.nodes.length} enheter • {filteredGraph.links.length} relationer • Klicka på objekt för detaljer
             </span>
           </div>
         </div>
@@ -339,70 +432,89 @@ export default function App() {
               id="graph-search"
               name="graph-search"
               type="text"
-              placeholder="Sök myndighet, sektor, MSB, KTH, NCRS, SFS..."
+              placeholder="Sök myndighet, stad, MSB, KTH, NCRS..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
 
-          <select
-            id="dag-layout"
-            name="dag-layout"
-            value={dagMode}
-            onChange={(e) => setDagMode(e.target.value as DagLayout)}
-            title="Välj graf-layout"
-          >
-            <option value="">Layout: Fri nätverksfysik</option>
-            <option value="radialout">Layout: Koncentriska ringar (Radial)</option>
-            <option value="td">Layout: Hierarki (Uppifrån-ner)</option>
-            <option value="lr">Layout: Flöde (Vänster-höger)</option>
-          </select>
+          {viewMode !== 'map' && (
+            <select
+              id="dag-layout"
+              name="dag-layout"
+              value={dagMode}
+              onChange={(e) => setDagMode(e.target.value as DagLayout)}
+              title="Välj graf-layout"
+            >
+              <option value="">Layout: Fri nätverksfysik</option>
+              <option value="radialout">Layout: Koncentriska ringar</option>
+              <option value="td">Layout: Hierarki (Uppifrån-ner)</option>
+              <option value="lr">Layout: Flöde (Vänster-höger)</option>
+            </select>
+          )}
 
           <button
             className={`btn ${weightByDegree ? 'active' : ''}`}
             onClick={() => setWeightByDegree((w) => !w)}
-            title="Vikta nodernas storlek efter antal in- och utgående kopplingar"
+            title="Vikta storlek efter antal kopplingar"
           >
-            <Scale size={14} /> {weightByDegree ? 'Viktad storlek' : 'Jämn storlek'}
+            <Scale size={14} /> {weightByDegree ? 'Viktad' : 'Jämn'}
           </button>
 
+          {viewMode !== 'map' && (
+            <button
+              className={`btn ${showEmblems ? 'active' : ''}`}
+              onClick={() => setShowEmblems((s) => !s)}
+              title="Visa/dölj heraldiska vapen och logotyper på planeterna"
+            >
+              🛡️ Vapen
+            </button>
+          )}
+
           <button
-            className={`btn ${is3D ? 'active' : ''}`}
-            onClick={() => setIs3D(true)}
+            className={`btn ${viewMode === '3d' ? 'active' : ''}`}
+            onClick={() => setViewMode('3d')}
             title="3D Force Graph (WebGL)"
           >
             <Box size={14} /> 3D
           </button>
           <button
-            className={`btn ${!is3D ? 'active' : ''}`}
-            onClick={() => setIs3D(false)}
+            className={`btn ${viewMode === '2d' ? 'active' : ''}`}
+            onClick={() => setViewMode('2d')}
             title="2D Force Graph"
           >
             <Share2 size={14} /> 2D
           </button>
+          <button
+            className={`btn ${viewMode === 'map' ? 'active' : ''}`}
+            onClick={() => setViewMode('map')}
+            title="Geografisk vy över Sverige & Google Maps"
+          >
+            <MapIcon size={14} /> Karta
+          </button>
 
-          <button className="btn" onClick={resetView} title="Återställ filter & zoom">
+          <button className="btn" onClick={resetView} title="Återställ alla källgrupper & zoom">
             <RotateCcw size={14} /> Återställ
           </button>
         </div>
       </header>
 
-      {/* Vänsterkolumn: utfällbar / infällbar */}
+      {/* Vänsterkolumn: Källgrupper (kryssrutor) + Snabbperspektiv + Nodtyper */}
       {!leftOpen ? (
         <button
           className="drawer-toggle-left"
           onClick={() => setLeftOpen(true)}
-          title="Fäll ut vänsterkolumn (Perspektiv & Filter)"
+          title="Fäll ut vänsterkolumn (Källgrupper & Perspektiv)"
         >
           <PanelLeftOpen size={16} />
-          <span>Perspektiv & Filter</span>
+          <span>Källgrupper ({enabledGroups.size}/{rawData?.sourceGroups.length ?? 7})</span>
         </button>
       ) : (
         <aside className="perspective-bar">
           <div className="panel-header">
             <div className="section-label">
-              <Compass size={12} style={{ verticalAlign: 'middle', marginRight: 4 }} />
-              Välj Perspektiv
+              <CheckSquare size={12} style={{ verticalAlign: 'middle', marginRight: 4 }} />
+              Källgrupper (Markera i / ur)
             </div>
             <button
               className="icon-btn"
@@ -414,23 +526,67 @@ export default function App() {
             </button>
           </div>
 
-          {rawData?.perspectives.map((p) => (
-            <button
-              key={p.id}
-              className={`persp-btn ${activePerspective === p.id && !egoCenterId ? 'active' : ''}`}
-              onClick={() => {
-                setEgoCenterId(null);
-                setActivePerspective(p.id);
-              }}
-            >
-              <strong>{p.title}</strong>
-              <small>{p.description}</small>
+          <div className="preset-chips">
+            <button className="btn btn-xs" onClick={selectAllGroups}>
+              Alla (7)
             </button>
-          ))}
+            <button className="btn btn-xs" onClick={selectCoreGroupsOnly} title="Dölj de 37 lärosätena och 18 FFO för renare kärnöversikt">
+              Endast kärna (5)
+            </button>
+            <button className="btn btn-xs" onClick={clearAllGroups}>
+              Töm val
+            </button>
+          </div>
+
+          <div className="source-group-list">
+            {rawData?.sourceGroups.map((sg) => {
+              const checked = enabledGroups.has(sg.id);
+              const count = groupCounts.get(sg.id) ?? 0;
+              return (
+                <label
+                  key={sg.id}
+                  className={`source-group-card ${checked ? 'checked' : 'unchecked'}`}
+                >
+                  <input
+                    type="checkbox"
+                    checked={checked}
+                    onChange={() => toggleSourceGroup(sg.id)}
+                  />
+                  <div className="sg-body">
+                    <div className="sg-title-row">
+                      <strong style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                        <span className="legend-dot" style={{ background: sg.color }} />
+                        {sg.shortTitle}
+                      </strong>
+                      <span className="sg-count">{count}</span>
+                    </div>
+                    <small>{sg.description}</small>
+                  </div>
+                </label>
+              );
+            })}
+          </div>
+
+          <div className="section-label" style={{ marginTop: 10 }}>
+            <Compass size={12} style={{ verticalAlign: 'middle', marginRight: 4 }} />
+            Snabbperspektiv
+          </div>
+          <div className="preset-chips">
+            {rawData?.perspectives.map((p) => (
+              <button
+                key={p.id}
+                className="btn btn-xs"
+                onClick={() => applyPerspectivePreset(p)}
+                title={p.description}
+              >
+                {p.title.split('–')[0].split(':')[0].trim()}
+              </button>
+            ))}
+          </div>
 
           <div className="section-label" style={{ marginTop: 10 }}>
             <Layers size={12} style={{ verticalAlign: 'middle', marginRight: 4 }} />
-            Filtrera Nodtyper (Klicka)
+            Finhantera Nodtyper
           </div>
           <div className="legend-list">
             {rawData &&
@@ -448,7 +604,7 @@ export default function App() {
         </aside>
       )}
 
-      {/* Högerkolumn: utfällbar / infällbar – öppnas automatiskt vid klick på nod */}
+      {/* Högerkolumn: Detaljpanel med heraldiskt vapen/logotyp & Google Maps-länk */}
       {selectedNode && !rightOpen && (
         <button
           className="drawer-toggle-right"
@@ -456,7 +612,11 @@ export default function App() {
           title="Fäll ut högerkolumn (Detaljpanel)"
         >
           <PanelRightOpen size={16} />
-          <span className="legend-dot" style={{ background: selectedNode.color }} />
+          {selectedNode.iconUrl ? (
+            <img src={selectedNode.iconUrl} alt="" style={{ width: 18, height: 18, objectFit: 'contain' }} />
+          ) : (
+            <span className="legend-dot" style={{ background: selectedNode.color }} />
+          )}
           <span className="truncate">{selectedNode.shortName}</span>
         </button>
       )}
@@ -478,14 +638,30 @@ export default function App() {
             </button>
           </div>
 
-          <h2>{selectedNode.name}</h2>
+          <div className="inspector-hero">
+            {selectedNode.iconUrl && (
+              <img
+                className="inspector-crest"
+                src={selectedNode.iconUrl}
+                alt={selectedNode.shortName}
+              />
+            )}
+            <div>
+              <h2>{selectedNode.name}</h2>
+              {selectedNode.geo && (
+                <div className="city-badge">
+                  <MapPin size={12} /> Sätesort: {selectedNode.geo.city}
+                </div>
+              )}
+            </div>
+          </div>
+
           {selectedNode.aliases.length > 0 && (
             <div style={{ fontSize: '0.73rem', color: '#94a3b8', marginBottom: 4 }}>
               Tidigare / Alias: {selectedNode.aliases.join(', ')}
             </div>
           )}
 
-          {/* Kopplings- och viktstatistik */}
           <div className="metrics-grid">
             <div className="metric-card" title="Totalt antal kopplingar till och från enheten">
               <strong>{selectedRelations.incoming.length + selectedRelations.outgoing.length}</strong>
@@ -503,7 +679,7 @@ export default function App() {
 
           <p>{selectedNode.description}</p>
 
-          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
             <button
               className={`btn ${egoCenterId === selectedNode.id ? 'active' : ''}`}
               onClick={() =>
@@ -511,7 +687,7 @@ export default function App() {
               }
             >
               <Focus size={14} />
-              {egoCenterId === selectedNode.id ? 'Visa hela perspektivet' : 'Fokusera grannskap (2 hopp)'}
+              {egoCenterId === selectedNode.id ? 'Visa alla valda' : 'Fokusera (2 hopp)'}
             </button>
 
             {selectedNode.url && (
@@ -522,7 +698,22 @@ export default function App() {
                 rel="noreferrer"
                 style={{ textDecoration: 'none' }}
               >
-                <ExternalLink size={14} /> Officiell källa
+                <ExternalLink size={14} /> Källa
+              </a>
+            )}
+
+            {selectedNode.geo && (
+              <a
+                className="btn"
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                  `${selectedNode.name}, ${selectedNode.geo.city}`
+                )}`}
+                target="_blank"
+                rel="noreferrer"
+                style={{ textDecoration: 'none' }}
+                title="Öppna direkt i Google Maps"
+              >
+                <MapPin size={14} /> Google Maps
               </a>
             )}
           </div>
@@ -539,8 +730,13 @@ export default function App() {
                     handleSelectAndFocusNode(live);
                   }}
                 >
-                  <span className="rel-tag">→ {item.relation}</span>
-                  <strong>{item.other.shortName}</strong>
+                  {item.other.iconUrl && (
+                    <img className="rel-mini-icon" src={item.other.iconUrl} alt="" />
+                  )}
+                  <div>
+                    <span className="rel-tag">→ {item.relation}</span>
+                    <strong>{item.other.shortName}</strong>
+                  </div>
                 </div>
               ))}
             </div>
@@ -558,8 +754,13 @@ export default function App() {
                     handleSelectAndFocusNode(live);
                   }}
                 >
-                  <span className="rel-tag">← {item.relation}</span>
-                  <strong>{item.other.shortName}</strong>
+                  {item.other.iconUrl && (
+                    <img className="rel-mini-icon" src={item.other.iconUrl} alt="" />
+                  )}
+                  <div>
+                    <span className="rel-tag">← {item.relation}</span>
+                    <strong>{item.other.shortName}</strong>
+                  </div>
                 </div>
               ))}
             </div>
@@ -567,14 +768,26 @@ export default function App() {
         </aside>
       )}
 
-      <div className="hint-banner">
-        {is3D
-          ? 'Klicka på ett klot för att läsa om enheten • Vänsterdrag: rotera • Scroll: zooma • Högerdrag: panorera'
-          : 'Klicka på en cirkel för att läsa om enheten • Dra: panorera • Scroll: zooma'}
-      </div>
+      {viewMode !== 'map' && (
+        <div className="hint-banner">
+          {viewMode === '3d'
+            ? 'Klicka på en planet/vapensköld för att läsa om enheten • Vänsterdrag: rotera • Scroll: zooma • Högerdrag: panorera'
+            : 'Klicka på en enhet för att läsa mer • Dra: panorera • Scroll: zooma'}
+        </div>
+      )}
 
-      {/* Huvudcanvas: react-force-graph 2D eller 3D */}
-      {rawData && !is3D && (
+      {/* VY 1: Kartläge (Inbyggd Karta + Google Maps JS + KML) */}
+      {rawData && viewMode === 'map' && (
+        <MapView
+          nodes={filteredGraph.nodes}
+          links={filteredGraph.links}
+          selectedNodeId={selectedNodeId}
+          onSelectNode={(n) => handleSelectAndFocusNode(n as GraphNode)}
+        />
+      )}
+
+      {/* VY 2: 2D Force Graph med heraldiska vapen/logotyper */}
+      {rawData && viewMode === '2d' && (
         <ForceGraph2D
           ref={fg2dRef}
           width={dimensions.width}
@@ -589,7 +802,7 @@ export default function App() {
           nodeColor={(n) => (n as GraphNode).color}
           nodeLabel={(n) => {
             const g = n as GraphNode;
-            return `${g.name} (${g.typeLabel}) — ${g.activeDegree ?? g.degree} kopplingar (←${g.activeIn ?? 0} / →${g.activeOut ?? 0})`;
+            return `${g.name} (${g.typeLabel}) — ${g.activeDegree ?? g.degree} kopplingar`;
           }}
           linkColor={() => 'rgba(148, 163, 184, 0.28)'}
           linkWidth={(l) => Math.max(0.8, ((l as GraphLink).weight || 1) * 0.65)}
@@ -600,19 +813,27 @@ export default function App() {
           onNodeClick={(n) => handleSelectAndFocusNode(n as GraphNode)}
           nodeCanvasObject={(node, ctx, globalScale) => {
             const gNode = node as GraphNode;
-            const r = gNode.radius2D ?? 6;
+            const r = gNode.radius2D ?? 7;
             const isSelected = gNode.id === selectedNodeId;
             const isHovered = gNode.id === hoveredNodeId;
+            const x = gNode.x || 0;
+            const y = gNode.y || 0;
 
             ctx.beginPath();
-            ctx.arc(gNode.x || 0, gNode.y || 0, r, 0, 2 * Math.PI, false);
-            ctx.fillStyle = gNode.color;
+            ctx.arc(x, y, r, 0, 2 * Math.PI, false);
+            ctx.fillStyle = showEmblems && gNode.iconUrl ? 'rgba(15, 23, 42, 0.92)' : gNode.color;
             ctx.fill();
 
-            if (isSelected || isHovered) {
-              ctx.lineWidth = (isSelected ? 2.8 : 1.8) / globalScale;
-              ctx.strokeStyle = '#ffffff';
-              ctx.stroke();
+            ctx.lineWidth = (isSelected ? 3.0 : isHovered ? 2.2 : 1.5) / globalScale;
+            ctx.strokeStyle = isSelected ? '#ffffff' : gNode.color;
+            ctx.stroke();
+
+            if (showEmblems && gNode.iconUrl) {
+              const img = get2dImage(gNode.iconUrl);
+              if (img.complete && img.naturalWidth > 0) {
+                const box = r * 1.42;
+                ctx.drawImage(img, x - box / 2, y - box / 2, box, box);
+              }
             }
 
             if (globalScale >= 0.85 || (gNode.activeDegree ?? 0) >= 5 || isSelected || isHovered) {
@@ -621,13 +842,14 @@ export default function App() {
               ctx.textAlign = 'center';
               ctx.textBaseline = 'top';
               ctx.fillStyle = isSelected ? '#ffffff' : 'rgba(241, 245, 249, 0.92)';
-              ctx.fillText(gNode.shortName, gNode.x || 0, (gNode.y || 0) + r + 2 / globalScale);
+              ctx.fillText(gNode.shortName, x, y + r + 2.5 / globalScale);
             }
           }}
         />
       )}
 
-      {rawData && is3D && (
+      {/* VY 3: 3D Force Graph (Default) med heraldiska vapen inuti glödande planeter */}
+      {rawData && viewMode === '3d' && (
         <ForceGraph3D
           ref={fg3dRef}
           width={dimensions.width}
@@ -640,7 +862,7 @@ export default function App() {
           showNavInfo={false}
           nodeRelSize={2.2}
           nodeResolution={20}
-          nodeOpacity={0.92}
+          nodeOpacity={showEmblems ? 0.34 : 0.92}
           nodeVal={(n) => (n as GraphNode).val}
           nodeColor={(n) => {
             const g = n as GraphNode;
@@ -649,7 +871,8 @@ export default function App() {
           }}
           nodeLabel={(n) => {
             const g = n as GraphNode;
-            return `${g.name} • ${g.activeDegree ?? g.degree} kopplingar (←${g.activeIn ?? 0} in / →${g.activeOut ?? 0} ut)`;
+            const cityPart = g.geo ? ` • ${g.geo.city}` : '';
+            return `${g.name}${cityPart} • ${g.activeDegree ?? g.degree} kopplingar (←${g.activeIn ?? 0} / →${g.activeOut ?? 0})`;
           }}
           linkColor={() => 'rgba(148, 163, 184, 0.38)'}
           linkWidth={(l) => Math.max(0.5, ((l as GraphLink).weight || 1) * 0.5)}
@@ -661,14 +884,33 @@ export default function App() {
           nodeThreeObjectExtend={true}
           nodeThreeObject={(node) => {
             const gNode = node as GraphNode;
-            const sprite = new SpriteText(gNode.shortName);
-            // Släpp igenom musklick rakt till 3D-klotet bakom textetiketten så att klick aldrig missar!
-            sprite.raycast = () => {};
-            sprite.color = gNode.id === selectedNodeId ? '#ffffff' : gNode.color;
-            const r3d = gNode.radius3D ?? 4.5;
-            sprite.textHeight = Math.max(2.4, Math.min(5.8, r3d * 0.42));
-            sprite.position.y = -(r3d + 3.8);
-            return sprite;
+            const r3d = gNode.radius3D ?? 4.8;
+            const group = new THREE.Group();
+
+            // 1. Heraldiskt vapen / logotyp svävande i planetens kärna (billboard-sprite)
+            if (showEmblems && gNode.iconUrl) {
+              const tex = getThreeTexture(gNode.iconUrl);
+              const mat = new THREE.SpriteMaterial({
+                map: tex,
+                transparent: true,
+                depthWrite: false,
+              });
+              const crestSprite = new THREE.Sprite(mat);
+              const crestSize = r3d * 1.48;
+              crestSprite.scale.set(crestSize, crestSize, 1);
+              crestSprite.raycast = () => {};
+              group.add(crestSprite);
+            }
+
+            // 2. Namnetikett under planeten
+            const label = new SpriteText(gNode.shortName);
+            label.raycast = () => {};
+            label.color = gNode.id === selectedNodeId ? '#ffffff' : gNode.color;
+            label.textHeight = Math.max(2.4, Math.min(5.8, r3d * 0.42));
+            label.position.y = -(r3d + 4.0);
+            group.add(label);
+
+            return group;
           }}
         />
       )}

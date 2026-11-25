@@ -1,6 +1,6 @@
 # Svenskt Totalförsvar – Exekutiv Helhetsbild (Nivå L1)
 
-> Automatgenererad ur projektets kunskapsgraf (`183` noder, `325` kopplingar, `11` indexerade rättskällor med `269` sökbara textavsnitt).
+> Automatgenererad ur projektets kunskapsgraf (`187` noder, `335` kopplingar, `11` indexerade rättskällor med `269` sökbara textavsnitt).
 
 ## Systemkarta
 
@@ -9,10 +9,11 @@ flowchart TD
     Riksdagen["Sveriges riksdag (Lagar & Budget)"] --> TF["Sveriges Totalförsvar"]
     Regeringen["Regeringen (Förordningar & Regleringsbrev)"] --> TF
     TF <--> NATO["NATO & Alliansramverk (Artikel 3, NCRS/CRM, HNS, NDPP)"]
-    TF --> MF["Militärt försvar (Försvarsmakten, Militärregioner & Stödmyndigheter)"]
+    TF --> MF["Militärt försvar (Försvarsmakten, 4 Militärregioner & Stödmyndigheter)"]
     TF --> CF["Civilt försvar (Samhällets samlade motståndskraft)"]
     CF --> Sektorer["12 Beredskapssektorer (~67 Beredskapsmyndigheter)"]
     CF --> Civilomr["6 Civilområden (21 Länsstyrelser)"]
+    MF <--> Civilomr
     CF --> KommunRegion["290 Kommuner & 21 Regioner (LEH / SKR)"]
     TF --> FFO["18 Frivilliga försvarsorganisationer (FFO)"]
     TF --> Campus["Campus totalförsvar (37 Svenska lärosäten)"]
@@ -21,7 +22,7 @@ flowchart TD
 
 ## Nyckeltal i strukturen
 * **12 nationella beredskapssektorer** med var sin sektorsansvarig myndighet enligt *förordning (2022:524)*.
-* **6 geografiska civilområden** ledda av civilområdesansvariga länsstyrelser i samspel med 21 län/regioner och 290 kommuner.
+* **6 geografiska civilområden** och **4 militärregioner** i samspel med 21 län/regioner och 290 kommuner.
 * **7 grundläggande NATO-krav på civil motståndskraft** (*Seven Baseline Requirements*, Artikel 3) mappade direkt mot Sveriges beredskapssektorer.
 * **18 frivilliga försvarsorganisationer (FFO)** som förstärker både militärt och civilt försvar.
 * **37 universitet och högskolor** förenade i **Campus totalförsvar** för forskning och utbildning.

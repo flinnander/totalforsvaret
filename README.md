@@ -4,9 +4,9 @@ Ett öppet kunskaps- och verktygsprojekt som samlar in, strukturerar och tillgä
 
 ---
 
-## Interaktiv Visualisering med `react-force-graph` (2D & 3D)
+## Interaktiv Visualisering i 3D, 2D & Karta (`react-force-graph` + Google Maps / GeoJSON)
 
-Projektet inkluderar en interaktiv webbapplikation i [`web/`](web/) byggd med **[vasturiano/react-force-graph](https://github.com/vasturiano/react-force-graph)** (`ForceGraph2D` + `ForceGraph3D` i WebGL) där datat kan utforskas ur **6 färdiga perspektiv** och **4 graf-layouter** (*Fri nätverksfysik*, *Koncentriska ringar*, *Hierarki uppifrån-ner*, *Flöde vänster-höger*):
+Projektet inkluderar en interaktiv webbapplikation i [`web/`](web/) (med **3D som standardvy**, **2D-graf** och **interaktiv Karta**) där alla noder pryds av **officiella heraldiska vapen, länsvapen, sigill och logotyper**, skalas dynamiskt efter hur många kopplingar som går till/från dem och kan filtreras med **kryssrutor för 7 källgrupper**:
 
 1. **Helhetsbild** – Hela det svenska totalförsvaret och dess kopplingar.
 2. **12 Beredskapssektorer & Myndigheter** – Sektorsansvariga myndigheter och ingående beredskapsmyndigheter enligt *SFS 2022:524*.
@@ -25,7 +25,8 @@ Kräver [uv](https://docs.astral.sh/uv/):
 uv run totalforsvaret build
 ```
 Detta bygger SQLite-databasen (`data/totalforsvaret.db`), hämtar centrala lagtexter från **Riksdagens Öppna Data API**, indexerar dem i `FTS5` (BM25) och exporterar:
-* [`exports/graph/force_graph.json`](exports/graph/force_graph.json) & `web/public/data/force_graph.json` (för `react-force-graph`)
+* [`exports/graph/force_graph.json`](exports/graph/force_graph.json) & `web/public/data/force_graph.json` (för `react-force-graph` i 3D/2D)
+* [`exports/geo/totalforsvaret.geojson`](exports/geo/totalforsvaret.geojson) & [`exports/geo/totalforsvaret.kml`](exports/geo/totalforsvaret.kml) (interaktiv GitHub-karta samt KML för direktimport i **Google My Maps / Google Earth**)
 * [`exports/markdown/OVERSIKT_L1.md`](exports/markdown/OVERSIKT_L1.md) (med Mermaid-systemkarta)
 * [`exports/markdown/BEREDSKAPSSEKTORER_L2.md`](exports/markdown/BEREDSKAPSSEKTORER_L2.md)
 * [`exports/markdown/NATO_OCH_NCRS_L2.md`](exports/markdown/NATO_OCH_NCRS_L2.md)

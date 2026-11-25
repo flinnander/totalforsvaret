@@ -5,6 +5,8 @@
     "shortName": "Campus totalförsvar (37 lärosäten)",
     "type": "academia_hub",
     "typeLabel": "Campus totalförsvar (Nav)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#22d3ee",
     "val": 1272.6,
     "degree": 38,
@@ -13,6 +15,13 @@
     "weightedDegree": 46.8,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/academia_campus_totalforsvar.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.3293,
+      "lon": 18.0686,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Nationellt strategiskt samarbete mellan 37 svenska universitet och högskolor för utbildning och forskning som stärker totalförsvaret.",
     "aliases": [],
     "metadata": {}
@@ -23,6 +32,8 @@
     "shortName": "Affärsverket svenska kraftnät",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 61.7,
     "degree": 3,
@@ -31,6 +42,13 @@
     "weightedDegree": 4.0,
     "domain": "svk.se",
     "url": "https://www.svk.se",
+    "iconUrl": "./icons/agency_svenska_kraftnat.png",
+    "geo": {
+      "city": "Sundbyberg",
+      "lat": 59.3613,
+      "lon": 17.9711,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Elektroniska kommunikationer och post, Energiförsörjning. (svk.se)",
     "aliases": [],
     "metadata": {
@@ -43,6 +61,8 @@
     "shortName": "Arbetsförmedlingen",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -51,6 +71,13 @@
     "weightedDegree": 2.4,
     "domain": "arbetsformedlingen.se",
     "url": "https://www.arbetsformedlingen.se",
+    "iconUrl": "./icons/agency_arbetsformedlingen.png",
+    "geo": {
+      "city": "Solna",
+      "lat": 59.36,
+      "lon": 18.0009,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Ekonomisk säkerhet. (arbetsformedlingen.se)",
     "aliases": [],
     "metadata": {
@@ -63,6 +90,8 @@
     "shortName": "Bolagsverket",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -71,6 +100,13 @@
     "weightedDegree": 2.4,
     "domain": "bolagsverket.se",
     "url": "https://www.bolagsverket.se",
+    "iconUrl": "./icons/agency_bolagsverket.png",
+    "geo": {
+      "city": "Sundsvall",
+      "lat": 62.3908,
+      "lon": 17.3069,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Försörjning av grunddata. (bolagsverket.se)",
     "aliases": [],
     "metadata": {
@@ -83,6 +119,8 @@
     "shortName": "Boverket",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -91,6 +129,13 @@
     "weightedDegree": 2.4,
     "domain": "boverket.se",
     "url": "https://www.boverket.se",
+    "iconUrl": "./icons/agency_boverket.png",
+    "geo": {
+      "city": "Karlskrona",
+      "lat": 56.1612,
+      "lon": 15.5869,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Industri, byggande och handel. (boverket.se)",
     "aliases": [],
     "metadata": {
@@ -103,6 +148,8 @@
     "shortName": "Domstolsverket",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -111,6 +158,13 @@
     "weightedDegree": 2.4,
     "domain": "domstol.se",
     "url": "https://www.domstol.se",
+    "iconUrl": "./icons/agency_domstolsverket.png",
+    "geo": {
+      "city": "Jönköping",
+      "lat": 57.7826,
+      "lon": 14.1618,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Ordning och säkerhet. (domstol.se)",
     "aliases": [],
     "metadata": {
@@ -123,6 +177,8 @@
     "shortName": "E-hälsomyndigheten",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -131,6 +187,13 @@
     "weightedDegree": 2.4,
     "domain": "ehalsomyndigheten.se",
     "url": "https://www.ehalsomyndigheten.se",
+    "iconUrl": "./icons/agency_ehalsomyndigheten.png",
+    "geo": {
+      "city": "Kalmar",
+      "lat": 56.6634,
+      "lon": 16.3568,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Hälsa, vård och omsorg. (ehalsomyndigheten.se)",
     "aliases": [],
     "metadata": {
@@ -143,6 +206,8 @@
     "shortName": "Energimarknadsinspektionen",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -151,6 +216,13 @@
     "weightedDegree": 2.4,
     "domain": "ei.se",
     "url": "https://www.ei.se",
+    "iconUrl": "./icons/agency_energimarknadsinspektionen.png",
+    "geo": {
+      "city": "Eskilstuna",
+      "lat": 59.3712,
+      "lon": 16.5098,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Energiförsörjning. (ei.se)",
     "aliases": [],
     "metadata": {
@@ -163,6 +235,8 @@
     "shortName": "Finansinspektionen",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 54.1,
     "degree": 2,
@@ -171,6 +245,13 @@
     "weightedDegree": 3.5,
     "domain": "fi.se",
     "url": "https://www.fi.se",
+    "iconUrl": "./icons/agency_finansinspektionen.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.33369,
+      "lon": 18.06021,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Sektorsansvarig myndighet för: Finansiella tjänster. (fi.se)",
     "aliases": [],
     "metadata": {
@@ -184,6 +265,8 @@
     "shortName": "Folkhälsomyndigheten",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -192,6 +275,13 @@
     "weightedDegree": 2.4,
     "domain": "folkhalsomyndigheten.se",
     "url": "https://www.folkhalsomyndigheten.se",
+    "iconUrl": "./icons/agency_folkhalsomyndigheten.png",
+    "geo": {
+      "city": "Solna",
+      "lat": 59.36439,
+      "lon": 17.99251,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Hälsa, vård och omsorg. (folkhalsomyndigheten.se)",
     "aliases": [],
     "metadata": {
@@ -204,6 +294,8 @@
     "shortName": "Fortifikationsverket",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "militart_och_karnmyndigheter",
+    "sourceGroupTitle": "Militärt & Försvarsmyndigheter",
     "color": "#34d399",
     "val": 49.6,
     "degree": 2,
@@ -212,6 +304,13 @@
     "weightedDegree": 3.2,
     "domain": "fortifikationsverket.se",
     "url": "https://www.fortifikationsverket.se",
+    "iconUrl": "./icons/agency_fortifikationsverket.png",
+    "geo": {
+      "city": "Eskilstuna",
+      "lat": 59.37559,
+      "lon": 16.50141,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Central försvars- eller totalförsvarsmyndighet (fortifikationsverket.se).",
     "aliases": [],
     "metadata": {
@@ -227,6 +326,8 @@
     "shortName": "Försvarets materielverk",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "militart_och_karnmyndigheter",
+    "sourceGroupTitle": "Militärt & Försvarsmyndigheter",
     "color": "#34d399",
     "val": 49.6,
     "degree": 2,
@@ -235,6 +336,13 @@
     "weightedDegree": 3.2,
     "domain": "fmv.se",
     "url": "https://www.fmv.se",
+    "iconUrl": "./icons/agency_fmv.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.32014,
+      "lon": 18.07001,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Central försvars- eller totalförsvarsmyndighet (fmv.se).",
     "aliases": [],
     "metadata": {
@@ -250,6 +358,8 @@
     "shortName": "Försvarets radioanstalt",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "militart_och_karnmyndigheter",
+    "sourceGroupTitle": "Militärt & Försvarsmyndigheter",
     "color": "#34d399",
     "val": 49.6,
     "degree": 2,
@@ -258,6 +368,13 @@
     "weightedDegree": 3.2,
     "domain": "fra.se",
     "url": "https://www.fra.se",
+    "iconUrl": "./icons/agency_fra_ncsc.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.33823,
+      "lon": 18.08059,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Central försvars- eller totalförsvarsmyndighet (fra.se).",
     "aliases": [],
     "metadata": {
@@ -274,6 +391,8 @@
     "shortName": "Försvarshögskolan",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "militart_och_karnmyndigheter",
+    "sourceGroupTitle": "Militärt & Försvarsmyndigheter",
     "color": "#34d399",
     "val": 67.9,
     "degree": 3,
@@ -282,6 +401,13 @@
     "weightedDegree": 4.4,
     "domain": "fhs.se",
     "url": "https://www.fhs.se",
+    "iconUrl": "./icons/agency_fhs.jpg",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.32704,
+      "lon": 18.0462,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Central försvars- eller totalförsvarsmyndighet (fhs.se).",
     "aliases": [],
     "metadata": {
@@ -299,14 +425,23 @@
     "shortName": "Försvarsmakten",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "militart_och_karnmyndigheter",
+    "sourceGroupTitle": "Militärt & Försvarsmyndigheter",
     "color": "#34d399",
-    "val": 49.6,
-    "degree": 2,
-    "inDegree": 1,
+    "val": 193.6,
+    "degree": 6,
+    "inDegree": 5,
     "outDegree": 1,
-    "weightedDegree": 3.2,
+    "weightedDegree": 11.2,
     "domain": "forsvarsmakten.se",
     "url": "https://www.forsvarsmakten.se",
+    "iconUrl": "./icons/agency_forsvarsmakten.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.3215,
+      "lon": 18.09006,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Central försvars- eller totalförsvarsmyndighet (forsvarsmakten.se).",
     "aliases": [],
     "metadata": {
@@ -326,6 +461,8 @@
     "shortName": "Försäkringskassan",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 54.1,
     "degree": 2,
@@ -334,6 +471,13 @@
     "weightedDegree": 3.5,
     "domain": "forsakringskassan.se",
     "url": "https://www.forsakringskassan.se",
+    "iconUrl": "./icons/agency_forsakringskassan.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.34468,
+      "lon": 18.06137,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Sektorsansvarig myndighet för: Ekonomisk säkerhet. (forsakringskassan.se)",
     "aliases": [],
     "metadata": {
@@ -347,6 +491,8 @@
     "shortName": "Kommerskollegium",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 54.1,
     "degree": 2,
@@ -355,6 +501,13 @@
     "weightedDegree": 3.5,
     "domain": "kommerskollegium.se",
     "url": "https://www.kommerskollegium.se",
+    "iconUrl": "./icons/agency_kommerskollegium.svg",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.31404,
+      "lon": 18.05473,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Sektorsansvarig myndighet för: Utrikeshandel. (kommerskollegium.se)",
     "aliases": [],
     "metadata": {
@@ -368,6 +521,8 @@
     "shortName": "Kriminalvården",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -376,6 +531,13 @@
     "weightedDegree": 2.4,
     "domain": "kriminalvarden.se",
     "url": "https://www.kriminalvarden.se",
+    "iconUrl": "./icons/agency_kriminalvarden.png",
+    "geo": {
+      "city": "Norrköping",
+      "lat": 58.5877,
+      "lon": 16.1924,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Ordning och säkerhet. (kriminalvarden.se)",
     "aliases": [],
     "metadata": {
@@ -388,6 +550,8 @@
     "shortName": "Kustbevakningen",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 61.7,
     "degree": 3,
@@ -396,6 +560,13 @@
     "weightedDegree": 4.0,
     "domain": "kustbevakningen.se",
     "url": "https://www.kustbevakningen.se",
+    "iconUrl": "./icons/agency_kustbevakningen.png",
+    "geo": {
+      "city": "Karlskrona",
+      "lat": 56.16559,
+      "lon": 15.57851,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Ordning och säkerhet, Räddningstjänst och skydd av civilbefolkningen. (kustbevakningen.se)",
     "aliases": [],
     "metadata": {
@@ -408,6 +579,8 @@
     "shortName": "Lantmäteriet",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -416,6 +589,13 @@
     "weightedDegree": 2.4,
     "domain": "lantmateriet.se",
     "url": "https://www.lantmateriet.se",
+    "iconUrl": "./icons/agency_lantmateriet.png",
+    "geo": {
+      "city": "Gävle",
+      "lat": 60.6749,
+      "lon": 17.1413,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Försörjning av grunddata. (lantmateriet.se)",
     "aliases": [],
     "metadata": {
@@ -428,6 +608,8 @@
     "shortName": "Livsmedelsverket",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 54.1,
     "degree": 2,
@@ -436,6 +618,13 @@
     "weightedDegree": 3.5,
     "domain": "livsmedelsverket.se",
     "url": "https://www.livsmedelsverket.se",
+    "iconUrl": "./icons/agency_livsmedelsverket.png",
+    "geo": {
+      "city": "Uppsala",
+      "lat": 59.8586,
+      "lon": 17.6389,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Sektorsansvarig myndighet för: Livsmedelsförsörjning och dricksvatten. (livsmedelsverket.se)",
     "aliases": [],
     "metadata": {
@@ -449,6 +638,8 @@
     "shortName": "Luftfartsverket",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -457,6 +648,13 @@
     "weightedDegree": 2.4,
     "domain": "lfv.se",
     "url": "https://www.lfv.se",
+    "iconUrl": "./icons/agency_luftfartsverket.png",
+    "geo": {
+      "city": "Norrköping",
+      "lat": 58.59209,
+      "lon": 16.18401,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Transporter. (lfv.se)",
     "aliases": [],
     "metadata": {
@@ -469,6 +667,8 @@
     "shortName": "Läkemedelsverket",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -477,6 +677,13 @@
     "weightedDegree": 2.4,
     "domain": "lakemedelsverket.se",
     "url": "https://www.lakemedelsverket.se",
+    "iconUrl": "./icons/agency_lakemedelsverket.png",
+    "geo": {
+      "city": "Uppsala",
+      "lat": 59.86299,
+      "lon": 17.63051,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Hälsa, vård och omsorg. (lakemedelsverket.se)",
     "aliases": [],
     "metadata": {
@@ -489,6 +696,8 @@
     "shortName": "Länsstyrelserna",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 539.4,
     "degree": 24,
@@ -497,6 +706,8 @@
     "weightedDegree": 25.0,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/agency_lansstyrelserna.png",
+    "geo": null,
     "description": "Ingår som beredskapsmyndighet i: Livsmedelsförsörjning och dricksvatten, Räddningstjänst och skydd av civilbefolkningen. (lansstyrelsen.se)",
     "aliases": [],
     "metadata": {
@@ -509,6 +720,8 @@
     "shortName": "Migrationsverket",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -517,6 +730,13 @@
     "weightedDegree": 2.4,
     "domain": "migrationsverket.se",
     "url": "https://www.migrationsverket.se",
+    "iconUrl": "./icons/agency_migrationsverket.png",
+    "geo": {
+      "city": "Norrköping",
+      "lat": 58.57854,
+      "lon": 16.19381,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Ordning och säkerhet. (migrationsverket.se)",
     "aliases": [],
     "metadata": {
@@ -529,6 +749,8 @@
     "shortName": "Myndigheten för civilt försvar",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 117.2,
     "degree": 4,
@@ -537,6 +759,13 @@
     "weightedDegree": 7.3,
     "domain": "mcf.se",
     "url": "https://www.mcf.se",
+    "iconUrl": "./icons/agency_mcf.jpg",
+    "geo": {
+      "city": "Karlstad",
+      "lat": 59.3793,
+      "lon": 13.5036,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Sektorsansvarig myndighet för: Räddningstjänst och skydd av civilbefolkningen. Ingår som beredskapsmyndighet i: Elektroniska kommunikationer och post. (mcf.se)",
     "aliases": [
       "msb.se",
@@ -554,6 +783,8 @@
     "shortName": "Myndigheten för digital förvaltning",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -562,6 +793,13 @@
     "weightedDegree": 2.4,
     "domain": "digg.se",
     "url": "https://www.digg.se",
+    "iconUrl": "./icons/agency_digg.png",
+    "geo": {
+      "city": "Sundsvall",
+      "lat": 62.39519,
+      "lon": 17.29851,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Försörjning av grunddata. (digg.se)",
     "aliases": [],
     "metadata": {
@@ -574,6 +812,8 @@
     "shortName": "Myndigheten för psykologiskt försvar",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 94.3,
     "degree": 4,
@@ -582,6 +822,13 @@
     "weightedDegree": 6.0,
     "domain": "mpf.se",
     "url": "https://www.mpf.se",
+    "iconUrl": "./icons/agency_mpf.png",
+    "geo": {
+      "city": "Karlstad",
+      "lat": 59.38369,
+      "lon": 13.49521,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Fristående beredskapsmyndighet enligt SFS 2022:524 utanför den fasta sektorsindelningen.",
     "aliases": [],
     "metadata": {
@@ -595,6 +842,8 @@
     "shortName": "Myndigheten för totalförsvarsanalys",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "militart_och_karnmyndigheter",
+    "sourceGroupTitle": "Militärt & Försvarsmyndigheter",
     "color": "#34d399",
     "val": 43.8,
     "degree": 2,
@@ -603,6 +852,13 @@
     "weightedDegree": 2.8,
     "domain": "mtfa.se",
     "url": "https://www.mtfa.se",
+    "iconUrl": "./icons/agency_mtfa.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.33561,
+      "lon": 18.09882,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Endast beskrivningar av MTFA:s uppdrag och systembeskrivningar av totalförsvarets uppbyggnad. Granskningsrapporter som bedömer aktörers faktiska förmåga eller brister exkluderas enligt SECURITY_AND_SCOPE.md.\n",
     "aliases": [],
     "metadata": {
@@ -619,6 +875,8 @@
     "shortName": "Naturvårdsverket",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -627,6 +885,13 @@
     "weightedDegree": 2.4,
     "domain": "naturvardsverket.se",
     "url": "https://www.naturvardsverket.se",
+    "iconUrl": "./icons/agency_naturvardsverket.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.33674,
+      "lon": 18.03706,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Livsmedelsförsörjning och dricksvatten. (naturvardsverket.se)",
     "aliases": [],
     "metadata": {
@@ -639,6 +904,8 @@
     "shortName": "Pensionsmyndigheten",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -647,6 +914,13 @@
     "weightedDegree": 2.4,
     "domain": "pensionsmyndigheten.se",
     "url": "https://www.pensionsmyndigheten.se",
+    "iconUrl": "./icons/agency_pensionsmyndigheten.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.31068,
+      "lon": 18.08385,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Ekonomisk säkerhet. (pensionsmyndigheten.se)",
     "aliases": [],
     "metadata": {
@@ -659,6 +933,8 @@
     "shortName": "Polismyndigheten",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 75.9,
     "degree": 3,
@@ -667,6 +943,13 @@
     "weightedDegree": 4.9,
     "domain": "polisen.se",
     "url": "https://www.polisen.se",
+    "iconUrl": "./icons/agency_polismyndigheten.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.34987,
+      "lon": 18.07989,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Sektorsansvarig myndighet för: Ordning och säkerhet. Ingår som beredskapsmyndighet i: Räddningstjänst och skydd av civilbefolkningen. (polisen.se)",
     "aliases": [],
     "metadata": {
@@ -679,6 +962,8 @@
     "shortName": "Post- och telestyrelsen",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 54.1,
     "degree": 2,
@@ -687,6 +972,13 @@
     "weightedDegree": 3.5,
     "domain": "pts.se",
     "url": "https://www.pts.se",
+    "iconUrl": "./icons/agency_pts.jpg",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.31801,
+      "lon": 18.03451,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Sektorsansvarig myndighet för: Elektroniska kommunikationer och post. (pts.se)",
     "aliases": [],
     "metadata": {
@@ -700,6 +992,8 @@
     "shortName": "Riksantikvarieämbetet",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 43.8,
     "degree": 2,
@@ -708,6 +1002,13 @@
     "weightedDegree": 2.8,
     "domain": "raa.se",
     "url": "https://www.raa.se",
+    "iconUrl": "./icons/agency_riksantikvarieambetet.png",
+    "geo": {
+      "city": "Visby",
+      "lat": 57.6348,
+      "lon": 18.2948,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Fristående beredskapsmyndighet enligt SFS 2022:524 utanför den fasta sektorsindelningen.",
     "aliases": [],
     "metadata": {
@@ -721,6 +1022,8 @@
     "shortName": "Riksarkivet",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -729,6 +1032,13 @@
     "weightedDegree": 2.4,
     "domain": "riksarkivet.se",
     "url": "https://www.riksarkivet.se",
+    "iconUrl": "./icons/agency_riksarkivet.svg",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.32427,
+      "lon": 18.10866,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Försörjning av grunddata. (riksarkivet.se)",
     "aliases": [],
     "metadata": {
@@ -741,6 +1051,8 @@
     "shortName": "Riksgäldskontoret",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 61.7,
     "degree": 3,
@@ -749,6 +1061,13 @@
     "weightedDegree": 4.0,
     "domain": "riksgalden.se",
     "url": "https://www.riksgalden.se",
+    "iconUrl": "./icons/agency_riksgalden.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.3492,
+      "lon": 18.04412,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Ekonomisk säkerhet, Finansiella tjänster. (riksgalden.se)",
     "aliases": [],
     "metadata": {
@@ -761,6 +1080,8 @@
     "shortName": "SMHI",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -769,6 +1090,13 @@
     "weightedDegree": 2.4,
     "domain": "smhi.se",
     "url": "https://www.smhi.se",
+    "iconUrl": "./icons/agency_smhi.png",
+    "geo": {
+      "city": "Norrköping",
+      "lat": 58.59663,
+      "lon": 16.20439,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Räddningstjänst och skydd av civilbefolkningen. (smhi.se)",
     "aliases": [],
     "metadata": {
@@ -781,6 +1109,8 @@
     "shortName": "Sjöfartsverket",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 61.7,
     "degree": 3,
@@ -789,6 +1119,13 @@
     "weightedDegree": 4.0,
     "domain": "sjofartsverket.se",
     "url": "https://www.sjofartsverket.se",
+    "iconUrl": "./icons/agency_sjofartsverket.png",
+    "geo": {
+      "city": "Norrköping",
+      "lat": 58.58544,
+      "lon": 16.17,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Räddningstjänst och skydd av civilbefolkningen, Transporter. (sjofartsverket.se)",
     "aliases": [],
     "metadata": {
@@ -801,6 +1138,8 @@
     "shortName": "Skatteverket",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 79.2,
     "degree": 3,
@@ -809,6 +1148,13 @@
     "weightedDegree": 5.1,
     "domain": "skatteverket.se",
     "url": "https://www.skatteverket.se",
+    "iconUrl": "./icons/agency_skatteverket.png",
+    "geo": {
+      "city": "Solna",
+      "lat": 59.35084,
+      "lon": 18.00231,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Sektorsansvarig myndighet för: Försörjning av grunddata. Ingår som beredskapsmyndighet i: Ekonomisk säkerhet. (skatteverket.se)",
     "aliases": [],
     "metadata": {
@@ -822,6 +1168,8 @@
     "shortName": "Socialstyrelsen",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 54.1,
     "degree": 2,
@@ -830,6 +1178,13 @@
     "weightedDegree": 3.5,
     "domain": "socialstyrelsen.se",
     "url": "https://www.socialstyrelsen.se",
+    "iconUrl": "./icons/agency_socialstyrelsen.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.30433,
+      "lon": 18.06294,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Sektorsansvarig myndighet för: Hälsa, vård och omsorg. (socialstyrelsen.se)",
     "aliases": [],
     "metadata": {
@@ -843,6 +1198,8 @@
     "shortName": "Statens energimyndighet",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 54.1,
     "degree": 2,
@@ -851,6 +1208,13 @@
     "weightedDegree": 3.5,
     "domain": "energimyndigheten.se",
     "url": "https://www.energimyndigheten.se",
+    "iconUrl": "./icons/agency_energimyndigheten.png",
+    "geo": {
+      "city": "Eskilstuna",
+      "lat": 59.36204,
+      "lon": 16.51121,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Sektorsansvarig myndighet för: Energiförsörjning. (energimyndigheten.se)",
     "aliases": [],
     "metadata": {
@@ -864,6 +1228,8 @@
     "shortName": "Statens jordbruksverk",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -872,6 +1238,13 @@
     "weightedDegree": 2.4,
     "domain": "jordbruksverket.se",
     "url": "https://www.jordbruksverket.se",
+    "iconUrl": "./icons/agency_jordbruksverket.png",
+    "geo": {
+      "city": "Jönköping",
+      "lat": 57.78699,
+      "lon": 14.15341,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Livsmedelsförsörjning och dricksvatten. (jordbruksverket.se)",
     "aliases": [],
     "metadata": {
@@ -884,6 +1257,8 @@
     "shortName": "Statens servicecenter",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -892,6 +1267,13 @@
     "weightedDegree": 2.4,
     "domain": "statenssc.se",
     "url": "https://www.statenssc.se",
+    "iconUrl": "./icons/agency_statens_servicecenter.png",
+    "geo": {
+      "city": "Gävle",
+      "lat": 60.67929,
+      "lon": 17.13291,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Ekonomisk säkerhet. (statenssc.se)",
     "aliases": [],
     "metadata": {
@@ -904,6 +1286,8 @@
     "shortName": "Statens skolverk",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 43.8,
     "degree": 2,
@@ -912,6 +1296,13 @@
     "weightedDegree": 2.8,
     "domain": "skolverket.se",
     "url": "https://www.skolverket.se",
+    "iconUrl": "./icons/agency_skolverket.jpg",
+    "geo": {
+      "city": "Solna",
+      "lat": 59.36893,
+      "lon": 18.01289,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Fristående beredskapsmyndighet enligt SFS 2022:524 utanför den fasta sektorsindelningen.",
     "aliases": [],
     "metadata": {
@@ -925,6 +1316,8 @@
     "shortName": "Statens veterinärmedicinska anstalt",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -933,6 +1326,13 @@
     "weightedDegree": 2.4,
     "domain": "sva.se",
     "url": "https://www.sva.se",
+    "iconUrl": "./icons/agency_sva.png",
+    "geo": {
+      "city": "Uppsala",
+      "lat": 59.84944,
+      "lon": 17.64031,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Livsmedelsförsörjning och dricksvatten. (sva.se)",
     "aliases": [],
     "metadata": {
@@ -945,6 +1345,8 @@
     "shortName": "Strålsäkerhetsmyndigheten",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 61.7,
     "degree": 3,
@@ -953,6 +1355,13 @@
     "weightedDegree": 4.0,
     "domain": "stralsakerhetsmyndigheten.se",
     "url": "https://www.stralsakerhetsmyndigheten.se",
+    "iconUrl": "./icons/agency_stralsakerhetsmyndigheten.png",
+    "geo": {
+      "city": "Solna",
+      "lat": 59.35774,
+      "lon": 17.9785,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Energiförsörjning, Räddningstjänst och skydd av civilbefolkningen. (stralsakerhetsmyndigheten.se)",
     "aliases": [],
     "metadata": {
@@ -965,6 +1374,8 @@
     "shortName": "Sveriges geologiska undersökning",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -973,6 +1384,13 @@
     "weightedDegree": 2.4,
     "domain": "sgu.se",
     "url": "https://www.sgu.se",
+    "iconUrl": "./icons/agency_sgu.png",
+    "geo": {
+      "city": "Uppsala",
+      "lat": 59.86753,
+      "lon": 17.65089,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Industri, byggande och handel. (sgu.se)",
     "aliases": [],
     "metadata": {
@@ -985,6 +1403,8 @@
     "shortName": "Riksbanken",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "styrning_lagrum",
+    "sourceGroupTitle": "Styrning & Lagrum",
     "color": "#34d399",
     "val": 46.7,
     "degree": 2,
@@ -993,6 +1413,13 @@
     "weightedDegree": 3.0,
     "domain": "riksbank.se",
     "url": "https://www.riksbank.se/sv/betalningar--kontanter/beredskap/",
+    "iconUrl": "./icons/riksbanken.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.34606,
+      "lon": 18.10339,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Riksdagens myndighet med övergripande ansvar för betalningssystemets och kontantförsörjningens motståndskraft under fredstida kriser och höjd beredskap.",
     "aliases": [],
     "metadata": {}
@@ -1003,6 +1430,8 @@
     "shortName": "Säkerhetspolisen",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -1011,6 +1440,13 @@
     "weightedDegree": 2.4,
     "domain": "sakerhetspolisen.se",
     "url": "https://www.sakerhetspolisen.se",
+    "iconUrl": "./icons/agency_sakerhetspolisen.png",
+    "geo": {
+      "city": "Solna",
+      "lat": 59.3522,
+      "lon": 18.02236,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Ordning och säkerhet. (sakerhetspolisen.se)",
     "aliases": [],
     "metadata": {
@@ -1023,6 +1459,8 @@
     "shortName": "Tillväxtverket",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 54.1,
     "degree": 2,
@@ -1031,6 +1469,13 @@
     "weightedDegree": 3.5,
     "domain": "tillvaxtverket.se",
     "url": "https://www.tillvaxtverket.se",
+    "iconUrl": "./icons/agency_tillvaxtverket.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.33041,
+      "lon": 18.02174,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Sektorsansvarig myndighet för: Industri, byggande och handel. (tillvaxtverket.se)",
     "aliases": [],
     "metadata": {
@@ -1044,6 +1489,8 @@
     "shortName": "Totalförsvarets forskningsinstitut",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "militart_och_karnmyndigheter",
+    "sourceGroupTitle": "Militärt & Försvarsmyndigheter",
     "color": "#34d399",
     "val": 43.8,
     "degree": 2,
@@ -1052,6 +1499,13 @@
     "weightedDegree": 2.8,
     "domain": "foi.se",
     "url": "https://www.foi.se",
+    "iconUrl": "./icons/agency_foi.svg",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.30985,
+      "lon": 18.10281,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Central försvars- eller totalförsvarsmyndighet (foi.se).",
     "aliases": [],
     "metadata": {
@@ -1068,6 +1522,8 @@
     "shortName": "Totalförsvarets plikt- och prövningsverk",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "militart_och_karnmyndigheter",
+    "sourceGroupTitle": "Militärt & Försvarsmyndigheter",
     "color": "#34d399",
     "val": 43.8,
     "degree": 2,
@@ -1076,6 +1532,13 @@
     "weightedDegree": 2.8,
     "domain": "pliktverket.se",
     "url": "https://www.pliktverket.se",
+    "iconUrl": "./icons/agency_pliktverket.png",
+    "geo": {
+      "city": "Karlstad",
+      "lat": 59.37014,
+      "lon": 13.50501,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Central försvars- eller totalförsvarsmyndighet (pliktverket.se).",
     "aliases": [],
     "metadata": {
@@ -1093,6 +1556,8 @@
     "shortName": "Trafikverket",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 79.2,
     "degree": 3,
@@ -1101,6 +1566,13 @@
     "weightedDegree": 5.1,
     "domain": "trafikverket.se",
     "url": "https://www.trafikverket.se",
+    "iconUrl": "./icons/agency_trafikverket.png",
+    "geo": {
+      "city": "Borlänge",
+      "lat": 60.4843,
+      "lon": 15.434,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Sektorsansvarig myndighet för: Transporter. Ingår som beredskapsmyndighet i: Elektroniska kommunikationer och post. (trafikverket.se)",
     "aliases": [],
     "metadata": {
@@ -1114,6 +1586,8 @@
     "shortName": "Transportstyrelsen",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -1122,6 +1596,13 @@
     "weightedDegree": 2.4,
     "domain": "transportstyrelsen.se",
     "url": "https://www.transportstyrelsen.se",
+    "iconUrl": "./icons/agency_transportstyrelsen.png",
+    "geo": {
+      "city": "Norrköping",
+      "lat": 58.5799,
+      "lon": 16.21386,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Transporter. (transportstyrelsen.se)",
     "aliases": [],
     "metadata": {
@@ -1134,6 +1615,8 @@
     "shortName": "Tullverket",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 61.7,
     "degree": 3,
@@ -1142,6 +1625,13 @@
     "weightedDegree": 4.0,
     "domain": "tullverket.se",
     "url": "https://www.tullverket.se",
+    "iconUrl": "./icons/agency_tullverket.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.3576,
+      "lon": 18.06631,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Ordning och säkerhet, Utrikeshandel. (tullverket.se)",
     "aliases": [],
     "metadata": {
@@ -1154,6 +1644,8 @@
     "shortName": "Utbetalningsmyndigheten",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -1162,6 +1654,13 @@
     "weightedDegree": 2.4,
     "domain": "utbetalningsmyndigheten.se",
     "url": "https://www.utbetalningsmyndigheten.se",
+    "iconUrl": "./icons/agency_utbetalningsmyndigheten.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.30698,
+      "lon": 18.03601,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Ekonomisk säkerhet. (utbetalningsmyndigheten.se)",
     "aliases": [],
     "metadata": {
@@ -1174,6 +1673,8 @@
     "shortName": "Åklagarmyndigheten",
     "type": "agency",
     "typeLabel": "Statlig myndighet",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#34d399",
     "val": 38.2,
     "degree": 2,
@@ -1182,6 +1683,13 @@
     "weightedDegree": 2.4,
     "domain": "aklagare.se",
     "url": "https://www.aklagare.se",
+    "iconUrl": "./icons/agency_aklagarmyndigheten.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.33327,
+      "lon": 18.12026,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Ingår som beredskapsmyndighet i: Ordning och säkerhet. (aklagare.se)",
     "aliases": [],
     "metadata": {
@@ -1194,6 +1702,8 @@
     "shortName": "Energiföretagen Sverige",
     "type": "business_org",
     "typeLabel": "Näringsliv & Försörjning",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#94a3b8",
     "val": 48.2,
     "degree": 2,
@@ -1202,6 +1712,13 @@
     "weightedDegree": 3.1,
     "domain": "energiforetagen.se",
     "url": "https://www.energiforetagen.se",
+    "iconUrl": "./icons/biz_energiforetagen.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.34671,
+      "lon": 18.0248,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Näringslivs- och branschaktör med roll i Sveriges försörjningsberedskap.",
     "aliases": [],
     "metadata": {}
@@ -1212,6 +1729,8 @@
     "shortName": "Livsmedelsföretagen",
     "type": "business_org",
     "typeLabel": "Näringsliv & Försörjning",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#94a3b8",
     "val": 48.2,
     "degree": 2,
@@ -1220,6 +1739,13 @@
     "weightedDegree": 3.1,
     "domain": "livsmedelsforetagen.se",
     "url": "https://www.livsmedelsforetagen.se",
+    "iconUrl": "./icons/biz_livsmedelsforetagen.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.29889,
+      "lon": 18.08057,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Näringslivs- och branschaktör med roll i Sveriges försörjningsberedskap.",
     "aliases": [],
     "metadata": {}
@@ -1230,6 +1756,8 @@
     "shortName": "Svenskt Näringsliv",
     "type": "business_org",
     "typeLabel": "Näringsliv & Försörjning",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#94a3b8",
     "val": 48.2,
     "degree": 2,
@@ -1238,6 +1766,13 @@
     "weightedDegree": 3.1,
     "domain": "svensktnaringsliv.se",
     "url": "https://www.svensktnaringsliv.se",
+    "iconUrl": "./icons/biz_svenskt_naringsliv.jpg",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.35693,
+      "lon": 18.09631,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Näringslivs- och branschaktör med roll i Sveriges försörjningsberedskap.",
     "aliases": [],
     "metadata": {}
@@ -1248,14 +1783,23 @@
     "shortName": "Mellersta civilområdet",
     "type": "civilomrade",
     "typeLabel": "Civilområde (6 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#a855f7",
-    "val": 259.4,
-    "degree": 9,
-    "inDegree": 7,
+    "val": 304.0,
+    "degree": 10,
+    "inDegree": 8,
     "outDegree": 2,
-    "weightedDegree": 14.2,
+    "weightedDegree": 16.1,
     "domain": "lansstyrelsen.se/orebro",
     "url": "https://www.lansstyrelsen.se/orebro",
+    "iconUrl": "./icons/civilomrade_mellersta_civilomradet.png",
+    "geo": {
+      "city": "Örebro",
+      "lat": 59.2753,
+      "lon": 15.2134,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Regional samordningsnivå i det civila försvaret. Civilområdesansvarig: Länsstyrelsen i Örebro län.",
     "aliases": [],
     "metadata": {
@@ -1277,14 +1821,23 @@
     "shortName": "Norra civilområdet",
     "type": "civilomrade",
     "typeLabel": "Civilområde (6 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#a855f7",
-    "val": 169.0,
-    "degree": 6,
-    "inDegree": 4,
+    "val": 208.4,
+    "degree": 7,
+    "inDegree": 5,
     "outDegree": 2,
-    "weightedDegree": 10.0,
+    "weightedDegree": 11.9,
     "domain": "lansstyrelsen.se/norrbotten",
     "url": "https://www.lansstyrelsen.se/norrbotten",
+    "iconUrl": "./icons/civilomrade_norra_civilomradet.png",
+    "geo": {
+      "city": "Luleå",
+      "lat": 65.5848,
+      "lon": 22.1567,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Regional samordningsnivå i det civila försvaret. Civilområdesansvarig: Länsstyrelsen i Norrbottens län.",
     "aliases": [],
     "metadata": {
@@ -1303,14 +1856,23 @@
     "shortName": "Sydöstra civilområdet",
     "type": "civilomrade",
     "typeLabel": "Civilområde (6 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#a855f7",
-    "val": 141.5,
-    "degree": 5,
-    "inDegree": 3,
+    "val": 179.1,
+    "degree": 6,
+    "inDegree": 4,
     "outDegree": 2,
-    "weightedDegree": 8.6,
+    "weightedDegree": 10.5,
     "domain": "lansstyrelsen.se/ostergotland",
     "url": "https://www.lansstyrelsen.se/ostergotland",
+    "iconUrl": "./icons/civilomrade_sydostra_civilomradet.png",
+    "geo": {
+      "city": "Linköping",
+      "lat": 58.4108,
+      "lon": 15.6214,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Regional samordningsnivå i det civila försvaret. Civilområdesansvarig: Länsstyrelsen i Östergötlands län.",
     "aliases": [],
     "metadata": {
@@ -1328,14 +1890,23 @@
     "shortName": "Södra civilområdet",
     "type": "civilomrade",
     "typeLabel": "Civilområde (6 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#a855f7",
-    "val": 141.5,
-    "degree": 5,
-    "inDegree": 3,
+    "val": 179.1,
+    "degree": 6,
+    "inDegree": 4,
     "outDegree": 2,
-    "weightedDegree": 8.6,
+    "weightedDegree": 10.5,
     "domain": "lansstyrelsen.se/skane",
     "url": "https://www.lansstyrelsen.se/skane",
+    "iconUrl": "./icons/civilomrade_sodra_civilomradet.png",
+    "geo": {
+      "city": "Malmö",
+      "lat": 55.605,
+      "lon": 13.0038,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Regional samordningsnivå i det civila försvaret. Civilområdesansvarig: Länsstyrelsen i Skåne län.",
     "aliases": [],
     "metadata": {
@@ -1353,14 +1924,23 @@
     "shortName": "Västra civilområdet",
     "type": "civilomrade",
     "typeLabel": "Civilområde (6 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#a855f7",
-    "val": 115.4,
-    "degree": 4,
-    "inDegree": 2,
+    "val": 151.1,
+    "degree": 5,
+    "inDegree": 3,
     "outDegree": 2,
-    "weightedDegree": 7.2,
+    "weightedDegree": 9.1,
     "domain": "lansstyrelsen.se/vastra-gotaland",
     "url": "https://www.lansstyrelsen.se/vastra-gotaland",
+    "iconUrl": "./icons/civilomrade_vastra_civilomradet.png",
+    "geo": {
+      "city": "Göteborg",
+      "lat": 57.7089,
+      "lon": 11.9746,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Regional samordningsnivå i det civila försvaret. Civilområdesansvarig: Länsstyrelsen i Västra Götalands län.",
     "aliases": [],
     "metadata": {
@@ -1377,14 +1957,23 @@
     "shortName": "Östra civilområdet",
     "type": "civilomrade",
     "typeLabel": "Civilområde (6 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#a855f7",
-    "val": 115.4,
-    "degree": 4,
-    "inDegree": 2,
+    "val": 151.1,
+    "degree": 5,
+    "inDegree": 3,
     "outDegree": 2,
-    "weightedDegree": 7.2,
+    "weightedDegree": 9.1,
     "domain": "lansstyrelsen.se/stockholm",
     "url": "https://www.lansstyrelsen.se/stockholm",
+    "iconUrl": "./icons/civilomrade_ostra_civilomradet.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.31942,
+      "lon": 18.01442,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Regional samordningsnivå i det civila försvaret. Civilområdesansvarig: Länsstyrelsen i Stockholms län.",
     "aliases": [],
     "metadata": {
@@ -1401,6 +1990,8 @@
     "shortName": "Blekinge län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 38.2,
     "degree": 2,
@@ -1409,6 +2000,13 @@
     "weightedDegree": 2.4,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_blekinge_lan.png",
+    "geo": {
+      "city": "Karlskrona",
+      "lat": 56.15204,
+      "lon": 15.58831,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Blekinge län.",
     "aliases": [],
     "metadata": {
@@ -1422,6 +2020,8 @@
     "shortName": "Dalarnas län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 38.2,
     "degree": 2,
@@ -1430,6 +2030,13 @@
     "weightedDegree": 2.4,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_dalarnas_lan.png",
+    "geo": {
+      "city": "Falun",
+      "lat": 60.6065,
+      "lon": 15.6355,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Dalarnas län.",
     "aliases": [],
     "metadata": {
@@ -1443,6 +2050,8 @@
     "shortName": "Gotlands län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 38.2,
     "degree": 2,
@@ -1451,6 +2060,13 @@
     "weightedDegree": 2.4,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_gotlands_lan.png",
+    "geo": {
+      "city": "Visby",
+      "lat": 57.63919,
+      "lon": 18.28641,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Gotlands län.",
     "aliases": [],
     "metadata": {
@@ -1464,6 +2080,8 @@
     "shortName": "Gävleborgs län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 38.2,
     "degree": 2,
@@ -1472,6 +2090,13 @@
     "weightedDegree": 2.4,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_gavleborgs_lan.png",
+    "geo": {
+      "city": "Gävle",
+      "lat": 60.66574,
+      "lon": 17.14271,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Gävleborgs län.",
     "aliases": [],
     "metadata": {
@@ -1485,6 +2110,8 @@
     "shortName": "Hallands län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 38.2,
     "degree": 2,
@@ -1493,6 +2120,13 @@
     "weightedDegree": 2.4,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_hallands_lan.png",
+    "geo": {
+      "city": "Halmstad",
+      "lat": 56.6744,
+      "lon": 12.8578,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Hallands län.",
     "aliases": [],
     "metadata": {
@@ -1506,6 +2140,8 @@
     "shortName": "Jämtlands län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 38.2,
     "degree": 2,
@@ -1514,6 +2150,13 @@
     "weightedDegree": 2.4,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_jamtlands_lan.png",
+    "geo": {
+      "city": "Östersund",
+      "lat": 63.1767,
+      "lon": 14.6361,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Jämtlands län.",
     "aliases": [],
     "metadata": {
@@ -1527,6 +2170,8 @@
     "shortName": "Jönköpings län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 38.2,
     "degree": 2,
@@ -1535,6 +2180,13 @@
     "weightedDegree": 2.4,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_jonkopings_lan.png",
+    "geo": {
+      "city": "Jönköping",
+      "lat": 57.77344,
+      "lon": 14.16321,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Jönköpings län.",
     "aliases": [],
     "metadata": {
@@ -1548,6 +2200,8 @@
     "shortName": "Kalmar län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 38.2,
     "degree": 2,
@@ -1556,6 +2210,13 @@
     "weightedDegree": 2.4,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_kalmar_lan.png",
+    "geo": {
+      "city": "Kalmar",
+      "lat": 56.66779,
+      "lon": 16.34841,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Kalmar län.",
     "aliases": [],
     "metadata": {
@@ -1569,6 +2230,8 @@
     "shortName": "Kronobergs län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 38.2,
     "degree": 2,
@@ -1577,6 +2240,13 @@
     "weightedDegree": 2.4,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_kronobergs_lan.png",
+    "geo": {
+      "city": "Växjö",
+      "lat": 56.879,
+      "lon": 14.8059,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Kronobergs län.",
     "aliases": [],
     "metadata": {
@@ -1590,6 +2260,8 @@
     "shortName": "Norrbottens län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 49.6,
     "degree": 2,
@@ -1598,6 +2270,13 @@
     "weightedDegree": 3.2,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_norrbottens_lan.png",
+    "geo": {
+      "city": "Luleå",
+      "lat": 65.58919,
+      "lon": 22.14831,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Norrbottens län samt civilområdesansvarig länsstyrelse för Norra civilområdet.",
     "aliases": [],
     "metadata": {
@@ -1611,6 +2290,8 @@
     "shortName": "Skåne län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 49.6,
     "degree": 2,
@@ -1619,6 +2300,13 @@
     "weightedDegree": 3.2,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_skane_lan.png",
+    "geo": {
+      "city": "Malmö",
+      "lat": 55.60939,
+      "lon": 12.99541,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Skåne län samt civilområdesansvarig länsstyrelse för Södra civilområdet.",
     "aliases": [],
     "metadata": {
@@ -1632,6 +2320,8 @@
     "shortName": "Stockholms län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 49.6,
     "degree": 2,
@@ -1640,6 +2330,13 @@
     "weightedDegree": 3.2,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_stockholms_lan.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.3154,
+      "lon": 18.12125,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Stockholms län samt civilområdesansvarig länsstyrelse för Östra civilområdet.",
     "aliases": [],
     "metadata": {
@@ -1653,6 +2350,8 @@
     "shortName": "Södermanlands län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 38.2,
     "degree": 2,
@@ -1661,6 +2360,13 @@
     "weightedDegree": 2.4,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_sodermanlands_lan.png",
+    "geo": {
+      "city": "Nyköping",
+      "lat": 58.7528,
+      "lon": 17.0092,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Södermanlands län.",
     "aliases": [],
     "metadata": {
@@ -1674,6 +2380,8 @@
     "shortName": "Uppsala län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 38.2,
     "degree": 2,
@@ -1682,6 +2390,13 @@
     "weightedDegree": 2.4,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_uppsala_lan.png",
+    "geo": {
+      "city": "Uppsala",
+      "lat": 59.85634,
+      "lon": 17.6165,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Uppsala län.",
     "aliases": [],
     "metadata": {
@@ -1695,6 +2410,8 @@
     "shortName": "Värmlands län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 38.2,
     "degree": 2,
@@ -1703,6 +2420,13 @@
     "weightedDegree": 2.4,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_varmlands_lan.png",
+    "geo": {
+      "city": "Karlstad",
+      "lat": 59.38823,
+      "lon": 13.51559,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Värmlands län.",
     "aliases": [],
     "metadata": {
@@ -1716,6 +2440,8 @@
     "shortName": "Västerbottens län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 38.2,
     "degree": 2,
@@ -1724,6 +2450,13 @@
     "weightedDegree": 2.4,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_vasterbottens_lan.png",
+    "geo": {
+      "city": "Umeå",
+      "lat": 63.8258,
+      "lon": 20.263,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Västerbottens län.",
     "aliases": [],
     "metadata": {
@@ -1737,6 +2470,8 @@
     "shortName": "Västernorrlands län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 38.2,
     "degree": 2,
@@ -1745,6 +2480,13 @@
     "weightedDegree": 2.4,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_vasternorrlands_lan.png",
+    "geo": {
+      "city": "Härnösand",
+      "lat": 62.6323,
+      "lon": 17.9409,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Västernorrlands län.",
     "aliases": [],
     "metadata": {
@@ -1758,6 +2500,8 @@
     "shortName": "Västmanlands län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 38.2,
     "degree": 2,
@@ -1766,6 +2510,13 @@
     "weightedDegree": 2.4,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_vastmanlands_lan.png",
+    "geo": {
+      "city": "Västerås",
+      "lat": 59.6099,
+      "lon": 16.5448,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Västmanlands län.",
     "aliases": [],
     "metadata": {
@@ -1779,6 +2530,8 @@
     "shortName": "Västra Götalands län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 49.6,
     "degree": 2,
@@ -1787,6 +2540,13 @@
     "weightedDegree": 3.2,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_vastra_gotalands_lan.png",
+    "geo": {
+      "city": "Göteborg",
+      "lat": 57.71329,
+      "lon": 11.96621,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Västra Götalands län samt civilområdesansvarig länsstyrelse för Västra civilområdet.",
     "aliases": [],
     "metadata": {
@@ -1800,6 +2560,8 @@
     "shortName": "Örebro län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 49.6,
     "degree": 2,
@@ -1808,6 +2570,13 @@
     "weightedDegree": 3.2,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_orebro_lan.png",
+    "geo": {
+      "city": "Örebro",
+      "lat": 59.27969,
+      "lon": 15.20501,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Örebro län samt civilområdesansvarig länsstyrelse för Mellersta civilområdet.",
     "aliases": [],
     "metadata": {
@@ -1821,6 +2590,8 @@
     "shortName": "Östergötlands län",
     "type": "county",
     "typeLabel": "Länsstyrelse / Län (21 st)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#c084fc",
     "val": 49.6,
     "degree": 2,
@@ -1829,6 +2600,13 @@
     "weightedDegree": 3.2,
     "domain": "lansstyrelsen.se",
     "url": "https://www.lansstyrelsen.se",
+    "iconUrl": "./icons/county_ostergotlands_lan.png",
+    "geo": {
+      "city": "Linköping",
+      "lat": 58.41519,
+      "lon": 15.61301,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Högsta civila totalförsvarsmyndighet på länsnivå i Östergötlands län samt civilområdesansvarig länsstyrelse för Sydöstra civilområdet.",
     "aliases": [],
     "metadata": {
@@ -1842,6 +2620,8 @@
     "shortName": "Civilförsvarsförbundet",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -1850,6 +2630,8 @@
     "weightedDegree": 1.3,
     "domain": "civil.se",
     "url": "https://www.civil.se",
+    "iconUrl": "./icons/ffo_civilforsvarsforbundet.png",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -1860,6 +2642,8 @@
     "shortName": "Flygvapenfrivilligas riksförbund",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -1868,6 +2652,8 @@
     "weightedDegree": 1.3,
     "domain": "flygvapenfrivilliga.se",
     "url": "https://www.flygvapenfrivilliga.se",
+    "iconUrl": "./icons/ffo_flygvapenfrivilligas_riksforbund_fvf.png",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -1878,6 +2664,8 @@
     "shortName": "Frivilliga automobilkårernas riksförbund",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -1886,6 +2674,8 @@
     "weightedDegree": 1.3,
     "domain": "bilkaren.se",
     "url": "https://www.bilkaren.se",
+    "iconUrl": "./icons/ffo_frivilliga_automobilkarernas_riksforbund_bilkaren.png",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -1896,6 +2686,8 @@
     "shortName": "Frivilliga flygkåren",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -1904,6 +2696,8 @@
     "weightedDegree": 1.3,
     "domain": "ffk.se",
     "url": "https://www.ffk.se",
+    "iconUrl": "./icons/ffo_frivilliga_flygkaren_ffk.png",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -1914,6 +2708,8 @@
     "shortName": "Frivilliga motorcykelkårernas riksförbund",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -1922,6 +2718,8 @@
     "weightedDegree": 1.3,
     "domain": "fmck.se",
     "url": "https://www.fmck.se",
+    "iconUrl": "./icons/ffo_frivilliga_motorcykelkarernas_riksforbund_fmck.png",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -1932,6 +2730,8 @@
     "shortName": "Frivilliga radioorganisationen",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -1940,6 +2740,8 @@
     "weightedDegree": 1.3,
     "domain": "fro.se",
     "url": "https://www.fro.se",
+    "iconUrl": "./icons/ffo_frivilliga_radioorganisationen_fro.png",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -1950,6 +2752,8 @@
     "shortName": "Försvarets personaltjänstförbund",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -1958,6 +2762,8 @@
     "weightedDegree": 1.3,
     "domain": "fpf1.se",
     "url": "https://www.fpf1.se",
+    "iconUrl": "./icons/ffo_forsvarets_personaltjanstforbund_fpf.svg",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -1968,6 +2774,8 @@
     "shortName": "Insatsingenjörernas riksförbund",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -1976,6 +2784,8 @@
     "weightedDegree": 1.3,
     "domain": "insatsingenjorerna.se",
     "url": "https://www.insatsingenjorerna.se",
+    "iconUrl": "./icons/ffo_insatsingenjorernas_riksforbund.png",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -1986,6 +2796,8 @@
     "shortName": "Sjövärnskårernas riksförbund",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -1994,6 +2806,8 @@
     "weightedDegree": 1.3,
     "domain": "sjovarnskaren.se",
     "url": "https://www.sjovarnskaren.se",
+    "iconUrl": "./icons/ffo_sjovarnskarernas_riksforbund_svk.svg",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -2004,6 +2818,8 @@
     "shortName": "Svenska Blå Stjärnan",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -2012,6 +2828,8 @@
     "weightedDegree": 1.3,
     "domain": "svenskablastjarnan.se",
     "url": "https://www.svenskablastjarnan.se",
+    "iconUrl": "./icons/ffo_svenska_bla_stjarnan.png",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -2022,6 +2840,8 @@
     "shortName": "Svenska Brukshundklubben",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -2030,6 +2850,8 @@
     "weightedDegree": 1.3,
     "domain": "brukshundklubben.se",
     "url": "https://www.brukshundklubben.se",
+    "iconUrl": "./icons/ffo_svenska_brukshundklubben.png",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -2040,6 +2862,8 @@
     "shortName": "Svenska Fallskärmsförbundet",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -2048,6 +2872,8 @@
     "weightedDegree": 1.3,
     "domain": "sff.se",
     "url": "https://www.sff.se",
+    "iconUrl": "./icons/ffo_svenska_fallskarmsforbundet_sff.png",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -2058,6 +2884,8 @@
     "shortName": "Svenska Lottakåren",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -2066,6 +2894,8 @@
     "weightedDegree": 1.3,
     "domain": "svenskalottakaren.se",
     "url": "https://www.svenskalottakaren.se",
+    "iconUrl": "./icons/ffo_svenska_lottakaren.png",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -2076,6 +2906,8 @@
     "shortName": "Svenska Pistolskytteförbundet",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -2084,6 +2916,8 @@
     "weightedDegree": 1.3,
     "domain": "pistolskytteforbundet.se",
     "url": "https://www.pistolskytteforbundet.se",
+    "iconUrl": "./icons/ffo_svenska_pistolskytteforbundet.svg",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -2094,6 +2928,8 @@
     "shortName": "Svenska Röda Korset",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -2102,6 +2938,8 @@
     "weightedDegree": 1.3,
     "domain": "redcross.se",
     "url": "https://www.redcross.se",
+    "iconUrl": "./icons/ffo_svenska_roda_korset.png",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -2112,6 +2950,8 @@
     "shortName": "Svenska Skyttesportförbundet",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -2120,6 +2960,8 @@
     "weightedDegree": 1.3,
     "domain": "skyttesport.se",
     "url": "https://www.skyttesport.se",
+    "iconUrl": "./icons/ffo_svenska_skyttesportforbundet.jpg",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -2130,6 +2972,8 @@
     "shortName": "Svenska försvarsutbildningsförbundet",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -2138,6 +2982,8 @@
     "weightedDegree": 1.3,
     "domain": "forsvarsutbildarna.se",
     "url": "https://www.forsvarsutbildarna.se",
+    "iconUrl": "./icons/ffo_svenska_forsvarsutbildningsforbundet_forsvarsutbildarna.svg",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -2148,6 +2994,8 @@
     "shortName": "Sveriges bilkårers riksförbund",
     "type": "ffo",
     "typeLabel": "Frivillig försvarsorganisation (18 FFO)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fdba74",
     "val": 23.4,
     "degree": 1,
@@ -2156,6 +3004,8 @@
     "weightedDegree": 1.3,
     "domain": "bilkaren.se",
     "url": "https://www.bilkaren.se",
+    "iconUrl": "./icons/ffo_sveriges_bilkarers_riksforbund.png",
+    "geo": null,
     "description": "Frivillig försvarsorganisation med uppdrag inom Sveriges totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -2166,6 +3016,8 @@
     "shortName": "Frivilligförsvaret (18 FFO)",
     "type": "ffo_hub",
     "typeLabel": "Frivilligförsvaret (Nav)",
+    "sourceGroup": "frivilliga_och_naringsliv",
+    "sourceGroupTitle": "18 FFO & Näringsliv",
     "color": "#fb923c",
     "val": 597.9,
     "degree": 20,
@@ -2174,6 +3026,13 @@
     "weightedDegree": 27.0,
     "domain": "frivilligforsvaret.se",
     "url": "https://www.frivilligforsvaret.se",
+    "iconUrl": "./icons/ffo_portal.svg",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.36046,
+      "lon": 18.04578,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Samlingsnod för de 18 statligt erkända frivilliga försvarsorganisationerna som rekryterar och utbildar frivilliga till både militärt och civilt försvar.",
     "aliases": [],
     "metadata": {}
@@ -2184,6 +3043,8 @@
     "shortName": "Regeringen",
     "type": "governance",
     "typeLabel": "Riksdag, Regering & Styrning",
+    "sourceGroup": "styrning_lagrum",
+    "sourceGroupTitle": "Styrning & Lagrum",
     "color": "#f59e0b",
     "val": 102.9,
     "degree": 3,
@@ -2192,6 +3053,13 @@
     "weightedDegree": 6.5,
     "domain": "regeringen.se",
     "url": "https://www.regeringen.se",
+    "iconUrl": "./icons/regeringen.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.29694,
+      "lon": 18.04823,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Styr riket och beslutar om höjd beredskap, förordningar och myndigheternas årliga regleringsbrev (inkl. Försvarsdepartementet och ministern för civilt försvar).",
     "aliases": [],
     "metadata": {}
@@ -2202,6 +3070,8 @@
     "shortName": "Regleringsbrev (ESV)",
     "type": "governance",
     "typeLabel": "Riksdag, Regering & Styrning",
+    "sourceGroup": "styrning_lagrum",
+    "sourceGroupTitle": "Styrning & Lagrum",
     "color": "#f59e0b",
     "val": 1334.0,
     "degree": 54,
@@ -2210,6 +3080,13 @@
     "weightedDegree": 48.4,
     "domain": "esv.se",
     "url": "https://www.esv.se/statsliggaren/",
+    "iconUrl": "./icons/esv_regleringsbrev.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.34558,
+      "lon": 18.12282,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Regeringens årliga styrinstrument med formella mål, totalförsvarsuppdrag och anslag till statliga myndigheter.",
     "aliases": [],
     "metadata": {}
@@ -2220,6 +3097,8 @@
     "shortName": "Riksdagen",
     "type": "governance",
     "typeLabel": "Riksdag, Regering & Styrning",
+    "sourceGroup": "styrning_lagrum",
+    "sourceGroupTitle": "Styrning & Lagrum",
     "color": "#f59e0b",
     "val": 330.7,
     "degree": 13,
@@ -2228,6 +3107,13 @@
     "weightedDegree": 17.2,
     "domain": "riksdagen.se",
     "url": "https://www.riksdagen.se",
+    "iconUrl": "./icons/riksdagen.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.33837,
+      "lon": 18.00835,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Stiftar lagar (SFS), beslutar om statsbudgeten (Utgiftsområde 6 m.fl.) och fastställer totalförsvarsbeslut.",
     "aliases": [],
     "metadata": {}
@@ -2238,6 +3124,8 @@
     "shortName": "SFS 1978:599",
     "type": "law",
     "typeLabel": "Lag & Förordning (SFS)",
+    "sourceGroup": "styrning_lagrum",
+    "sourceGroupTitle": "Styrning & Lagrum",
     "color": "#f43f5e",
     "val": 22.1,
     "degree": 1,
@@ -2246,6 +3134,8 @@
     "weightedDegree": 1.2,
     "domain": "riksdagen.se",
     "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/_sfs-1978-599/",
+    "iconUrl": "./icons/sfs_1978_599.svg",
+    "geo": null,
     "description": "Ger staten rätt att under krig eller höjd beredskap ta i anspråk egendom och tjänster som behövs för totalförsvaret.",
     "aliases": [],
     "metadata": {
@@ -2258,6 +3148,8 @@
     "shortName": "SFS 2006:637",
     "type": "law",
     "typeLabel": "Lag & Förordning (SFS)",
+    "sourceGroup": "styrning_lagrum",
+    "sourceGroupTitle": "Styrning & Lagrum",
     "color": "#f43f5e",
     "val": 22.1,
     "degree": 1,
@@ -2266,6 +3158,8 @@
     "weightedDegree": 1.2,
     "domain": "riksdagen.se",
     "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/_sfs-2006-637/",
+    "iconUrl": "./icons/sfs_2006_637.svg",
+    "geo": null,
     "description": "Kompletterande förordning till LEH avseende geografiskt områdesansvar och planering.",
     "aliases": [],
     "metadata": {
@@ -2278,6 +3172,8 @@
     "shortName": "SFS 2015:1053",
     "type": "law",
     "typeLabel": "Lag & Förordning (SFS)",
+    "sourceGroup": "styrning_lagrum",
+    "sourceGroupTitle": "Styrning & Lagrum",
     "color": "#f43f5e",
     "val": 49.6,
     "degree": 2,
@@ -2286,6 +3182,8 @@
     "weightedDegree": 3.2,
     "domain": "riksdagen.se",
     "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/_sfs-2015-1053/",
+    "iconUrl": "./icons/sfs_2015_1053.svg",
+    "geo": null,
     "description": "Reglerar krigsorganisation, beredskapslarm och myndigheters planering för höjd beredskap.",
     "aliases": [],
     "metadata": {
@@ -2298,6 +3196,8 @@
     "shortName": "SFS 2022:524",
     "type": "law",
     "typeLabel": "Lag & Förordning (SFS)",
+    "sourceGroup": "styrning_lagrum",
+    "sourceGroupTitle": "Styrning & Lagrum",
     "color": "#f43f5e",
     "val": 807.5,
     "degree": 23,
@@ -2306,6 +3206,8 @@
     "weightedDegree": 33.7,
     "domain": "riksdagen.se",
     "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/_sfs-2022-524/",
+    "iconUrl": "./icons/sfs_2022_524.svg",
+    "geo": null,
     "description": "Beredskapsförordningen som pekar ut Sveriges ~67 beredskapsmyndigheter, de 12 beredskapssektorerna, sektorsansvariga myndigheter och de 6 civilområdena.",
     "aliases": [],
     "metadata": {
@@ -2318,6 +3220,8 @@
     "shortName": "SFS 1982:1004",
     "type": "law",
     "typeLabel": "Lag & Förordning (SFS)",
+    "sourceGroup": "styrning_lagrum",
+    "sourceGroupTitle": "Styrning & Lagrum",
     "color": "#f43f5e",
     "val": 89.1,
     "degree": 4,
@@ -2326,6 +3230,8 @@
     "weightedDegree": 5.7,
     "domain": "riksdagen.se",
     "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/_sfs-1982-1004/",
+    "iconUrl": "./icons/sfs_1982_1004.svg",
+    "geo": null,
     "description": "Grunden för näringslivets medverkan i totalförsvarsplaneringen och utpekande av samhällsviktiga företag (K-företag).",
     "aliases": [],
     "metadata": {
@@ -2338,6 +3244,8 @@
     "shortName": "SFS 1992:1403",
     "type": "law",
     "typeLabel": "Lag & Förordning (SFS)",
+    "sourceGroup": "styrning_lagrum",
+    "sourceGroupTitle": "Styrning & Lagrum",
     "color": "#f43f5e",
     "val": 57.1,
     "degree": 2,
@@ -2346,6 +3254,8 @@
     "weightedDegree": 3.7,
     "domain": "riksdagen.se",
     "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/_sfs-1992-1403/",
+    "iconUrl": "./icons/sfs_1992_1403.svg",
+    "geo": null,
     "description": "Grundläggande lag som definierar totalförsvaret (militärt och civilt försvar) samt beredskapsgraderna skärpt beredskap och högsta beredskap.",
     "aliases": [],
     "metadata": {
@@ -2358,6 +3268,8 @@
     "shortName": "SFS 1994:1809",
     "type": "law",
     "typeLabel": "Lag & Förordning (SFS)",
+    "sourceGroup": "styrning_lagrum",
+    "sourceGroupTitle": "Styrning & Lagrum",
     "color": "#f43f5e",
     "val": 49.6,
     "degree": 2,
@@ -2366,6 +3278,8 @@
     "weightedDegree": 3.2,
     "domain": "riksdagen.se",
     "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/_sfs-1994-1809/",
+    "iconUrl": "./icons/sfs_1994_1809.svg",
+    "geo": null,
     "description": "Reglerar värnplikt, civilplikt och allmän tjänsteplikt för alla som bor i Sverige mellan 16 och 70 års ålder.",
     "aliases": [],
     "metadata": {
@@ -2378,6 +3292,8 @@
     "shortName": "SFS 2006:544",
     "type": "law",
     "typeLabel": "Lag & Förordning (SFS)",
+    "sourceGroup": "styrning_lagrum",
+    "sourceGroupTitle": "Styrning & Lagrum",
     "color": "#f43f5e",
     "val": 49.6,
     "degree": 2,
@@ -2386,6 +3302,8 @@
     "weightedDegree": 3.2,
     "domain": "riksdagen.se",
     "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/_sfs-2006-544/",
+    "iconUrl": "./icons/sfs_2006_544.svg",
+    "geo": null,
     "description": "Styr kommunernas (290 st) och regionernas (21 st) ansvar under kris och höjd beredskap.",
     "aliases": [],
     "metadata": {
@@ -2398,6 +3316,8 @@
     "shortName": "SFS 2020:782",
     "type": "law",
     "typeLabel": "Lag & Förordning (SFS)",
+    "sourceGroup": "styrning_lagrum",
+    "sourceGroupTitle": "Styrning & Lagrum",
     "color": "#f43f5e",
     "val": 46.7,
     "degree": 2,
@@ -2406,6 +3326,8 @@
     "weightedDegree": 3.0,
     "domain": "riksdagen.se",
     "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/_sfs-2020-782/",
+    "iconUrl": "./icons/sfs_2020_782.svg",
+    "geo": null,
     "description": "Reglerar ramarna för mottagande och lämnande av militärt stöd samt värdlandsstöd i samverkan med allierade.",
     "aliases": [],
     "metadata": {
@@ -2418,6 +3340,8 @@
     "shortName": "SFS 1978:561",
     "type": "law",
     "typeLabel": "Lag & Förordning (SFS)",
+    "sourceGroup": "styrning_lagrum",
+    "sourceGroupTitle": "Styrning & Lagrum",
     "color": "#f43f5e",
     "val": 22.1,
     "degree": 1,
@@ -2426,6 +3350,8 @@
     "weightedDegree": 1.2,
     "domain": "riksdagen.se",
     "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/_sfs-1978-561/",
+    "iconUrl": "./icons/sfs_1978_561.svg",
+    "geo": null,
     "description": "Möjliggör reglering och ransonering av livsmedel, drivmedel och andra förnödenheter vid försörjningskriser eller krig.",
     "aliases": [],
     "metadata": {
@@ -2438,6 +3364,8 @@
     "shortName": "SFS 2018:585",
     "type": "law",
     "typeLabel": "Lag & Förordning (SFS)",
+    "sourceGroup": "styrning_lagrum",
+    "sourceGroupTitle": "Styrning & Lagrum",
     "color": "#f43f5e",
     "val": 22.1,
     "degree": 1,
@@ -2446,6 +3374,8 @@
     "weightedDegree": 1.2,
     "domain": "riksdagen.se",
     "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/_sfs-2018-585/",
+    "iconUrl": "./icons/sfs_2018_585.svg",
+    "geo": null,
     "description": "Normativt regelverk för skydd av säkerhetskänslig verksamhet och säkerhetsskyddsklassificerade uppgifter.",
     "aliases": [],
     "metadata": {
@@ -2453,11 +3383,121 @@
     }
   },
   {
+    "id": "militarregion_mellersta",
+    "name": "Mellersta militärregionen (MR M)",
+    "shortName": "MR Mellersta (Kungsängen)",
+    "type": "militarregion",
+    "typeLabel": "Militärregion (4 st)",
+    "sourceGroup": "militart_och_karnmyndigheter",
+    "sourceGroupTitle": "Militärt & Försvarsmyndigheter",
+    "color": "#eab308",
+    "val": 90.8,
+    "degree": 3,
+    "inDegree": 0,
+    "outDegree": 3,
+    "weightedDegree": 5.8,
+    "domain": "forsvarsmakten.se",
+    "url": "https://www.forsvarsmakten.se/sv/organisation/militarregioner/",
+    "iconUrl": "./icons/militarregion_mellersta.png",
+    "geo": {
+      "city": "Kungsängen",
+      "lat": 59.4792,
+      "lon": 17.7519,
+      "precision": "administrative_municipality_center"
+    },
+    "description": "Regional militär stab som samverkar med Mellersta och Östra civilområdet.",
+    "aliases": [],
+    "metadata": {}
+  },
+  {
+    "id": "militarregion_norra",
+    "name": "Norra militärregionen (MR N)",
+    "shortName": "MR Norra (Boden)",
+    "type": "militarregion",
+    "typeLabel": "Militärregion (4 st)",
+    "sourceGroup": "militart_och_karnmyndigheter",
+    "sourceGroupTitle": "Militärt & Försvarsmyndigheter",
+    "color": "#eab308",
+    "val": 60.1,
+    "degree": 2,
+    "inDegree": 0,
+    "outDegree": 2,
+    "weightedDegree": 3.9,
+    "domain": "forsvarsmakten.se",
+    "url": "https://www.forsvarsmakten.se/sv/organisation/militarregioner/",
+    "iconUrl": "./icons/militarregion_norra.png",
+    "geo": {
+      "city": "Boden",
+      "lat": 65.8251,
+      "lon": 21.6887,
+      "precision": "administrative_municipality_center"
+    },
+    "description": "Regional militär stab med säte i Boden som leder regionala insatser och samverkar med Norra civilområdet.",
+    "aliases": [],
+    "metadata": {}
+  },
+  {
+    "id": "militarregion_sodra",
+    "name": "Södra militärregionen (MR S)",
+    "shortName": "MR Södra (Revingehed/Lund)",
+    "type": "militarregion",
+    "typeLabel": "Militärregion (4 st)",
+    "sourceGroup": "militart_och_karnmyndigheter",
+    "sourceGroupTitle": "Militärt & Försvarsmyndigheter",
+    "color": "#eab308",
+    "val": 90.8,
+    "degree": 3,
+    "inDegree": 0,
+    "outDegree": 3,
+    "weightedDegree": 5.8,
+    "domain": "forsvarsmakten.se",
+    "url": "https://www.forsvarsmakten.se/sv/organisation/militarregioner/",
+    "iconUrl": "./icons/militarregion_sodra.png",
+    "geo": {
+      "city": "Lund",
+      "lat": 55.7047,
+      "lon": 13.191,
+      "precision": "administrative_municipality_center"
+    },
+    "description": "Regional militär stab i Skåne som samverkar med Södra och Sydöstra civilområdet.",
+    "aliases": [],
+    "metadata": {}
+  },
+  {
+    "id": "militarregion_vastra",
+    "name": "Västra militärregionen (MR V)",
+    "shortName": "MR Västra (Skövde)",
+    "type": "militarregion",
+    "typeLabel": "Militärregion (4 st)",
+    "sourceGroup": "militart_och_karnmyndigheter",
+    "sourceGroupTitle": "Militärt & Försvarsmyndigheter",
+    "color": "#eab308",
+    "val": 60.1,
+    "degree": 2,
+    "inDegree": 0,
+    "outDegree": 2,
+    "weightedDegree": 3.9,
+    "domain": "forsvarsmakten.se",
+    "url": "https://www.forsvarsmakten.se/sv/organisation/militarregioner/",
+    "iconUrl": "./icons/militarregion_vastra.png",
+    "geo": {
+      "city": "Skövde",
+      "lat": 58.3898,
+      "lon": 13.8461,
+      "precision": "administrative_municipality_center"
+    },
+    "description": "Regional militär stab med säte i Skövde som samverkar med Västra civilområdet och delar av mellersta/sydöstra Sverige.",
+    "aliases": [],
+    "metadata": {}
+  },
+  {
     "id": "nato_alliansen",
     "name": "NATO & Alliansramverk",
     "shortName": "NATO",
     "type": "nato_framework",
     "typeLabel": "NATO & Alliansen",
+    "sourceGroup": "nato_allians",
+    "sourceGroupTitle": "NATO & Alliansramverk",
     "color": "#38bdf8",
     "val": 469.0,
     "degree": 11,
@@ -2466,6 +3506,13 @@
     "weightedDegree": 22.5,
     "domain": "nato.int",
     "url": "https://www.nato.int",
+    "iconUrl": "./icons/nato_alliansen.png",
+    "geo": {
+      "city": "Bryssel (NATO HQ)",
+      "lat": 50.8779,
+      "lon": 4.4257,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Nordatlantiska fördragsorganisationen. Sveriges totalförsvar är integrerat i NATO:s kollektiva försvar, försvarsplanering (NDPP), krishanteringssystem (NCRS/NRS) och Artikel 3-krav på civil motståndskraft.",
     "aliases": [],
     "metadata": {}
@@ -2476,6 +3523,8 @@
     "shortName": "NCRS / CRM",
     "type": "nato_mechanism",
     "typeLabel": "NATO-system (NCRS / HNS / NDPP)",
+    "sourceGroup": "nato_allians",
+    "sourceGroupTitle": "NATO & Alliansramverk",
     "color": "#0ea5e9",
     "val": 94.3,
     "degree": 3,
@@ -2484,6 +3533,8 @@
     "weightedDegree": 6.0,
     "domain": "nato.int",
     "url": "https://www.nato.int/cps/en/natohq/topics_49288.htm",
+    "iconUrl": "./icons/nato_ncrs.png",
+    "geo": null,
     "description": "NATO:s krishanteringssystem för koordinerade politiska, civila och militära åtgärder (Crisis Response Measures) som i Sverige omsätts via regeringsbeslut, beredskapsåtgärder och höjd beredskap.",
     "aliases": [],
     "metadata": {}
@@ -2494,6 +3545,8 @@
     "shortName": "NDPP",
     "type": "nato_mechanism",
     "typeLabel": "NATO-system (NCRS / HNS / NDPP)",
+    "sourceGroup": "nato_allians",
+    "sourceGroupTitle": "NATO & Alliansramverk",
     "color": "#0ea5e9",
     "val": 61.7,
     "degree": 2,
@@ -2502,6 +3555,8 @@
     "weightedDegree": 4.0,
     "domain": "nato.int",
     "url": "https://www.nato.int",
+    "iconUrl": "./icons/nato_ndpp.png",
+    "geo": null,
     "description": "NATO:s gemensamma försvarsplaneringsprocess som harmoniserar förmågemål med svensk totalförsvarsplanering.",
     "aliases": [],
     "metadata": {}
@@ -2512,6 +3567,8 @@
     "shortName": "Värdlandsstöd (HNS)",
     "type": "nato_mechanism",
     "typeLabel": "NATO-system (NCRS / HNS / NDPP)",
+    "sourceGroup": "nato_allians",
+    "sourceGroupTitle": "NATO & Alliansramverk",
     "color": "#0ea5e9",
     "val": 157.0,
     "degree": 5,
@@ -2520,6 +3577,8 @@
     "weightedDegree": 9.4,
     "domain": "nato.int",
     "url": "https://www.forsvarsmakten.se",
+    "iconUrl": "./icons/nato_hns.png",
+    "geo": null,
     "description": "Civilt och militärt stöd som Sverige lämnar till allierade styrkor som befinner sig på, verkar i eller transiterar genom svenskt territorium.",
     "aliases": [],
     "metadata": {}
@@ -2530,6 +3589,8 @@
     "shortName": "1. Beslutsfattande & Ledning",
     "type": "nato_requirement",
     "typeLabel": "NATO:s 7 Grundkrav (Artikel 3)",
+    "sourceGroup": "nato_allians",
+    "sourceGroupTitle": "NATO & Alliansramverk",
     "color": "#0284c7",
     "val": 169.0,
     "degree": 5,
@@ -2538,6 +3599,8 @@
     "weightedDegree": 10.0,
     "domain": "nato.int",
     "url": "https://www.nato.int/cps/en/natohq/topics_132722.htm",
+    "iconUrl": "./icons/nato_req_continuity_of_government.svg",
+    "geo": null,
     "description": "Säkerställa kontinuitet i statsledning, regering, riksdag och kritiska offentliga tjänster under alla förhållanden (Artikel 3).",
     "aliases": [],
     "metadata": {}
@@ -2548,6 +3611,8 @@
     "shortName": "2. Energiförsörjning",
     "type": "nato_requirement",
     "typeLabel": "NATO:s 7 Grundkrav (Artikel 3)",
+    "sourceGroup": "nato_allians",
+    "sourceGroupTitle": "NATO & Alliansramverk",
     "color": "#0284c7",
     "val": 130.1,
     "degree": 4,
@@ -2556,6 +3621,8 @@
     "weightedDegree": 8.0,
     "domain": "nato.int",
     "url": "https://www.nato.int/cps/en/natohq/topics_132722.htm",
+    "iconUrl": "./icons/nato_req_resilient_energy_supplies.svg",
+    "geo": null,
     "description": "Trygga tillförlitlig elförsörjning, bränsleförsörjning och energidistribution även vid angrepp eller störningar.",
     "aliases": [],
     "metadata": {}
@@ -2566,6 +3633,8 @@
     "shortName": "3. Befolkningsrörelser & Utrymning",
     "type": "nato_requirement",
     "typeLabel": "NATO:s 7 Grundkrav (Artikel 3)",
+    "sourceGroup": "nato_allians",
+    "sourceGroupTitle": "NATO & Alliansramverk",
     "color": "#0284c7",
     "val": 94.3,
     "degree": 3,
@@ -2574,6 +3643,8 @@
     "weightedDegree": 6.0,
     "domain": "nato.int",
     "url": "https://www.nato.int/cps/en/natohq/topics_132722.htm",
+    "iconUrl": "./icons/nato_req_uncontrolled_movement_of_people.svg",
+    "geo": null,
     "description": "Förmåga att hantera omfattande utrymningar, evakuering och plötsliga befolkningsrörelser utan att hindra militära rörelser.",
     "aliases": [],
     "metadata": {}
@@ -2584,6 +3655,8 @@
     "shortName": "4. Livsmedel & Dricksvatten",
     "type": "nato_requirement",
     "typeLabel": "NATO:s 7 Grundkrav (Artikel 3)",
+    "sourceGroup": "nato_allians",
+    "sourceGroupTitle": "NATO & Alliansramverk",
     "color": "#0284c7",
     "val": 94.3,
     "degree": 3,
@@ -2592,6 +3665,8 @@
     "weightedDegree": 6.0,
     "domain": "nato.int",
     "url": "https://www.nato.int/cps/en/natohq/topics_132722.htm",
+    "iconUrl": "./icons/nato_req_resilient_food_and_water_resources.svg",
+    "geo": null,
     "description": "Säkerställa tillgång till mat och rent dricksvatten för civilbefolkning och militära styrkor under kris och krig.",
     "aliases": [],
     "metadata": {}
@@ -2602,6 +3677,8 @@
     "shortName": "5. Masskadeutfall & Sjukvård",
     "type": "nato_requirement",
     "typeLabel": "NATO:s 7 Grundkrav (Artikel 3)",
+    "sourceGroup": "nato_allians",
+    "sourceGroupTitle": "NATO & Alliansramverk",
     "color": "#0284c7",
     "val": 94.3,
     "degree": 3,
@@ -2610,6 +3687,8 @@
     "weightedDegree": 6.0,
     "domain": "nato.int",
     "url": "https://www.nato.int/cps/en/natohq/topics_132722.htm",
+    "iconUrl": "./icons/nato_req_ability_to_deal_with_mass_casualties.svg",
+    "geo": null,
     "description": "Sjukvårdens, läkemedelsförsörjningens och räddningstjänstens förmåga att hantera stora mängder skadade och akuta hälsokriser.",
     "aliases": [],
     "metadata": {}
@@ -2620,6 +3699,8 @@
     "shortName": "6. Civila kommunikationer & Cyber",
     "type": "nato_requirement",
     "typeLabel": "NATO:s 7 Grundkrav (Artikel 3)",
+    "sourceGroup": "nato_allians",
+    "sourceGroupTitle": "NATO & Alliansramverk",
     "color": "#0284c7",
     "val": 94.3,
     "degree": 3,
@@ -2628,6 +3709,8 @@
     "weightedDegree": 6.0,
     "domain": "nato.int",
     "url": "https://www.nato.int/cps/en/natohq/topics_132722.htm",
+    "iconUrl": "./icons/nato_req_resilient_civil_communications.svg",
+    "geo": null,
     "description": "Robusta och säkra telekom-, fiber-, post- och digitala kommunikationsnät.",
     "aliases": [],
     "metadata": {}
@@ -2638,6 +3721,8 @@
     "shortName": "7. Transportsystem",
     "type": "nato_requirement",
     "typeLabel": "NATO:s 7 Grundkrav (Artikel 3)",
+    "sourceGroup": "nato_allians",
+    "sourceGroupTitle": "NATO & Alliansramverk",
     "color": "#0284c7",
     "val": 94.3,
     "degree": 3,
@@ -2646,6 +3731,8 @@
     "weightedDegree": 6.0,
     "domain": "nato.int",
     "url": "https://www.nato.int/cps/en/natohq/topics_132722.htm",
+    "iconUrl": "./icons/nato_req_resilient_transport_systems.svg",
+    "geo": null,
     "description": "Säkerställa att vägar, järnvägar, hamnar och flygplatser kan bära både samhällsviktiga transporter och allierade styrkors rörelser.",
     "aliases": [],
     "metadata": {}
@@ -2656,6 +3743,8 @@
     "shortName": "Civilt försvar",
     "type": "pillar",
     "typeLabel": "Huvudpelare",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#fbbf24",
     "val": 2079.8,
     "degree": 32,
@@ -2664,6 +3753,13 @@
     "weightedDegree": 66.2,
     "domain": null,
     "url": "https://www.mcf.se",
+    "iconUrl": "./icons/civilt_forsvar.jpg",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.29886,
+      "lon": 18.10285,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Samhällets samlade motståndskraft vid krigsfara och krig: skydda civilbefolkningen, säkerställa de viktigaste samhällsfunktionerna och stödja Försvarsmakten och allierade.",
     "aliases": [],
     "metadata": {}
@@ -2674,6 +3770,8 @@
     "shortName": "Militärt försvar",
     "type": "pillar",
     "typeLabel": "Huvudpelare",
+    "sourceGroup": "militart_och_karnmyndigheter",
+    "sourceGroupTitle": "Militärt & Försvarsmyndigheter",
     "color": "#fbbf24",
     "val": 287.3,
     "degree": 7,
@@ -2682,6 +3780,13 @@
     "weightedDegree": 15.4,
     "domain": null,
     "url": "https://www.forsvarsmakten.se",
+    "iconUrl": "./icons/militart_forsvar.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.36554,
+      "lon": 18.0795,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Försvarsmakten (inkl. Hemvärnet och militärregionerna) tillsammans med stödjande försvarsmyndigheter och frivilliga försvarsorganisationer.",
     "aliases": [],
     "metadata": {}
@@ -2692,6 +3797,8 @@
     "shortName": "Totalförsvaret",
     "type": "pillar",
     "typeLabel": "Huvudpelare",
+    "sourceGroup": "styrning_lagrum",
+    "sourceGroupTitle": "Styrning & Lagrum",
     "color": "#fbbf24",
     "val": 857.1,
     "degree": 16,
@@ -2700,6 +3807,13 @@
     "weightedDegree": 35.2,
     "domain": null,
     "url": "https://www.regeringen.se/regeringens-politik/totalforsvar/",
+    "iconUrl": "./icons/totalforsvaret.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.30644,
+      "lon": 18.01694,
+      "precision": "administrative_municipality_center"
+    },
     "description": "All verksamhet som behövs för att förbereda Sverige för krig. Består av militärt försvar och civilt försvar i samverkan inom ramen för NATO-medlemskapet.",
     "aliases": [],
     "metadata": {}
@@ -2710,6 +3824,8 @@
     "shortName": "SKR (290 kommuner & 21 regioner)",
     "type": "regional_umbrella",
     "typeLabel": "Kommuner & Regioner (SKR)",
+    "sourceGroup": "geografi_civilomraden",
+    "sourceGroupTitle": "6 Civilområden & 21 Län",
     "color": "#e879f9",
     "val": 61.7,
     "degree": 2,
@@ -2718,6 +3834,13 @@
     "weightedDegree": 4.0,
     "domain": "skr.se",
     "url": "https://skr.se/skr/samhallsplaneringinfrastruktur/trygghetsakerhet/civiltforsvar.html",
+    "iconUrl": "./icons/regional_skr.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.32617,
+      "lon": 18.1347,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Företräder Sveriges 290 kommuner och 21 regioner, som utgör basen i det lokala och regionala civila försvaret enligt LEH (2006:544).",
     "aliases": [],
     "metadata": {}
@@ -2728,6 +3851,8 @@
     "shortName": "Ekonomisk säkerhet",
     "type": "sector",
     "typeLabel": "Beredskapssektor (12 st)",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#10b981",
     "val": 345.6,
     "degree": 10,
@@ -2736,6 +3861,8 @@
     "weightedDegree": 17.8,
     "domain": null,
     "url": "https://www.mcf.se",
+    "iconUrl": "./icons/sector_ekonomisk_sakerhet.svg",
+    "geo": null,
     "description": "En av Sveriges 12 nationella beredskapssektorer enligt förordning (2022:524) om statliga myndigheters beredskap.",
     "aliases": [],
     "metadata": {
@@ -2748,6 +3875,8 @@
     "shortName": "Elektroniska kommunikationer och post",
     "type": "sector",
     "typeLabel": "Beredskapssektor (12 st)",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#10b981",
     "val": 232.4,
     "degree": 7,
@@ -2756,6 +3885,8 @@
     "weightedDegree": 13.0,
     "domain": null,
     "url": "https://www.mcf.se",
+    "iconUrl": "./icons/sector_elektroniska_kommunikationer_och_post.svg",
+    "geo": null,
     "description": "En av Sveriges 12 nationella beredskapssektorer enligt förordning (2022:524) om statliga myndigheters beredskap.",
     "aliases": [],
     "metadata": {
@@ -2768,6 +3899,8 @@
     "shortName": "Energiförsörjning",
     "type": "sector",
     "typeLabel": "Beredskapssektor (12 st)",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#10b981",
     "val": 232.4,
     "degree": 7,
@@ -2776,6 +3909,8 @@
     "weightedDegree": 13.0,
     "domain": null,
     "url": "https://www.mcf.se",
+    "iconUrl": "./icons/sector_energiforsorjning.svg",
+    "geo": null,
     "description": "En av Sveriges 12 nationella beredskapssektorer enligt förordning (2022:524) om statliga myndigheters beredskap.",
     "aliases": [],
     "metadata": {
@@ -2788,6 +3923,8 @@
     "shortName": "Finansiella tjänster",
     "type": "sector",
     "typeLabel": "Beredskapssektor (12 st)",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#10b981",
     "val": 164.9,
     "degree": 5,
@@ -2796,6 +3933,8 @@
     "weightedDegree": 9.8,
     "domain": null,
     "url": "https://www.mcf.se",
+    "iconUrl": "./icons/sector_finansiella_tjanster.svg",
+    "geo": null,
     "description": "En av Sveriges 12 nationella beredskapssektorer enligt förordning (2022:524) om statliga myndigheters beredskap.",
     "aliases": [],
     "metadata": {
@@ -2808,6 +3947,8 @@
     "shortName": "Försörjning av grunddata",
     "type": "sector",
     "typeLabel": "Beredskapssektor (12 st)",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#10b981",
     "val": 316.0,
     "degree": 9,
@@ -2816,6 +3957,8 @@
     "weightedDegree": 16.6,
     "domain": null,
     "url": "https://www.mcf.se",
+    "iconUrl": "./icons/sector_forsorjning_av_grunddata.svg",
+    "geo": null,
     "description": "En av Sveriges 12 nationella beredskapssektorer enligt förordning (2022:524) om statliga myndigheters beredskap.",
     "aliases": [],
     "metadata": {
@@ -2828,6 +3971,8 @@
     "shortName": "Hälsa, vård och omsorg",
     "type": "sector",
     "typeLabel": "Beredskapssektor (12 st)",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#10b981",
     "val": 232.4,
     "degree": 7,
@@ -2836,6 +3981,8 @@
     "weightedDegree": 13.0,
     "domain": null,
     "url": "https://www.mcf.se",
+    "iconUrl": "./icons/sector_halsa_vard_och_omsorg.svg",
+    "geo": null,
     "description": "En av Sveriges 12 nationella beredskapssektorer enligt förordning (2022:524) om statliga myndigheters beredskap.",
     "aliases": [],
     "metadata": {
@@ -2848,6 +3995,8 @@
     "shortName": "Industri, byggande och handel",
     "type": "sector",
     "typeLabel": "Beredskapssektor (12 st)",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#10b981",
     "val": 241.3,
     "degree": 7,
@@ -2856,6 +4005,8 @@
     "weightedDegree": 13.4,
     "domain": null,
     "url": "https://www.mcf.se",
+    "iconUrl": "./icons/sector_industri_byggande_och_handel.svg",
+    "geo": null,
     "description": "En av Sveriges 12 nationella beredskapssektorer enligt förordning (2022:524) om statliga myndigheters beredskap.",
     "aliases": [],
     "metadata": {
@@ -2868,6 +4019,8 @@
     "shortName": "Livsmedelsförsörjning och dricksvatten",
     "type": "sector",
     "typeLabel": "Beredskapssektor (12 st)",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#10b981",
     "val": 268.6,
     "degree": 8,
@@ -2876,6 +4029,8 @@
     "weightedDegree": 14.6,
     "domain": null,
     "url": "https://www.mcf.se",
+    "iconUrl": "./icons/sector_livsmedelsforsorjning_och_dricksvatten.svg",
+    "geo": null,
     "description": "En av Sveriges 12 nationella beredskapssektorer enligt förordning (2022:524) om statliga myndigheters beredskap.",
     "aliases": [],
     "metadata": {
@@ -2888,6 +4043,8 @@
     "shortName": "Ordning och säkerhet",
     "type": "sector",
     "typeLabel": "Beredskapssektor (12 st)",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#10b981",
     "val": 439.1,
     "degree": 12,
@@ -2896,6 +4053,8 @@
     "weightedDegree": 21.4,
     "domain": null,
     "url": "https://www.mcf.se",
+    "iconUrl": "./icons/sector_ordning_och_sakerhet.svg",
+    "geo": null,
     "description": "En av Sveriges 12 nationella beredskapssektorer enligt förordning (2022:524) om statliga myndigheters beredskap.",
     "aliases": [],
     "metadata": {
@@ -2908,6 +4067,8 @@
     "shortName": "Räddningstjänst och skydd av civilbefolkningen",
     "type": "sector",
     "typeLabel": "Beredskapssektor (12 st)",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#10b981",
     "val": 396.7,
     "degree": 11,
@@ -2916,6 +4077,8 @@
     "weightedDegree": 19.8,
     "domain": null,
     "url": "https://www.mcf.se",
+    "iconUrl": "./icons/sector_raddningstjanst_och_skydd_av_civilbefolkningen.svg",
+    "geo": null,
     "description": "En av Sveriges 12 nationella beredskapssektorer enligt förordning (2022:524) om statliga myndigheters beredskap.",
     "aliases": [],
     "metadata": {
@@ -2928,6 +4091,8 @@
     "shortName": "Transporter",
     "type": "sector",
     "typeLabel": "Beredskapssektor (12 st)",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#10b981",
     "val": 232.4,
     "degree": 7,
@@ -2936,6 +4101,8 @@
     "weightedDegree": 13.0,
     "domain": null,
     "url": "https://www.mcf.se",
+    "iconUrl": "./icons/sector_transporter.svg",
+    "geo": null,
     "description": "En av Sveriges 12 nationella beredskapssektorer enligt förordning (2022:524) om statliga myndigheters beredskap.",
     "aliases": [],
     "metadata": {
@@ -2948,6 +4115,8 @@
     "shortName": "Utrikeshandel",
     "type": "sector",
     "typeLabel": "Beredskapssektor (12 st)",
+    "sourceGroup": "beredskapssektorer",
+    "sourceGroupTitle": "12 Beredskapssektorer",
     "color": "#10b981",
     "val": 206.3,
     "degree": 6,
@@ -2956,6 +4125,8 @@
     "weightedDegree": 11.8,
     "domain": null,
     "url": "https://www.mcf.se",
+    "iconUrl": "./icons/sector_utrikeshandel.svg",
+    "geo": null,
     "description": "En av Sveriges 12 nationella beredskapssektorer enligt förordning (2022:524) om statliga myndigheters beredskap.",
     "aliases": [],
     "metadata": {
@@ -2968,6 +4139,8 @@
     "shortName": "Blekinge tekniska högskola",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -2976,6 +4149,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_blekinge_tekniska_hogskola.png",
+    "geo": {
+      "city": "Karlskrona",
+      "lat": 56.17013,
+      "lon": 15.59889,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -2986,6 +4166,8 @@
     "shortName": "Chalmers tekniska högskola",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -2994,6 +4176,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_chalmers_tekniska_hogskola.png",
+    "geo": {
+      "city": "Göteborg",
+      "lat": 57.69974,
+      "lon": 11.97601,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3004,6 +4193,8 @@
     "shortName": "Gymnastik- och idrottshögskolan (GIH)",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3012,6 +4203,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_gymnastik_och_idrottshogskolan_gih.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.35753,
+      "lon": 18.0229,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3022,6 +4220,8 @@
     "shortName": "Göteborgs universitet",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3030,6 +4230,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_goteborgs_universitet.png",
+    "geo": {
+      "city": "Göteborg",
+      "lat": 57.71783,
+      "lon": 11.98659,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3040,6 +4247,8 @@
     "shortName": "Handelshögskolan i Stockholm",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3048,6 +4257,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_handelshogskolan_i_stockholm.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.2903,
+      "lon": 18.06893,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3058,6 +4274,8 @@
     "shortName": "Högskolan Dalarna",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3066,6 +4284,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_hogskolan_dalarna.png",
+    "geo": {
+      "city": "Falun",
+      "lat": 60.61089,
+      "lon": 15.62711,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3076,6 +4301,8 @@
     "shortName": "Högskolan Kristianstad",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3084,6 +4311,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_hogskolan_kristianstad.png",
+    "geo": {
+      "city": "Kristianstad",
+      "lat": 56.0294,
+      "lon": 14.1567,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3094,6 +4328,8 @@
     "shortName": "Högskolan Väst",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3102,6 +4338,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_hogskolan_vast.jpg",
+    "geo": {
+      "city": "Trollhättan",
+      "lat": 58.2837,
+      "lon": 12.2886,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3112,6 +4355,8 @@
     "shortName": "Högskolan i Borås",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3120,6 +4365,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_hogskolan_i_boras.png",
+    "geo": {
+      "city": "Borås",
+      "lat": 57.721,
+      "lon": 12.9401,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3130,6 +4382,8 @@
     "shortName": "Högskolan i Gävle",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3138,6 +4392,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_hogskolan_i_gavle.png",
+    "geo": {
+      "city": "Gävle",
+      "lat": 60.68383,
+      "lon": 17.15329,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3148,6 +4409,8 @@
     "shortName": "Högskolan i Halmstad",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3156,6 +4419,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_hogskolan_i_halmstad.png",
+    "geo": {
+      "city": "Halmstad",
+      "lat": 56.67879,
+      "lon": 12.84941,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3166,6 +4436,8 @@
     "shortName": "Högskolan i Skövde",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3174,6 +4446,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_hogskolan_i_skovde.png",
+    "geo": {
+      "city": "Skövde",
+      "lat": 58.39419,
+      "lon": 13.83771,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3184,6 +4463,8 @@
     "shortName": "Jönköping University",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3192,6 +4473,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_jonkoping_university.png",
+    "geo": {
+      "city": "Jönköping",
+      "lat": 57.79153,
+      "lon": 14.17379,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3202,6 +4490,8 @@
     "shortName": "Karlstads universitet",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3210,6 +4500,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_karlstads_universitet.png",
+    "geo": {
+      "city": "Karlstad",
+      "lat": 59.37704,
+      "lon": 13.4812,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3220,6 +4517,8 @@
     "shortName": "Karolinska Institutet",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3228,6 +4527,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_karolinska_institutet.png",
+    "geo": {
+      "city": "Solna",
+      "lat": 59.37538,
+      "lon": 17.99367,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3238,6 +4544,8 @@
     "shortName": "Konstfack",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3246,6 +4554,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_konstfack.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.35858,
+      "lon": 18.11509,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3256,6 +4571,8 @@
     "shortName": "Kungl. Konsthögskolan",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3264,6 +4581,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_kungl_konsthogskolan.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.3256,
+      "lon": 17.99878,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3274,6 +4598,8 @@
     "shortName": "Kungl. Musikhögskolan",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3282,6 +4608,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_kungl_musikhogskolan.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.30476,
+      "lon": 18.12519,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3292,6 +4625,8 @@
     "shortName": "Kungliga Tekniska högskolan (KTH)",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3300,6 +4635,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_kungliga_tekniska_hogskolan_kth.jpg",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.36975,
+      "lon": 18.05572,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3310,6 +4652,8 @@
     "shortName": "Linköpings universitet",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3318,6 +4662,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_linkopings_universitet.png",
+    "geo": {
+      "city": "Linköping",
+      "lat": 58.40164,
+      "lon": 15.62281,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3328,6 +4679,8 @@
     "shortName": "Linnéuniversitetet",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3336,6 +4689,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_linneuniversitetet.png",
+    "geo": {
+      "city": "Växjö",
+      "lat": 56.88339,
+      "lon": 14.79751,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3346,6 +4706,8 @@
     "shortName": "Luleå tekniska universitet",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3354,6 +4716,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_lulea_tekniska_universitet.png",
+    "geo": {
+      "city": "Luleå",
+      "lat": 65.57564,
+      "lon": 22.15811,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3364,6 +4733,8 @@
     "shortName": "Lunds universitet",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3372,6 +4743,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_lunds_universitet.png",
+    "geo": {
+      "city": "Lund",
+      "lat": 55.70909,
+      "lon": 13.18261,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3382,6 +4760,8 @@
     "shortName": "Malmö universitet",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3390,6 +4770,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_malmo_universitet.png",
+    "geo": {
+      "city": "Malmö",
+      "lat": 55.59584,
+      "lon": 13.00521,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3400,6 +4787,8 @@
     "shortName": "Marie Cederschiöld högskola",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3408,6 +4797,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_marie_cederschiold_hogskola.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.29407,
+      "lon": 18.02981,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3418,6 +4814,8 @@
     "shortName": "Mittuniversitetet",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3426,6 +4824,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_mittuniversitetet.png",
+    "geo": {
+      "city": "Sundsvall",
+      "lat": 62.38164,
+      "lon": 17.30831,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3436,6 +4841,8 @@
     "shortName": "Mälardalens universitet",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3444,6 +4851,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_malardalens_universitet.png",
+    "geo": {
+      "city": "Västerås",
+      "lat": 59.61429,
+      "lon": 16.53641,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3454,6 +4868,8 @@
     "shortName": "Röda Korsets högskola",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3462,6 +4878,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_roda_korsets_hogskola.png",
+    "geo": {
+      "city": "Huddinge",
+      "lat": 59.2363,
+      "lon": 17.9822,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3472,6 +4895,8 @@
     "shortName": "Sophiahemmet Högskola",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3480,6 +4905,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_sophiahemmet_hogskola.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.34043,
+      "lon": 18.1397,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3490,6 +4922,8 @@
     "shortName": "Stockholms konstnärliga högskola",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3498,6 +4932,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_stockholms_konstnarliga_hogskola.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.34876,
+      "lon": 18.00224,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3508,6 +4949,8 @@
     "shortName": "Stockholms universitet",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3516,6 +4959,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_stockholms_universitet.png",
+    "geo": {
+      "city": "Stockholm",
+      "lat": 59.28887,
+      "lon": 18.09483,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3526,6 +4976,8 @@
     "shortName": "Sveriges lantbruksuniversitet (SLU)",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3534,6 +4986,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_sveriges_lantbruksuniversitet_slu.png",
+    "geo": {
+      "city": "Uppsala",
+      "lat": 59.8508,
+      "lon": 17.66036,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3544,6 +5003,8 @@
     "shortName": "Södertörns högskola",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3552,6 +5013,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_sodertorns_hogskola.png",
+    "geo": {
+      "city": "Huddinge",
+      "lat": 59.24069,
+      "lon": 17.97381,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3562,6 +5030,8 @@
     "shortName": "Umeå universitet",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3570,6 +5040,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_umea_universitet.png",
+    "geo": {
+      "city": "Umeå",
+      "lat": 63.83019,
+      "lon": 20.25461,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3580,6 +5057,8 @@
     "shortName": "Uppsala universitet",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3588,6 +5067,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_uppsala_universitet.jpg",
+    "geo": {
+      "city": "Uppsala",
+      "lat": 59.87398,
+      "lon": 17.63167,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}
@@ -3598,6 +5084,8 @@
     "shortName": "Örebro universitet",
     "type": "university",
     "typeLabel": "Samverkande lärosäte (37 st)",
+    "sourceGroup": "akademi_campus",
+    "sourceGroupTitle": "Campus Totalförsvar (37 st)",
     "color": "#67e8f9",
     "val": 22.1,
     "degree": 1,
@@ -3606,6 +5094,13 @@
     "weightedDegree": 1.2,
     "domain": "campustotalforsvar.se",
     "url": "https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet",
+    "iconUrl": "./icons/uni_orebro_universitet.png",
+    "geo": {
+      "city": "Örebro",
+      "lat": 59.26614,
+      "lon": 15.21481,
+      "precision": "administrative_municipality_center"
+    },
     "description": "Lärosäte som ingår i det nationella samarbetet Campus totalförsvar.",
     "aliases": [],
     "metadata": {}

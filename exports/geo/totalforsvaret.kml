@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Svenskt Totalförsvar – Administrativ Geografi</name>
+    <description>Länsstyrelser, civilområden, militärregioner, beredskapsmyndigheters sätesorter och Campus totalförsvar.</description>
+    <Placemark>
+      <name>Campus totalförsvar (37 lärosäten) (Stockholm)</name>
+      <description>Campus totalförsvar (Nav) | Campus Totalförsvar (37 st) — Nationellt strategiskt samarbete mellan 37 svenska universitet och högskolor för utbildning och forskning som stärker totalförsvaret. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>18.0686,59.3293,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Affärsverket svenska kraftnät (Sundbyberg)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Elektroniska kommunikationer och post, Energiförsörjning. (svk.se) https://www.svk.se</description>
+      <Point><coordinates>17.9711,59.3613,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Arbetsförmedlingen (Solna)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Ekonomisk säkerhet. (arbetsformedlingen.se) https://www.arbetsformedlingen.se</description>
+      <Point><coordinates>18.0009,59.36,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Bolagsverket (Sundsvall)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Försörjning av grunddata. (bolagsverket.se) https://www.bolagsverket.se</description>
+      <Point><coordinates>17.3069,62.3908,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Boverket (Karlskrona)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Industri, byggande och handel. (boverket.se) https://www.boverket.se</description>
+      <Point><coordinates>15.5869,56.1612,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Domstolsverket (Jönköping)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Ordning och säkerhet. (domstol.se) https://www.domstol.se</description>
+      <Point><coordinates>14.1618,57.7826,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>E-hälsomyndigheten (Kalmar)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Hälsa, vård och omsorg. (ehalsomyndigheten.se) https://www.ehalsomyndigheten.se</description>
+      <Point><coordinates>16.3568,56.6634,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Energimarknadsinspektionen (Eskilstuna)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Energiförsörjning. (ei.se) https://www.ei.se</description>
+      <Point><coordinates>16.5098,59.3712,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Finansinspektionen (Stockholm)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Sektorsansvarig myndighet för: Finansiella tjänster. (fi.se) https://www.fi.se</description>
+      <Point><coordinates>18.06021,59.33369,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Folkhälsomyndigheten (Solna)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Hälsa, vård och omsorg. (folkhalsomyndigheten.se) https://www.folkhalsomyndigheten.se</description>
+      <Point><coordinates>17.99251,59.36439,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Fortifikationsverket (Eskilstuna)</name>
+      <description>Statlig myndighet | Militärt &amp; Försvarsmyndigheter — Central försvars- eller totalförsvarsmyndighet (fortifikationsverket.se). https://www.fortifikationsverket.se</description>
+      <Point><coordinates>16.50141,59.37559,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Försvarets materielverk (Stockholm)</name>
+      <description>Statlig myndighet | Militärt &amp; Försvarsmyndigheter — Central försvars- eller totalförsvarsmyndighet (fmv.se). https://www.fmv.se</description>
+      <Point><coordinates>18.07001,59.32014,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Försvarets radioanstalt (Stockholm)</name>
+      <description>Statlig myndighet | Militärt &amp; Försvarsmyndigheter — Central försvars- eller totalförsvarsmyndighet (fra.se). https://www.fra.se</description>
+      <Point><coordinates>18.08059,59.33823,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Försvarshögskolan (Stockholm)</name>
+      <description>Statlig myndighet | Militärt &amp; Försvarsmyndigheter — Central försvars- eller totalförsvarsmyndighet (fhs.se). https://www.fhs.se</description>
+      <Point><coordinates>18.0462,59.32704,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Försvarsmakten (Stockholm)</name>
+      <description>Statlig myndighet | Militärt &amp; Försvarsmyndigheter — Central försvars- eller totalförsvarsmyndighet (forsvarsmakten.se). https://www.forsvarsmakten.se</description>
+      <Point><coordinates>18.09006,59.3215,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Försäkringskassan (Stockholm)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Sektorsansvarig myndighet för: Ekonomisk säkerhet. (forsakringskassan.se) https://www.forsakringskassan.se</description>
+      <Point><coordinates>18.06137,59.34468,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Kommerskollegium (Stockholm)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Sektorsansvarig myndighet för: Utrikeshandel. (kommerskollegium.se) https://www.kommerskollegium.se</description>
+      <Point><coordinates>18.05473,59.31404,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Kriminalvården (Norrköping)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Ordning och säkerhet. (kriminalvarden.se) https://www.kriminalvarden.se</description>
+      <Point><coordinates>16.1924,58.5877,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Kustbevakningen (Karlskrona)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Ordning och säkerhet, Räddningstjänst och skydd av civilbefolkningen. (kustbevakningen.se) https://www.kustbevakningen.se</description>
+      <Point><coordinates>15.57851,56.16559,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Lantmäteriet (Gävle)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Försörjning av grunddata. (lantmateriet.se) https://www.lantmateriet.se</description>
+      <Point><coordinates>17.1413,60.6749,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Livsmedelsverket (Uppsala)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Sektorsansvarig myndighet för: Livsmedelsförsörjning och dricksvatten. (livsmedelsverket.se) https://www.livsmedelsverket.se</description>
+      <Point><coordinates>17.6389,59.8586,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Luftfartsverket (Norrköping)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Transporter. (lfv.se) https://www.lfv.se</description>
+      <Point><coordinates>16.18401,58.59209,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Läkemedelsverket (Uppsala)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Hälsa, vård och omsorg. (lakemedelsverket.se) https://www.lakemedelsverket.se</description>
+      <Point><coordinates>17.63051,59.86299,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Migrationsverket (Norrköping)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Ordning och säkerhet. (migrationsverket.se) https://www.migrationsverket.se</description>
+      <Point><coordinates>16.19381,58.57854,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Myndigheten för civilt försvar (Karlstad)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Sektorsansvarig myndighet för: Räddningstjänst och skydd av civilbefolkningen. Ingår som beredskapsmyndighet i: Elektroniska kommunikationer och post. (mcf.se) https://www.mcf.se</description>
+      <Point><coordinates>13.5036,59.3793,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Myndigheten för digital förvaltning (Sundsvall)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Försörjning av grunddata. (digg.se) https://www.digg.se</description>
+      <Point><coordinates>17.29851,62.39519,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Myndigheten för psykologiskt försvar (Karlstad)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Fristående beredskapsmyndighet enligt SFS 2022:524 utanför den fasta sektorsindelningen. https://www.mpf.se</description>
+      <Point><coordinates>13.49521,59.38369,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Myndigheten för totalförsvarsanalys (Stockholm)</name>
+      <description>Statlig myndighet | Militärt &amp; Försvarsmyndigheter — Endast beskrivningar av MTFA:s uppdrag och systembeskrivningar av totalförsvarets uppbyggnad. Granskningsrapporter som bedömer aktörers faktiska förmåga eller brister exkluderas enligt SECURITY_AND_SCOPE.md.
+ https://www.mtfa.se</description>
+      <Point><coordinates>18.09882,59.33561,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Naturvårdsverket (Stockholm)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Livsmedelsförsörjning och dricksvatten. (naturvardsverket.se) https://www.naturvardsverket.se</description>
+      <Point><coordinates>18.03706,59.33674,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Pensionsmyndigheten (Stockholm)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Ekonomisk säkerhet. (pensionsmyndigheten.se) https://www.pensionsmyndigheten.se</description>
+      <Point><coordinates>18.08385,59.31068,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Polismyndigheten (Stockholm)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Sektorsansvarig myndighet för: Ordning och säkerhet. Ingår som beredskapsmyndighet i: Räddningstjänst och skydd av civilbefolkningen. (polisen.se) https://www.polisen.se</description>
+      <Point><coordinates>18.07989,59.34987,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Post- och telestyrelsen (Stockholm)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Sektorsansvarig myndighet för: Elektroniska kommunikationer och post. (pts.se) https://www.pts.se</description>
+      <Point><coordinates>18.03451,59.31801,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Riksantikvarieämbetet (Visby)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Fristående beredskapsmyndighet enligt SFS 2022:524 utanför den fasta sektorsindelningen. https://www.raa.se</description>
+      <Point><coordinates>18.2948,57.6348,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Riksarkivet (Stockholm)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Försörjning av grunddata. (riksarkivet.se) https://www.riksarkivet.se</description>
+      <Point><coordinates>18.10866,59.32427,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Riksgäldskontoret (Stockholm)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Ekonomisk säkerhet, Finansiella tjänster. (riksgalden.se) https://www.riksgalden.se</description>
+      <Point><coordinates>18.04412,59.3492,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>SMHI (Norrköping)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Räddningstjänst och skydd av civilbefolkningen. (smhi.se) https://www.smhi.se</description>
+      <Point><coordinates>16.20439,58.59663,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Sjöfartsverket (Norrköping)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Räddningstjänst och skydd av civilbefolkningen, Transporter. (sjofartsverket.se) https://www.sjofartsverket.se</description>
+      <Point><coordinates>16.17,58.58544,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Skatteverket (Solna)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Sektorsansvarig myndighet för: Försörjning av grunddata. Ingår som beredskapsmyndighet i: Ekonomisk säkerhet. (skatteverket.se) https://www.skatteverket.se</description>
+      <Point><coordinates>18.00231,59.35084,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Socialstyrelsen (Stockholm)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Sektorsansvarig myndighet för: Hälsa, vård och omsorg. (socialstyrelsen.se) https://www.socialstyrelsen.se</description>
+      <Point><coordinates>18.06294,59.30433,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Statens energimyndighet (Eskilstuna)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Sektorsansvarig myndighet för: Energiförsörjning. (energimyndigheten.se) https://www.energimyndigheten.se</description>
+      <Point><coordinates>16.51121,59.36204,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Statens jordbruksverk (Jönköping)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Livsmedelsförsörjning och dricksvatten. (jordbruksverket.se) https://www.jordbruksverket.se</description>
+      <Point><coordinates>14.15341,57.78699,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Statens servicecenter (Gävle)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Ekonomisk säkerhet. (statenssc.se) https://www.statenssc.se</description>
+      <Point><coordinates>17.13291,60.67929,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Statens skolverk (Solna)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Fristående beredskapsmyndighet enligt SFS 2022:524 utanför den fasta sektorsindelningen. https://www.skolverket.se</description>
+      <Point><coordinates>18.01289,59.36893,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Statens veterinärmedicinska anstalt (Uppsala)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Livsmedelsförsörjning och dricksvatten. (sva.se) https://www.sva.se</description>
+      <Point><coordinates>17.64031,59.84944,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Strålsäkerhetsmyndigheten (Solna)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Energiförsörjning, Räddningstjänst och skydd av civilbefolkningen. (stralsakerhetsmyndigheten.se) https://www.stralsakerhetsmyndigheten.se</description>
+      <Point><coordinates>17.9785,59.35774,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Sveriges geologiska undersökning (Uppsala)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Industri, byggande och handel. (sgu.se) https://www.sgu.se</description>
+      <Point><coordinates>17.65089,59.86753,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Riksbanken (Stockholm)</name>
+      <description>Statlig myndighet | Styrning &amp; Lagrum — Riksdagens myndighet med övergripande ansvar för betalningssystemets och kontantförsörjningens motståndskraft under fredstida kriser och höjd beredskap. https://www.riksbank.se/sv/betalningar--kontanter/beredskap/</description>
+      <Point><coordinates>18.10339,59.34606,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Säkerhetspolisen (Solna)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Ordning och säkerhet. (sakerhetspolisen.se) https://www.sakerhetspolisen.se</description>
+      <Point><coordinates>18.02236,59.3522,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Tillväxtverket (Stockholm)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Sektorsansvarig myndighet för: Industri, byggande och handel. (tillvaxtverket.se) https://www.tillvaxtverket.se</description>
+      <Point><coordinates>18.02174,59.33041,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Totalförsvarets forskningsinstitut (Stockholm)</name>
+      <description>Statlig myndighet | Militärt &amp; Försvarsmyndigheter — Central försvars- eller totalförsvarsmyndighet (foi.se). https://www.foi.se</description>
+      <Point><coordinates>18.10281,59.30985,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Totalförsvarets plikt- och prövningsverk (Karlstad)</name>
+      <description>Statlig myndighet | Militärt &amp; Försvarsmyndigheter — Central försvars- eller totalförsvarsmyndighet (pliktverket.se). https://www.pliktverket.se</description>
+      <Point><coordinates>13.50501,59.37014,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Trafikverket (Borlänge)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Sektorsansvarig myndighet för: Transporter. Ingår som beredskapsmyndighet i: Elektroniska kommunikationer och post. (trafikverket.se) https://www.trafikverket.se</description>
+      <Point><coordinates>15.434,60.4843,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Transportstyrelsen (Norrköping)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Transporter. (transportstyrelsen.se) https://www.transportstyrelsen.se</description>
+      <Point><coordinates>16.21386,58.5799,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Tullverket (Stockholm)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Ordning och säkerhet, Utrikeshandel. (tullverket.se) https://www.tullverket.se</description>
+      <Point><coordinates>18.06631,59.3576,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Utbetalningsmyndigheten (Stockholm)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Ekonomisk säkerhet. (utbetalningsmyndigheten.se) https://www.utbetalningsmyndigheten.se</description>
+      <Point><coordinates>18.03601,59.30698,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Åklagarmyndigheten (Stockholm)</name>
+      <description>Statlig myndighet | 12 Beredskapssektorer — Ingår som beredskapsmyndighet i: Ordning och säkerhet. (aklagare.se) https://www.aklagare.se</description>
+      <Point><coordinates>18.12026,59.33327,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Energiföretagen Sverige (Stockholm)</name>
+      <description>Näringsliv &amp; Försörjning | 18 FFO &amp; Näringsliv — Näringslivs- och branschaktör med roll i Sveriges försörjningsberedskap. https://www.energiforetagen.se</description>
+      <Point><coordinates>18.0248,59.34671,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Livsmedelsföretagen (Stockholm)</name>
+      <description>Näringsliv &amp; Försörjning | 18 FFO &amp; Näringsliv — Näringslivs- och branschaktör med roll i Sveriges försörjningsberedskap. https://www.livsmedelsforetagen.se</description>
+      <Point><coordinates>18.08057,59.29889,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Svenskt Näringsliv (Stockholm)</name>
+      <description>Näringsliv &amp; Försörjning | 18 FFO &amp; Näringsliv — Näringslivs- och branschaktör med roll i Sveriges försörjningsberedskap. https://www.svensktnaringsliv.se</description>
+      <Point><coordinates>18.09631,59.35693,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Mellersta civilområdet (Örebro)</name>
+      <description>Civilområde (6 st) | 6 Civilområden &amp; 21 Län — Regional samordningsnivå i det civila försvaret. Civilområdesansvarig: Länsstyrelsen i Örebro län. https://www.lansstyrelsen.se/orebro</description>
+      <Point><coordinates>15.2134,59.2753,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Norra civilområdet (Luleå)</name>
+      <description>Civilområde (6 st) | 6 Civilområden &amp; 21 Län — Regional samordningsnivå i det civila försvaret. Civilområdesansvarig: Länsstyrelsen i Norrbottens län. https://www.lansstyrelsen.se/norrbotten</description>
+      <Point><coordinates>22.1567,65.5848,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Sydöstra civilområdet (Linköping)</name>
+      <description>Civilområde (6 st) | 6 Civilområden &amp; 21 Län — Regional samordningsnivå i det civila försvaret. Civilområdesansvarig: Länsstyrelsen i Östergötlands län. https://www.lansstyrelsen.se/ostergotland</description>
+      <Point><coordinates>15.6214,58.4108,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Södra civilområdet (Malmö)</name>
+      <description>Civilområde (6 st) | 6 Civilområden &amp; 21 Län — Regional samordningsnivå i det civila försvaret. Civilområdesansvarig: Länsstyrelsen i Skåne län. https://www.lansstyrelsen.se/skane</description>
+      <Point><coordinates>13.0038,55.605,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Västra civilområdet (Göteborg)</name>
+      <description>Civilområde (6 st) | 6 Civilområden &amp; 21 Län — Regional samordningsnivå i det civila försvaret. Civilområdesansvarig: Länsstyrelsen i Västra Götalands län. https://www.lansstyrelsen.se/vastra-gotaland</description>
+      <Point><coordinates>11.9746,57.7089,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Östra civilområdet (Stockholm)</name>
+      <description>Civilområde (6 st) | 6 Civilområden &amp; 21 Län — Regional samordningsnivå i det civila försvaret. Civilområdesansvarig: Länsstyrelsen i Stockholms län. https://www.lansstyrelsen.se/stockholm</description>
+      <Point><coordinates>18.01442,59.31942,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Blekinge län (Karlskrona)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Blekinge län. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>15.58831,56.15204,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Dalarnas län (Falun)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Dalarnas län. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>15.6355,60.6065,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Gotlands län (Visby)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Gotlands län. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>18.28641,57.63919,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Gävleborgs län (Gävle)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Gävleborgs län. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>17.14271,60.66574,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Hallands län (Halmstad)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Hallands län. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>12.8578,56.6744,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Jämtlands län (Östersund)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Jämtlands län. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>14.6361,63.1767,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Jönköpings län (Jönköping)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Jönköpings län. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>14.16321,57.77344,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Kalmar län (Kalmar)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Kalmar län. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>16.34841,56.66779,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Kronobergs län (Växjö)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Kronobergs län. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>14.8059,56.879,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Norrbottens län (Luleå)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Norrbottens län samt civilområdesansvarig länsstyrelse för Norra civilområdet. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>22.14831,65.58919,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Skåne län (Malmö)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Skåne län samt civilområdesansvarig länsstyrelse för Södra civilområdet. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>12.99541,55.60939,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Stockholms län (Stockholm)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Stockholms län samt civilområdesansvarig länsstyrelse för Östra civilområdet. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>18.12125,59.3154,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Södermanlands län (Nyköping)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Södermanlands län. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>17.0092,58.7528,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Uppsala län (Uppsala)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Uppsala län. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>17.6165,59.85634,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Värmlands län (Karlstad)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Värmlands län. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>13.51559,59.38823,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Västerbottens län (Umeå)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Västerbottens län. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>20.263,63.8258,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Västernorrlands län (Härnösand)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Västernorrlands län. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>17.9409,62.6323,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Västmanlands län (Västerås)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Västmanlands län. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>16.5448,59.6099,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Västra Götalands län (Göteborg)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Västra Götalands län samt civilområdesansvarig länsstyrelse för Västra civilområdet. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>11.96621,57.71329,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Örebro län (Örebro)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Örebro län samt civilområdesansvarig länsstyrelse för Mellersta civilområdet. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>15.20501,59.27969,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Östergötlands län (Linköping)</name>
+      <description>Länsstyrelse / Län (21 st) | 6 Civilområden &amp; 21 Län — Högsta civila totalförsvarsmyndighet på länsnivå i Östergötlands län samt civilområdesansvarig länsstyrelse för Sydöstra civilområdet. https://www.lansstyrelsen.se</description>
+      <Point><coordinates>15.61301,58.41519,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Frivilligförsvaret (18 FFO) (Stockholm)</name>
+      <description>Frivilligförsvaret (Nav) | 18 FFO &amp; Näringsliv — Samlingsnod för de 18 statligt erkända frivilliga försvarsorganisationerna som rekryterar och utbildar frivilliga till både militärt och civilt försvar. https://www.frivilligforsvaret.se</description>
+      <Point><coordinates>18.04578,59.36046,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Regeringen (Stockholm)</name>
+      <description>Riksdag, Regering &amp; Styrning | Styrning &amp; Lagrum — Styr riket och beslutar om höjd beredskap, förordningar och myndigheternas årliga regleringsbrev (inkl. Försvarsdepartementet och ministern för civilt försvar). https://www.regeringen.se</description>
+      <Point><coordinates>18.04823,59.29694,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Regleringsbrev (ESV) (Stockholm)</name>
+      <description>Riksdag, Regering &amp; Styrning | Styrning &amp; Lagrum — Regeringens årliga styrinstrument med formella mål, totalförsvarsuppdrag och anslag till statliga myndigheter. https://www.esv.se/statsliggaren/</description>
+      <Point><coordinates>18.12282,59.34558,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Riksdagen (Stockholm)</name>
+      <description>Riksdag, Regering &amp; Styrning | Styrning &amp; Lagrum — Stiftar lagar (SFS), beslutar om statsbudgeten (Utgiftsområde 6 m.fl.) och fastställer totalförsvarsbeslut. https://www.riksdagen.se</description>
+      <Point><coordinates>18.00835,59.33837,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>MR Mellersta (Kungsängen) (Kungsängen)</name>
+      <description>Militärregion (4 st) | Militärt &amp; Försvarsmyndigheter — Regional militär stab som samverkar med Mellersta och Östra civilområdet. https://www.forsvarsmakten.se/sv/organisation/militarregioner/</description>
+      <Point><coordinates>17.7519,59.4792,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>MR Norra (Boden) (Boden)</name>
+      <description>Militärregion (4 st) | Militärt &amp; Försvarsmyndigheter — Regional militär stab med säte i Boden som leder regionala insatser och samverkar med Norra civilområdet. https://www.forsvarsmakten.se/sv/organisation/militarregioner/</description>
+      <Point><coordinates>21.6887,65.8251,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>MR Södra (Revingehed/Lund) (Lund)</name>
+      <description>Militärregion (4 st) | Militärt &amp; Försvarsmyndigheter — Regional militär stab i Skåne som samverkar med Södra och Sydöstra civilområdet. https://www.forsvarsmakten.se/sv/organisation/militarregioner/</description>
+      <Point><coordinates>13.191,55.7047,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>MR Västra (Skövde) (Skövde)</name>
+      <description>Militärregion (4 st) | Militärt &amp; Försvarsmyndigheter — Regional militär stab med säte i Skövde som samverkar med Västra civilområdet och delar av mellersta/sydöstra Sverige. https://www.forsvarsmakten.se/sv/organisation/militarregioner/</description>
+      <Point><coordinates>13.8461,58.3898,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>NATO (Bryssel (NATO HQ))</name>
+      <description>NATO &amp; Alliansen | NATO &amp; Alliansramverk — Nordatlantiska fördragsorganisationen. Sveriges totalförsvar är integrerat i NATO:s kollektiva försvar, försvarsplanering (NDPP), krishanteringssystem (NCRS/NRS) och Artikel 3-krav på civil motståndskraft. https://www.nato.int</description>
+      <Point><coordinates>4.4257,50.8779,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Civilt försvar (Stockholm)</name>
+      <description>Huvudpelare | 12 Beredskapssektorer — Samhällets samlade motståndskraft vid krigsfara och krig: skydda civilbefolkningen, säkerställa de viktigaste samhällsfunktionerna och stödja Försvarsmakten och allierade. https://www.mcf.se</description>
+      <Point><coordinates>18.10285,59.29886,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Militärt försvar (Stockholm)</name>
+      <description>Huvudpelare | Militärt &amp; Försvarsmyndigheter — Försvarsmakten (inkl. Hemvärnet och militärregionerna) tillsammans med stödjande försvarsmyndigheter och frivilliga försvarsorganisationer. https://www.forsvarsmakten.se</description>
+      <Point><coordinates>18.0795,59.36554,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Totalförsvaret (Stockholm)</name>
+      <description>Huvudpelare | Styrning &amp; Lagrum — All verksamhet som behövs för att förbereda Sverige för krig. Består av militärt försvar och civilt försvar i samverkan inom ramen för NATO-medlemskapet. https://www.regeringen.se/regeringens-politik/totalforsvar/</description>
+      <Point><coordinates>18.01694,59.30644,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>SKR (290 kommuner &amp; 21 regioner) (Stockholm)</name>
+      <description>Kommuner &amp; Regioner (SKR) | 6 Civilområden &amp; 21 Län — Företräder Sveriges 290 kommuner och 21 regioner, som utgör basen i det lokala och regionala civila försvaret enligt LEH (2006:544). https://skr.se/skr/samhallsplaneringinfrastruktur/trygghetsakerhet/civiltforsvar.html</description>
+      <Point><coordinates>18.1347,59.32617,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Blekinge tekniska högskola (Karlskrona)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>15.59889,56.17013,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Chalmers tekniska högskola (Göteborg)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>11.97601,57.69974,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Gymnastik- och idrottshögskolan (GIH) (Stockholm)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>18.0229,59.35753,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Göteborgs universitet (Göteborg)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>11.98659,57.71783,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Handelshögskolan i Stockholm (Stockholm)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>18.06893,59.2903,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Högskolan Dalarna (Falun)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>15.62711,60.61089,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Högskolan Kristianstad (Kristianstad)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>14.1567,56.0294,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Högskolan Väst (Trollhättan)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>12.2886,58.2837,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Högskolan i Borås (Borås)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>12.9401,57.721,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Högskolan i Gävle (Gävle)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>17.15329,60.68383,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Högskolan i Halmstad (Halmstad)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>12.84941,56.67879,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Högskolan i Skövde (Skövde)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>13.83771,58.39419,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Jönköping University (Jönköping)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>14.17379,57.79153,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Karlstads universitet (Karlstad)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>13.4812,59.37704,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Karolinska Institutet (Solna)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>17.99367,59.37538,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Konstfack (Stockholm)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>18.11509,59.35858,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Kungl. Konsthögskolan (Stockholm)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>17.99878,59.3256,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Kungl. Musikhögskolan (Stockholm)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>18.12519,59.30476,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Kungliga Tekniska högskolan (KTH) (Stockholm)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>18.05572,59.36975,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Linköpings universitet (Linköping)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>15.62281,58.40164,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Linnéuniversitetet (Växjö)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>14.79751,56.88339,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Luleå tekniska universitet (Luleå)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>22.15811,65.57564,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Lunds universitet (Lund)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>13.18261,55.70909,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Malmö universitet (Malmö)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>13.00521,55.59584,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Marie Cederschiöld högskola (Stockholm)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>18.02981,59.29407,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Mittuniversitetet (Sundsvall)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>17.30831,62.38164,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Mälardalens universitet (Västerås)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>16.53641,59.61429,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Röda Korsets högskola (Huddinge)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>17.9822,59.2363,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Sophiahemmet Högskola (Stockholm)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>18.1397,59.34043,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Stockholms konstnärliga högskola (Stockholm)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>18.00224,59.34876,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Stockholms universitet (Stockholm)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>18.09483,59.28887,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Sveriges lantbruksuniversitet (SLU) (Uppsala)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>17.66036,59.8508,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Södertörns högskola (Huddinge)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>17.97381,59.24069,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Umeå universitet (Umeå)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>20.25461,63.83019,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Uppsala universitet (Uppsala)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>17.63167,59.87398,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Örebro universitet (Örebro)</name>
+      <description>Samverkande lärosäte (37 st) | Campus Totalförsvar (37 st) — Lärosäte som ingår i det nationella samarbetet Campus totalförsvar. https://campustotalforsvar.se/om-campus-totalforsvar/larosaten-i-samarbetet</description>
+      <Point><coordinates>15.21481,59.26614,0</coordinates></Point>
+    </Placemark>
+  </Document>
+</kml>

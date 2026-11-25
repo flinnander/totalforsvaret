@@ -434,6 +434,52 @@ def seed_knowledge_graph(
         upsert_edge(conn, source=umb_id, target="civilt_forsvar", relation="SAMORDNAR_KOMMUNER_OCH_REGIONER", weight=2.0)
         upsert_edge(conn, source=umb_id, target="sfs_2006_544", relation="STYRS_AV_LAG", weight=2.0)
 
+    # 7b. Försvarsmaktens 4 Militärregioner & samverkan med civilområdena
+    militarregioner = [
+        (
+            "militarregion_norra",
+            "Norra militärregionen (MR N)",
+            "MR Norra (Boden)",
+            "Regional militär stab med säte i Boden som leder regionala insatser och samverkar med Norra civilområdet.",
+            ["civilomrade_norra_civilomradet"],
+        ),
+        (
+            "militarregion_mellersta",
+            "Mellersta militärregionen (MR M)",
+            "MR Mellersta (Kungsängen)",
+            "Regional militär stab som samverkar med Mellersta och Östra civilområdet.",
+            ["civilomrade_mellersta_civilomradet", "civilomrade_ostra_civilomradet"],
+        ),
+        (
+            "militarregion_vastra",
+            "Västra militärregionen (MR V)",
+            "MR Västra (Skövde)",
+            "Regional militär stab med säte i Skövde som samverkar med Västra civilområdet och delar av mellersta/sydöstra Sverige.",
+            ["civilomrade_vastra_civilomradet"],
+        ),
+        (
+            "militarregion_sodra",
+            "Södra militärregionen (MR S)",
+            "MR Södra (Revingehed/Lund)",
+            "Regional militär stab i Skåne som samverkar med Södra och Sydöstra civilområdet.",
+            ["civilomrade_sodra_civilomradet", "civilomrade_sydostra_civilomradet"],
+        ),
+    ]
+    for mr_id, mr_name, mr_short, mr_desc, linked_civs in militarregioner:
+        upsert_node(
+            conn,
+            node_id=mr_id,
+            node_type="militarregion",
+            name=mr_name,
+            short_name=mr_short,
+            domain="forsvarsmakten.se",
+            url="https://www.forsvarsmakten.se/sv/organisation/militarregioner/",
+            description=mr_desc,
+        )
+        upsert_edge(conn, source=mr_id, target="agency_forsvarsmakten", relation="REGIONAL_STAB_INOM", weight=2.0)
+        for civ_target in linked_civs:
+            upsert_edge(conn, source=mr_id, target=civ_target, relation="SAMVERKAR_REGIONAL_MED", weight=1.9)
+
     # 8. Frivilliga försvarsorganisationer (18 FFO) & Näringsliv
     vol_cfg = cfg.get("voluntary_and_private_sector", {})
     portal = vol_cfg.get("voluntary_defense_portal")

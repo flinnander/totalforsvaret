@@ -1,14 +1,16 @@
-"""Exportmotor för react-force-graph (JSON), Markdown/Mermaid (L1–L2) och CSV/JSON."""
+"""Exportmotor för react-force-graph (JSON), Karta (GeoJSON & Google Maps KML), Markdown/Mermaid och CSV."""
 
 from __future__ import annotations
 
 import csv
+import html
 import json
 import sqlite3
 from pathlib import Path
 from typing import Any
 
 from .db import ROOT_DIR
+from .geo_data import SOURCE_GROUPS, resolve_city_coordinates, resolve_source_group
 
 
 NODE_VISUAL_CONFIG: dict[str, dict[str, Any]] = {
@@ -17,6 +19,7 @@ NODE_VISUAL_CONFIG: dict[str, dict[str, Any]] = {
     "nato_framework": {"color": "#38bdf8", "val": 24, "label_sv": "NATO & Alliansen"},
     "nato_mechanism": {"color": "#0ea5e9", "val": 15, "label_sv": "NATO-system (NCRS / HNS / NDPP)"},
     "nato_requirement": {"color": "#0284c7", "val": 14, "label_sv": "NATO:s 7 Grundkrav (Artikel 3)"},
+    "militarregion": {"color": "#eab308", "val": 15, "label_sv": "Militärregion (4 st)"},
     "sector": {"color": "#10b981", "val": 18, "label_sv": "Beredskapssektor (12 st)"},
     "agency": {"color": "#34d399", "val": 9, "label_sv": "Statlig myndighet"},
     "civilomrade": {"color": "#a855f7", "val": 16, "label_sv": "Civilområde (6 st)"},
@@ -34,38 +37,63 @@ NODE_VISUAL_CONFIG: dict[str, dict[str, Any]] = {
 PERSPECTIVES: dict[str, dict[str, Any]] = {
     "helhetsbild": {
         "id": "helhetsbild",
-        "title": "Helhetsbild – Hela Totalförsvaret",
-        "description": "Samtliga aktörer, sektorer, civilområden, lagar, NATO-krav, frivilligorganisationer och lärosäten.",
+        "title": "Helhetsbild – Alla Källgrupper",
+        "description": "Samtliga aktörer, sektorer, civilområden, militärregioner, lagar, NATO-krav, FFO och lärosäten.",
+        "source_groups": list(SOURCE_GROUPS.keys()),
         "node_types": list(NODE_VISUAL_CONFIG.keys()),
+    },
+    "karnstruktur": {
+        "id": "karnstruktur",
+        "title": "Kärnstruktur (Utan enskilda lärosäten & FFO)",
+        "description": " Luftig vy över styrning, NATO, militärregioner, 12 beredskapssektorer och 6 civilområden.",
+        "source_groups": [
+            "styrning_lagrum",
+            "nato_allians",
+            "militart_och_karnmyndigheter",
+            "beredskapssektorer",
+            "geografi_civilomraden",
+        ],
+        "node_types": [
+            "pillar",
+            "governance",
+            "nato_framework",
+            "nato_mechanism",
+            "nato_requirement",
+            "militarregion",
+            "sector",
+            "agency",
+            "civilomrade",
+            "county",
+            "regional_umbrella",
+            "law",
+        ],
     },
     "beredskapssektorer": {
         "id": "beredskapssektorer",
         "title": "12 Beredskapssektorer & Myndigheter",
-        "description": "Civilt försvar, de 12 beredskapssektorerna, sektorsansvariga myndigheter och samtliga beredskapsmyndigheter.",
+        "description": "Civilt försvar, de 12 beredskapssektorerna, sektorsansvariga myndigheter och beredskapsmyndigheter.",
+        "source_groups": ["beredskapssektorer"],
         "node_types": ["pillar", "sector", "agency"],
     },
     "nato_resiliens": {
         "id": "nato_resiliens",
         "title": "NATO, NCRS/CRM & 7 Resilienskrav",
-        "description": "Hur Sveriges totalförsvar och de 12 beredskapssektorerna kopplas till NATO:s 7 grundkrav (Artikel 3), NCRS/NRS och Värdlandsstöd (HNS).",
+        "description": "Hur Sveriges totalförsvar och de 12 beredskapssektorerna kopplas till NATO:s 7 grundkrav (Artikel 3), NCRS/NRS och HNS.",
+        "source_groups": ["styrning_lagrum", "nato_allians", "beredskapssektorer"],
         "node_types": ["pillar", "governance", "nato_framework", "nato_mechanism", "nato_requirement", "sector"],
     },
     "geografi_civilomraden": {
         "id": "geografi_civilomraden",
-        "title": "Geografi: 6 Civilområden, 21 Län & Kommuner",
-        "description": "Regional och lokal beredskapsstruktur med civilområdesansvariga länsstyrelser, alla 21 län samt SKR (290 kommuner & 21 regioner).",
-        "node_types": ["pillar", "civilomrade", "county", "regional_umbrella", "law"],
-    },
-    "lagstiftning_styrning": {
-        "id": "lagstiftning_styrning",
-        "title": "Styrning, Lagrum (SFS) & Regleringsbrev",
-        "description": "Riksdagen, Regeringen, regleringsbrev och hur centrala lagar och förordningar (SFS) styr totalförsvarets delar.",
-        "node_types": ["pillar", "governance", "law", "sector", "civilomrade", "regional_umbrella", "nato_mechanism"],
+        "title": "Geografi: Civilområden, Militärregioner & 21 Län",
+        "description": "Regional beredskapsstruktur med 6 civilområden, 4 militärregioner, alla 21 länsstyrelser och SKR.",
+        "source_groups": ["geografi_civilomraden", "militart_och_karnmyndigheter"],
+        "node_types": ["pillar", "militarregion", "civilomrade", "county", "regional_umbrella", "law"],
     },
     "akademi_och_frivilliga": {
         "id": "akademi_och_frivilliga",
         "title": "Campus Totalförsvar (37 lärosäten), 18 FFO & Näringsliv",
-        "description": "Utbildning och forskning via Campus totalförsvar, folkrörelseförankring via de 18 frivilliga försvarsorganisationerna samt näringslivets roll.",
+        "description": "Utbildning och forskning via Campus totalförsvar, de 18 frivilliga försvarsorganisationerna samt näringslivet.",
+        "source_groups": ["akademi_campus", "frivilliga_och_naringsliv", "styrning_lagrum"],
         "node_types": ["pillar", "academia_hub", "university", "ffo_hub", "ffo", "business_org"],
     },
 }
@@ -76,10 +104,12 @@ def build_force_graph_payload(
     perspective: str = "helhetsbild",
     center_node_id: str | None = None,
     max_hops: int = 2,
+    icon_map: dict[str, str] | None = None,
 ) -> dict[str, Any]:
-    """Bygger ett { metadata, perspectives, nodeTypes, nodes, links }-objekt för react-force-graph."""
+    """Bygger ett komplett { metadata, sourceGroups, perspectives, nodeTypes, nodes, links }-objekt."""
     persp = PERSPECTIVES.get(perspective, PERSPECTIVES["helhetsbild"])
     allowed_types = set(persp["node_types"])
+    icons = icon_map or {}
 
     rows_nodes = conn.execute("SELECT * FROM nodes ORDER BY type, name").fetchall()
     rows_edges = conn.execute("SELECT * FROM edges ORDER BY weight DESC, id ASC").fetchall()
@@ -94,12 +124,9 @@ def build_force_graph_payload(
         weight_sum_map[e["source"]] = weight_sum_map.get(e["source"], 0.0) + w
         weight_sum_map[e["target"]] = weight_sum_map.get(e["target"], 0.0) + w
 
-    filtered_node_ids = {
-        r["id"] for r in rows_nodes if r["type"] in allowed_types
-    }
+    filtered_node_ids = {r["id"] for r in rows_nodes if r["type"] in allowed_types}
 
     if center_node_id and any(r["id"] == center_node_id for r in rows_nodes):
-        # Ego-graf runt en vald nod (max_hops steg utåt/inåt)
         ego_ids = {center_node_id}
         frontier = {center_node_id}
         for _ in range(max(1, max_hops)):
@@ -113,6 +140,7 @@ def build_force_graph_payload(
             frontier = next_frontier
         filtered_node_ids = ego_ids
 
+    city_counter: dict[str, int] = {}
     nodes_out: list[dict[str, Any]] = []
     for r in rows_nodes:
         if r["id"] not in filtered_node_ids:
@@ -125,7 +153,6 @@ def build_force_graph_payload(
         deg = in_deg + out_deg
         w_sum = round(weight_sum_map.get(r["id"], 1.0), 2)
 
-        # Berika beskrivning för myndigheter som ingår i en eller flera beredskapssektorer
         desc = r["description"]
         if r["type"] == "agency":
             lead_secs = [
@@ -150,7 +177,9 @@ def build_force_graph_payload(
             if parts:
                 desc = " ".join(parts) + (f" ({r['domain']})" if r["domain"] else "")
 
-        # Volym/area-viktning baserad på in- och utgående kopplingar samt relationsvikt
+        src_group = resolve_source_group(r["id"], r["type"], meta)
+        geo = resolve_city_coordinates(r["id"], city_counter)
+
         radius_score = 2.0 + (w_sum ** 0.65) * 1.45
         weighted_val = round(radius_score ** 2.4, 1)
 
@@ -161,6 +190,8 @@ def build_force_graph_payload(
                 "shortName": r["short_name"] or r["name"],
                 "type": r["type"],
                 "typeLabel": vis["label_sv"],
+                "sourceGroup": src_group,
+                "sourceGroupTitle": SOURCE_GROUPS[src_group]["shortTitle"],
                 "color": vis["color"],
                 "val": weighted_val,
                 "degree": deg,
@@ -169,6 +200,8 @@ def build_force_graph_payload(
                 "weightedDegree": w_sum,
                 "domain": r["domain"],
                 "url": r["url"],
+                "iconUrl": icons.get(r["id"]),
+                "geo": geo,
                 "description": desc,
                 "aliases": aliases,
                 "metadata": meta,
@@ -194,8 +227,9 @@ def build_force_graph_payload(
             "activePerspective": persp["id"],
             "nodeCount": len(nodes_out),
             "linkCount": len(links_out),
-            "scopePolicy": "Endast öppna normativa och organisatoriska källor (SECURITY_AND_SCOPE.md).",
+            "scopePolicy": "Endast öppna normativa och organisatoriska källor samt administrativa sätesorter (SECURITY_AND_SCOPE.md).",
         },
+        "sourceGroups": list(SOURCE_GROUPS.values()),
         "perspectives": list(PERSPECTIVES.values()),
         "nodeTypes": NODE_VISUAL_CONFIG,
         "nodes": nodes_out,
@@ -203,25 +237,122 @@ def build_force_graph_payload(
     }
 
 
-def export_all_formats(conn: sqlite3.Connection, root_dir: Path = ROOT_DIR) -> dict[str, Path]:
-    """Genererar alla statiska utdatafiler (react-force-graph JSON, Markdown/Mermaid, CSV och JSON)."""
+def _export_geojson_and_kml(full_graph: dict[str, Any], geo_dir: Path) -> tuple[Path, Path]:
+    """Exporterar geografiska noder och regionala kopplingar till GeoJSON samt KML (för Google My Maps / Google Earth)."""
+    geo_dir.mkdir(parents=True, exist_ok=True)
+    node_by_id = {n["id"]: n for n in full_graph["nodes"] if n.get("geo")}
+
+    features: list[dict[str, Any]] = []
+    for n in node_by_id.values():
+        g = n["geo"]
+        features.append(
+            {
+                "type": "Feature",
+                "geometry": {"type": "Point", "coordinates": [g["lon"], g["lat"]]},
+                "properties": {
+                    "id": n["id"],
+                    "name": n["name"],
+                    "shortName": n["shortName"],
+                    "type": n["type"],
+                    "typeLabel": n["typeLabel"],
+                    "sourceGroup": n["sourceGroupTitle"],
+                    "city": g["city"],
+                    "degree": n["degree"],
+                    "marker-color": n["color"],
+                    "url": n["url"] or "",
+                    "description": n["description"],
+                },
+            }
+        )
+
+    # Lägg till administrativa regionala kopplingslinjer (Civilområde <-> Län samt Militärregion <-> Civilområde)
+    geo_relations = {"CIVILOMRADESANSVARIG_FOR", "INGAR_I_CIVILOMRADE", "SAMVERKAR_REGIONAL_MED"}
+    for l in full_graph["links"]:
+        if l["relation"] not in geo_relations:
+            continue
+        s = node_by_id.get(l["source"])
+        t = node_by_id.get(l["target"])
+        if not s or not t:
+            continue
+        features.append(
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [s["geo"]["lon"], s["geo"]["lat"]],
+                        [t["geo"]["lon"], t["geo"]["lat"]],
+                    ],
+                },
+                "properties": {
+                    "relation": l["relation"],
+                    "source": s["shortName"],
+                    "target": t["shortName"],
+                    "stroke": t["color"],
+                },
+            }
+        )
+
+    geojson_path = geo_dir / "totalforsvaret.geojson"
+    geojson_path.write_text(
+        json.dumps({"type": "FeatureCollection", "features": features}, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+    # Generera KML för direktimport i Google My Maps / Google Earth
+    kml_placemarks: list[str] = []
+    for n in node_by_id.values():
+        g = n["geo"]
+        nm = html.escape(f"{n['shortName']} ({g['city']})")
+        ds = html.escape(f"{n['typeLabel']} | {n['sourceGroupTitle']} — {n['description']} {n['url'] or ''}")
+        kml_placemarks.append(
+            f"    <Placemark>\n"
+            f"      <name>{nm}</name>\n"
+            f"      <description>{ds}</description>\n"
+            f"      <Point><coordinates>{g['lon']},{g['lat']},0</coordinates></Point>\n"
+            f"    </Placemark>"
+        )
+
+    kml_content = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<kml xmlns="http://www.opengis.net/kml/2.2">\n'
+        "  <Document>\n"
+        "    <name>Svenskt Totalförsvar – Administrativ Geografi</name>\n"
+        "    <description>Länsstyrelser, civilområden, militärregioner, beredskapsmyndigheters sätesorter och Campus totalförsvar.</description>\n"
+        + "\n".join(kml_placemarks)
+        + "\n  </Document>\n</kml>\n"
+    )
+    kml_path = geo_dir / "totalforsvaret.kml"
+    kml_path.write_text(kml_content, encoding="utf-8")
+
+    return geojson_path, kml_path
+
+
+def export_all_formats(
+    conn: sqlite3.Connection,
+    root_dir: Path = ROOT_DIR,
+    icon_map: dict[str, str] | None = None,
+) -> dict[str, Path]:
+    """Genererar alla statiska utdatafiler (react-force-graph JSON, GeoJSON, KML, Markdown/Mermaid, CSV och JSON)."""
     graph_dir = root_dir / "exports" / "graph"
+    geo_dir = root_dir / "exports" / "geo"
     md_dir = root_dir / "exports" / "markdown"
     json_dir = root_dir / "exports" / "json"
     csv_dir = root_dir / "exports" / "csv"
     web_data_dir = root_dir / "web" / "public" / "data"
 
-    for d in (graph_dir, md_dir, json_dir, csv_dir, web_data_dir):
+    for d in (graph_dir, geo_dir, md_dir, json_dir, csv_dir, web_data_dir):
         d.mkdir(parents=True, exist_ok=True)
 
-    # 1. react-force-graph master JSON (används både av webbappen och som export)
-    full_graph = build_force_graph_payload(conn, perspective="helhetsbild")
+    full_graph = build_force_graph_payload(conn, perspective="helhetsbild", icon_map=icon_map)
     fg_path = graph_dir / "force_graph.json"
     fg_text = json.dumps(full_graph, ensure_ascii=False, indent=2)
     fg_path.write_text(fg_text, encoding="utf-8")
     (web_data_dir / "force_graph.json").write_text(fg_text, encoding="utf-8")
 
-    # 2. Aktörslista i JSON & CSV
+    geojson_path, kml_path = _export_geojson_and_kml(full_graph, geo_dir)
+    (web_data_dir / "totalforsvaret.kml").write_text(kml_path.read_text(encoding="utf-8"), encoding="utf-8")
+
     actors_json_path = json_dir / "actors.json"
     actors_json_path.write_text(
         json.dumps(full_graph["nodes"], ensure_ascii=False, indent=2),
@@ -231,13 +362,13 @@ def export_all_formats(conn: sqlite3.Connection, root_dir: Path = ROOT_DIR) -> d
     actors_csv_path = csv_dir / "actors.csv"
     with actors_csv_path.open("w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow(["id", "type", "type_label", "name", "short_name", "domain", "url", "description"])
+        writer.writerow(["id", "source_group", "type", "type_label", "name", "short_name", "city", "domain", "url", "description"])
         for n in full_graph["nodes"]:
+            city = n["geo"]["city"] if n.get("geo") else ""
             writer.writerow(
-                [n["id"], n["type"], n["typeLabel"], n["name"], n["shortName"], n["domain"] or "", n["url"] or "", n["description"]]
+                [n["id"], n["sourceGroup"], n["type"], n["typeLabel"], n["name"], n["shortName"], city, n["domain"] or "", n["url"] or "", n["description"]]
             )
 
-    # 3. Markdown L1: Exekutiv översikt med Mermaid-karta
     sectors = conn.execute("SELECT * FROM nodes WHERE type = 'sector' ORDER BY name").fetchall()
     civilomraden = conn.execute("SELECT * FROM nodes WHERE type = 'civilomrade' ORDER BY name").fetchall()
     nato_reqs = conn.execute("SELECT * FROM nodes WHERE type = 'nato_requirement' ORDER BY id").fetchall()
@@ -256,10 +387,11 @@ flowchart TD
     Riksdagen["Sveriges riksdag (Lagar & Budget)"] --> TF["Sveriges Totalförsvar"]
     Regeringen["Regeringen (Förordningar & Regleringsbrev)"] --> TF
     TF <--> NATO["NATO & Alliansramverk (Artikel 3, NCRS/CRM, HNS, NDPP)"]
-    TF --> MF["Militärt försvar (Försvarsmakten, Militärregioner & Stödmyndigheter)"]
+    TF --> MF["Militärt försvar (Försvarsmakten, 4 Militärregioner & Stödmyndigheter)"]
     TF --> CF["Civilt försvar (Samhällets samlade motståndskraft)"]
     CF --> Sektorer["12 Beredskapssektorer (~67 Beredskapsmyndigheter)"]
     CF --> Civilomr["6 Civilområden (21 Länsstyrelser)"]
+    MF <--> Civilomr
     CF --> KommunRegion["290 Kommuner & 21 Regioner (LEH / SKR)"]
     TF --> FFO["18 Frivilliga försvarsorganisationer (FFO)"]
     TF --> Campus["Campus totalförsvar (37 Svenska lärosäten)"]
@@ -268,7 +400,7 @@ flowchart TD
 
 ## Nyckeltal i strukturen
 * **12 nationella beredskapssektorer** med var sin sektorsansvarig myndighet enligt *förordning (2022:524)*.
-* **6 geografiska civilområden** ledda av civilområdesansvariga länsstyrelser i samspel med 21 län/regioner och 290 kommuner.
+* **6 geografiska civilområden** och **4 militärregioner** i samspel med 21 län/regioner och 290 kommuner.
 * **7 grundläggande NATO-krav på civil motståndskraft** (*Seven Baseline Requirements*, Artikel 3) mappade direkt mot Sveriges beredskapssektorer.
 * **18 frivilliga försvarsorganisationer (FFO)** som förstärker både militärt och civilt försvar.
 * **37 universitet och högskolor** förenade i **Campus totalförsvar** för forskning och utbildning.
@@ -281,33 +413,18 @@ flowchart TD
     l1_path = md_dir / "OVERSIKT_L1.md"
     l1_path.write_text(l1_md, encoding="utf-8")
 
-    # 4. Markdown L2: De 12 Beredskapssektorerna & NATO-mappning
     l2_sec_md = "# De 12 Beredskapssektorerna & NATO-mappning (Nivå L2)\n\n"
     for sec in sectors:
         lead_row = conn.execute(
-            """
-            SELECT n.* FROM edges e
-            JOIN nodes n ON n.id = e.source
-            WHERE e.target = ? AND e.relation = 'SEKTORSANSVARIG_FOR'
-            """,
+            "SELECT n.* FROM edges e JOIN nodes n ON n.id = e.source WHERE e.target = ? AND e.relation = 'SEKTORSANSVARIG_FOR'",
             (sec["id"],),
         ).fetchone()
         member_rows = conn.execute(
-            """
-            SELECT n.* FROM edges e
-            JOIN nodes n ON n.id = e.source
-            WHERE e.target = ? AND e.relation = 'INGAR_I_SEKTOR'
-            ORDER BY n.name
-            """,
+            "SELECT n.* FROM edges e JOIN nodes n ON n.id = e.source WHERE e.target = ? AND e.relation = 'INGAR_I_SEKTOR' ORDER BY n.name",
             (sec["id"],),
         ).fetchall()
         nato_rows = conn.execute(
-            """
-            SELECT n.* FROM edges e
-            JOIN nodes n ON n.id = e.target
-            WHERE e.source = ? AND e.relation = 'MAPPAR_MOT_NATO_KRAV'
-            ORDER BY n.id
-            """,
+            "SELECT n.* FROM edges e JOIN nodes n ON n.id = e.target WHERE e.source = ? AND e.relation = 'MAPPAR_MOT_NATO_KRAV' ORDER BY n.id",
             (sec["id"],),
         ).fetchall()
 
@@ -325,7 +442,6 @@ flowchart TD
     l2_sec_path = md_dir / "BEREDSKAPSSEKTORER_L2.md"
     l2_sec_path.write_text(l2_sec_md, encoding="utf-8")
 
-    # 5. Markdown L2: NATO, NCRS/CRM & 7 Baseline Requirements
     l2_nato_md = """# NATO, NCRS/CRM & De 7 Grundkraven i Svenskt Totalförsvar (Nivå L2)
 
 > **Avgränsning:** Beskriver uteslutande öppna konceptuella och förvaltningsrättsliga ramverk enligt `SECURITY_AND_SCOPE.md`.
@@ -339,12 +455,7 @@ flowchart TD
     l2_nato_md += "## NATO:s sju grundläggande krav på civil motståndskraft (Artikel 3)\n\n"
     for nr in nato_reqs:
         mapped_secs = conn.execute(
-            """
-            SELECT n.short_name FROM edges e
-            JOIN nodes n ON n.id = e.source
-            WHERE e.target = ? AND e.relation = 'MAPPAR_MOT_NATO_KRAV'
-            ORDER BY n.short_name
-            """,
+            "SELECT n.short_name FROM edges e JOIN nodes n ON n.id = e.source WHERE e.target = ? AND e.relation = 'MAPPAR_MOT_NATO_KRAV' ORDER BY n.short_name",
             (nr["id"],),
         ).fetchall()
         sec_names = ", ".join(s["short_name"] for s in mapped_secs) or "Tvärsektoriellt"
@@ -353,7 +464,6 @@ flowchart TD
     l2_nato_path = md_dir / "NATO_OCH_NCRS_L2.md"
     l2_nato_path.write_text(l2_nato_md, encoding="utf-8")
 
-    # 6. Markdown L2: De 6 Civilområdena
     l2_civ_md = "# Sveriges 6 Civilområden & Regional Ledning (Nivå L2)\n\n"
     for civ in civilomraden:
         meta = json.loads(civ["metadata_json"] or "{}")
@@ -369,6 +479,8 @@ flowchart TD
 
     return {
         "force_graph": fg_path,
+        "geojson": geojson_path,
+        "kml": kml_path,
         "actors_json": actors_json_path,
         "actors_csv": actors_csv_path,
         "oversikt_l1": l1_path,

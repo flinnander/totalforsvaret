@@ -18,7 +18,7 @@ Detta projekt ([`flinnander/totalforsvaret`](https://github.com/flinnander/total
 ### Vad vi AKTIVT EXKLUDERAR (Utfall, förmåga & fysisk detaljdata)
 * **Hur aktörer svarar upp mot kraven:** Vi samlar **inte** in granskningar, mognadsmätningar, tillsynsbeslut, återrapporteringar av brister eller bedömningar av hur väl myndigheter, regioner, kommuner eller företag faktiskt uppfyller beredskaps- eller NATO-krav.
 * **Risk- och sårbarhetsanalyser (RSA):** Inga kommunala, regionala eller myndighetsspecifika RSA-dokument eller sårbarhetskartläggningar indexeras.
-* **Fysisk och geografisk infrastruktur:** Inga koordinater, kartlager, kapacitetssiffror eller placeringar för skyddsobjekt, reservkraft, beredskapslager, dricksvattentäkter, ledningscentraler, baser eller kritiska noder.
+* **Fysisk och geografisk infrastruktur:** Inga koordinater, kartlager, kapacitetssiffror eller placeringar för skyddsobjekt, reservkraft, beredskapslager, dricksvattentäkter, ledningscentraler, baser eller kritiska noder. *(Kartvyn i projektet använder uteslutande offentliga administrativa stadscentrumkoordinater för residensstäder, universitetsorter och myndigheters officiella säteskommuner.)*
 * **Personuppgifter på individnivå:** Endast institutionella roller och offentliga kontaktvägar på myndighets-/organisationsnivå hanteras; aldrig listor över enskilda befattningshavare i krigsorganisation eller liknande.
 
 ---

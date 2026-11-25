@@ -8,7 +8,7 @@ export default defineConfig({
     dedupe: ['three', 'react', 'react-dom'],
   },
   optimizeDeps: {
-    include: ['three', 'three-spritetext', 'react-force-graph-2d', 'react-force-graph-3d'],
+    include: ['three', 'three-spritetext', 'react-force-graph-2d', 'react-force-graph-3d', 'leaflet'],
   },
   build: {
     outDir: 'dist',
